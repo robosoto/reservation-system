@@ -1,4 +1,4 @@
-package com.goeazycarrent.service;
+package com.goeazycarrent.service.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
