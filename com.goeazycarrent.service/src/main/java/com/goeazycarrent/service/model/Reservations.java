@@ -4,6 +4,8 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -11,70 +13,49 @@ public class Reservations {
 
 	@Id
 	@Column(name = "id")
-	private String reservationId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer reservationId;
 	
-	@Id
-	@Column(name = "pickupDate")
-	private Date pickupDate;
+	@Column(name = "start_date")
+	private Date startEnd;
 	
-	@Id
-	@Column(name = "DropoffDate")
-	private Date DropoffDate;
+	@Column(name = "end_date")
+	private Date endDate;
 	
-	@Id
-	@Column(name = "Customer_id")
-	private Integer CustomerId;
+	@Column(name = "customer_id")
+	private Integer customerId;
 	
-	@Id
 	@Column(name = "vehicleId")
 	private Integer vehicleId;
+	
+	@Column(name = "location")
+	private String location;
+	
+	
 	/**
 	 * @return the reservationId
 	 */
-	public String getReservationId() {
+	public Integer getReservationId() {
 		return reservationId;
 	}
 	/**
 	 * @param reservationId the reservationId to set
 	 */
-	public void setReservationId(String reservationId) {
+	public void setReservationId(Integer reservationId) {
 		this.reservationId = reservationId;
 	}
-	/**
-	 * @return the pickupDate
-	 */
-	public Date getPickupDate() {
-		return pickupDate;
-	}
-	/**
-	 * @param pickupDate the pickupDate to set
-	 */
-	public void setPickupDate(Date pickupDate) {
-		this.pickupDate = pickupDate;
-	}
-	/**
-	 * @return the dropoffDate
-	 */
-	public Date getDropoffDate() {
-		return DropoffDate;
-	}
-	/**
-	 * @param dropoffDate the dropoffDate to set
-	 */
-	public void setDropoffDate(Date dropoffDate) {
-		DropoffDate = dropoffDate;
-	}
+	
 	/**
 	 * @return the customerId
 	 */
 	public Integer getCustomerId() {
-		return CustomerId;
+		return customerId;
 	}
 	/**
 	 * @param customerId the customerId to set
 	 */
 	public void setCustomerId(Integer customerId) {
-		CustomerId = customerId;
+		this.customerId = customerId;
 	}
 	/**
 	 * @return the vehicleId
@@ -88,4 +69,42 @@ public class Reservations {
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
 	}
+	/**
+	 * @return the startEnd
+	 */
+	public Date getStartEnd() {
+		return startEnd;
+	}
+	/**
+	 * @param startEnd the startEnd to set
+	 */
+	public void setStartEnd(Date startEnd) {
+		this.startEnd = startEnd;
+	}
+	/**
+	 * @return the endDate
+	 */
+	public Date getEndDate() {
+		return endDate;
+	}
+	/**
+	 * @param endDate the endDate to set
+	 */
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	/**
+	 * @return the location
+	 */
+	public String getLocation() {
+		return location;
+	}
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
+	
 }

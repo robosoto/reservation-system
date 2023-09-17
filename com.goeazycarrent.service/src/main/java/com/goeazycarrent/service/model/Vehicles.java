@@ -2,6 +2,8 @@ package com.goeazycarrent.service.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity 
@@ -9,23 +11,20 @@ public class Vehicles {
 	
 	@Id
 	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer vehicleId;
 	
-	@Id
 	@Column(name = "make")
 	private String make;
 	
-	@Id
 	@Column(name = "model")
 	private String model;
 	
-	@Id
 	@Column(name = "type")
 	private String type;
 	
-	@Id
 	@Column(name = "Location")
-	private String Location;
+	private String location;
 	
 	/**
 	 * @return the vehicleId
@@ -79,13 +78,13 @@ public class Vehicles {
 	 * @return the location
 	 */
 	public String getLocation() {
-		return Location;
+		return location;
 	}
 	/**
 	 * @param location the location to set
 	 */
 	public void setLocation(String location) {
-		Location = location;
+		this.location = location;
 	}
 	
 	

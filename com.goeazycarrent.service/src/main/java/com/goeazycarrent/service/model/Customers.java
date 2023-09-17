@@ -2,24 +2,24 @@ package com.goeazycarrent.service.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+@Entity(name="customers")
 public class Customers {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer customerId;
 	
-	@Id
 	@Column(name = "email")
 	private String email;
 	
-	@Id
 	@Column(name = "password")
 	private String password;
 	
-	@Id
 	@Column(name = "name")
 	private String name;
 	/**

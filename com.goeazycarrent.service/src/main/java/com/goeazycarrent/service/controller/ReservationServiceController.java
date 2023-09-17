@@ -31,7 +31,7 @@ public class ReservationServiceController {
 	ReservationService reservationService ;
 	
 	@GetMapping("/id/{id}")
-	public ResponseEntity<Reservations> getReservationById(@PathVariable Integer id){
+	public ResponseEntity<Reservations> getReservationById(@PathVariable Integer id) throws GoEazyException{
 		Reservations reservation;
 		try {
 			reservation = reservationService.getReservationById(id);

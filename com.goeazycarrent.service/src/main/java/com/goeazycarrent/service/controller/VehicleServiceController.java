@@ -18,62 +18,66 @@ import com.goeazycarrent.service.model.Vehicles;
 import com.goeazycarrent.service.services.VehicleService;
 
 /**
- * Controller for Handling CRUD operation for vehicles 
+ * Controller for Handling CRUD operation for vehicles
  */
 @RestController
 @RequestMapping("/vehicle")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = { "http://localhost:4200" })
 @Transactional
-
 public class VehicleServiceController {
 	@Autowired
 	VehicleService vehicleService;
-	
+
 	/**
 	 * Get vehicle by type
+	 * 
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/type")
-	public ResponseEntity<Vehicles> showVehicleById(@PathVariable String type){
-		Vehicles vehicle;
+	@GetMapping("/type/{type}")
+	public ResponseEntity<List<Vehicles>> getVehicleByType(@PathVariable String type) throws GoEazyException {
+		List<Vehicles> vehicle;
 		try {
 			vehicle = vehicleService.getVehicleByType(type);
-			
+
 		} catch (GoEazyException e) {
-			vehicle =  null;
+			vehicle = null;
 		}
-		return new ResponseEntity<Vehicles>(vehicle, HttpStatus.OK);
-		 
+		return new ResponseEntity<List<Vehicles>>(vehicle, HttpStatus.OK);
+
 	}
+
 	/**
 	 * Get All vehicles
+	 * 
 	 * @return
 	 * @throws GoEazyException
 	 */
 	@GetMapping("/all")
-	public ResponseEntity<List<Vehicles>> getAllvehicle() throws GoEazyException{
+	public ResponseEntity<List<Vehicles>> getAllvehicle() throws GoEazyException {
 		List<Vehicles> allVehicleList = new ArrayList<>();
 		allVehicleList = vehicleService.getAllVehicles();
 		return new ResponseEntity<List<Vehicles>>(allVehicleList, HttpStatus.OK);
-		 
+
 	}
+
 	/**
-	 * Get vehicle by type
+	 * Get vehicle by Location
+	 * 
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/location")
-	public ResponseEntity<Vehicles> showVehicleByLocation(@PathVariable String location){
-		Vehicles vehicle;
+	@GetMapping("/location/{location}")
+	public ResponseEntity<List<Vehicles>> getVehicleByLocation(@PathVariable String location) throws GoEazyException {
+		List<Vehicles> vehiclesByLocation;
 		try {
-			vehicle = vehicleService.getVehicleByLocation(location);
-			
+			vehiclesByLocation = vehicleService.getVehicleByLocation(location);
+
 		} catch (GoEazyException e) {
-			vehicle =  null;
+			vehiclesByLocation = null;
 		}
-		return new ResponseEntity<Vehicles>(vehicle, HttpStatus.OK);
-		 
+		return new ResponseEntity<List<Vehicles>>(vehiclesByLocation, HttpStatus.OK);
+
 	}
-	
+
 }

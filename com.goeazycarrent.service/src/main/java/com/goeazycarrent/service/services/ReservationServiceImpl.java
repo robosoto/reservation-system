@@ -1,13 +1,15 @@
 package com.goeazycarrent.service.services;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 import com.goeazycarrent.service.dto.ReservationRequestDto;
 import com.goeazycarrent.service.exception.GoEazyException;
 import com.goeazycarrent.service.model.Reservations;
 
+@Service
 public class ReservationServiceImpl implements ReservationService{
 
+	
 	
 
 	@Override
