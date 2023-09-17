@@ -31,7 +31,7 @@ public class ReservationServiceController {
 	ReservationService reservationService ;
 	
 	@GetMapping("/id/{id}")
-	public ResponseEntity<Reservations> getReservationById(@PathVariable Integer id) throws GoEazyException{
+	public ResponseEntity<Reservations> getReservationById(@PathVariable String id) throws GoEazyException{
 		Reservations reservation;
 		try {
 			reservation = reservationService.getReservationById(id);
@@ -60,8 +60,8 @@ public class ReservationServiceController {
 	 * @param id
 	 * @throws GoEazyException
 	 */
-	@DeleteMapping("/cancel/{id}")
-	public void cancelReservationById(@PathVariable Integer id) throws GoEazyException{
+	@PutMapping("/cancel/{id}")
+	public void cancelReservationById(@PathVariable String id) throws GoEazyException{
 		reservationService.cancelReservation(id);
 		 
 	}

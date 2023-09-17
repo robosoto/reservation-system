@@ -13,9 +13,9 @@ public interface ReservationService {
 
 	//public List<Reservations> getAllReservation() throws GoEazyException;
 
-	public Reservations getReservationById(int reservationId) throws GoEazyException;
+	public Reservations getReservationById(String reservationId) throws GoEazyException;
 
-	public void cancelReservation(Integer id) throws GoEazyException;
+	public void cancelReservation(String id) throws GoEazyException;
 	
 	public Reservations modifyReservation(ReservationRequestDto reservationDto) throws GoEazyException;
 	
