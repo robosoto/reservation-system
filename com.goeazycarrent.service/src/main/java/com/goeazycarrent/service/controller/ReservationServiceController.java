@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.goeazycarrent.service.dto.ReservationRequestDto;
+import com.goeazycarrent.service.email.Mail;
+import com.goeazycarrent.service.email.MailService;
 import com.goeazycarrent.service.exception.GoEazyException;
 import com.goeazycarrent.service.model.Reservations;
 import com.goeazycarrent.service.services.ReservationService;
@@ -28,6 +30,8 @@ public class ReservationServiceController {
 
 	@Autowired
 	ReservationService reservationService;
+	@Autowired
+	MailService mailService;
 
 	@GetMapping("/id/{id}")
 	public ResponseEntity<Reservations> getReservationById(@PathVariable String id) throws GoEazyException {
@@ -53,6 +57,15 @@ public class ReservationServiceController {
 	public ResponseEntity<Reservations> confirmReservation(@RequestBody ReservationRequestDto reservationRequestdto)
 			throws GoEazyException {
 		Reservations saveReservation = reservationService.confirmReservation(reservationRequestdto);
+
+		Mail mail = new Mail();
+		mail.setMailFrom("sender@gmail.com");
+		mail.setMailTo("receiver@gmail.com");
+		mail.setMailSubject("GoEazyCarRent Rental Confirmation #"+ saveReservation.getReservationId());
+		mail.setMailContent("Congratulation You have Succesfully reserved your Car Rental and Confirmation id is : "
+				+ saveReservation.getReservationId());
+		mailService.sendEmail(mail);
+
 		return new ResponseEntity<>(saveReservation, HttpStatus.OK);
 
 	}
@@ -86,16 +99,16 @@ public class ReservationServiceController {
 	}
 
 	@GetMapping("{location}/{fromDate}/{toDate}")
-	public List<Integer> getReservationById(@PathVariable String location,@PathVariable String fromDate, @PathVariable String toDate)
-			throws GoEazyException {
+	public List<Integer> getReservationById(@PathVariable String location, @PathVariable String fromDate,
+			@PathVariable String toDate) throws GoEazyException {
 		List<Integer> vehicles;
 		try {
-			vehicles = reservationService.getAllVehiclesByDate(location,fromDate, toDate);
+			vehicles = reservationService.getAllVehiclesByDate(location, fromDate, toDate);
 
 		} catch (GoEazyException e) {
 			vehicles = null;
 		}
-	
+
 		return vehicles;
 	}
 
