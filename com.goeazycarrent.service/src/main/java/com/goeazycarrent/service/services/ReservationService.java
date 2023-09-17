@@ -11,7 +11,7 @@ import com.goeazycarrent.service.model.Reservations;
 public interface ReservationService {
 	
 
-	//public List<Reservations> getAllReservation() throws GoEazyException;
+	public List<Integer> getAllVehiclesByDate(String location,String fromDate,String toDate) throws GoEazyException;
 
 	public Reservations getReservationById(String reservationId) throws GoEazyException;
 

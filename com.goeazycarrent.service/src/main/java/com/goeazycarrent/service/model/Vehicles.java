@@ -26,6 +26,7 @@ public class Vehicles {
 	@Column(name = "Location")
 	private String location;
 	
+	
 	/**
 	 * @return the vehicleId
 	 */
@@ -86,8 +87,6 @@ public class Vehicles {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
-	
 	
 
 }
