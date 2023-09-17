@@ -1,37 +1,37 @@
 package com.goeazycarrent.service.dto;
 
-import java.util.Date;
-
 public class ReservationRequestDto {
 	
-	private Integer reservationId;
-	private Date pickupDate;
-	private Date dropoffDate;
+	private String reservationId;
+	private String pickupDate;
+	private String dropoffDate;
 	private String location;
 	private Integer customerId;
 	private Integer vehicleId;
+	
+	    
 	/**
 	 * @return the pickupDate
 	 */
-	public Date getPickupDate() {
+	public String getPickupDate() {
 		return pickupDate;
 	}
 	/**
 	 * @param pickupDate the pickupDate to set
 	 */
-	public void setPickupDate(Date pickupDate) {
+	public void setPickupDate(String pickupDate) {
 		this.pickupDate = pickupDate;
 	}
 	/**
 	 * @return the dropoffDate
 	 */
-	public Date getDropoffDate() {
+	public String getDropoffDate() {
 		return dropoffDate;
 	}
 	/**
 	 * @param dropoffDate the dropoffDate to set
 	 */
-	public void setDropoffDate(Date dropoffDate) {
+	public void setDropoffDate(String dropoffDate) {
 		this.dropoffDate = dropoffDate;
 	}
 	/**
@@ -49,13 +49,13 @@ public class ReservationRequestDto {
 	/**
 	 * @return the reservationId
 	 */
-	public Integer getReservationId() {
+	public String getReservationId() {
 		return reservationId;
 	}
 	/**
 	 * @param reservationId the reservationId to set
 	 */
-	public void setReservationId(Integer reservationId) {
+	public void setReservationId(String reservationId) {
 		this.reservationId = reservationId;
 	}
 	/**

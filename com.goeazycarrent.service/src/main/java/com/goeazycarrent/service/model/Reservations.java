@@ -13,8 +13,7 @@ public class Reservations {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer reservationId;
+	private String reservationId;
 	
 	@Column(name = "start_date")
 	private Date startEnd;
@@ -31,17 +30,31 @@ public class Reservations {
 	@Column(name = "location")
 	private String location;
 	
+	@Column(name = "status")
+	private String status;
 	
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	/**
 	 * @return the reservationId
 	 */
-	public Integer getReservationId() {
+	public String getReservationId() {
 		return reservationId;
 	}
 	/**
 	 * @param reservationId the reservationId to set
 	 */
-	public void setReservationId(Integer reservationId) {
+	public void setReservationId(String reservationId) {
 		this.reservationId = reservationId;
 	}
 	
