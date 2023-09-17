@@ -1,1 +1,4 @@
-<p>vehicles works!</p>
+<h2>All Vehicles</h2>
+<li *ngFor="let vehicle of vehicles">
+    ID:{{vehicle.id}} -- {{vehicle.make}} {{vehicle.model}} -- Location: {{vehicle.location}}
+</li>
