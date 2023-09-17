@@ -1,6 +1,7 @@
 package com.goeazycarrent.service.services;
 
 import java.nio.ByteBuffer;
+import java.util.List;
 import java.util.UUID;
 
 import org.apache.commons.lang3.StringUtils;
@@ -13,16 +14,16 @@ import com.goeazycarrent.service.dto.ReservationRequestDto;
 import com.goeazycarrent.service.exception.GoEazyException;
 import com.goeazycarrent.service.model.Reservations;
 import com.goeazycarrent.service.repository.ReservationRepository;
-import com.goeazycarrent.service.repository.VehicleRepository;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
 
-	@Autowired
-	ReservationRepository reservationRepo;
+	private static final String CANCELLED = "Cancelled";
+
+	private static final String RESERVED = "Reserved";
 
 	@Autowired
-	VehicleRepository vehicleRepository;
+	ReservationRepository reservationRepo;
 
 	@Autowired
 	private ModelMapper mapper;
@@ -44,7 +45,7 @@ public class ReservationServiceImpl implements ReservationService {
 
 		Reservations reservationObj = reservationRepo.findByUniqueId(id);
 		if (reservationObj != null) {
-			reservationObj.setStatus("Cancelled");
+			reservationObj.setStatus(CANCELLED);
 			reservationRepo.save(reservationObj);
 		} else {
 
@@ -78,10 +79,11 @@ public class ReservationServiceImpl implements ReservationService {
 		Reservations reservationMap = mapper.map(reservationDto, Reservations.class);
 		reservationMap.setEndDate(DateUtil.convertDateByTimezone(reservationDto.getLocation(),reservationDto.getDropoffDate()));
 		reservationMap.setStartEnd(DateUtil.convertDateByTimezone(reservationDto.getLocation(),reservationDto.getPickupDate()));
-		reservationMap.setStatus("Reserved");
+		reservationMap.setStatus(RESERVED);
 		reservationMap.setReservationId(getShortUUID());
-		return reservationRepo.save(reservationMap);
-
+		Reservations savedReservation = reservationRepo.save(reservationMap);
+		return savedReservation;
+		
 	}
 
 	
@@ -90,6 +92,11 @@ public class ReservationServiceImpl implements ReservationService {
 		UUID uuid = UUID.randomUUID();
 		long l = ByteBuffer.wrap(uuid.toString().getBytes()).getLong();
 		return Long.toString(l, Character.MAX_RADIX);
+	}
+
+	@Override
+	public List<Integer> getAllVehiclesByDate(String location,String fromDate, String toDate) throws GoEazyException {
+		return reservationRepo.findVehiclesByDate(location,fromDate, toDate);
 	}
 
 }

@@ -16,5 +16,7 @@ public interface VehicleRepository extends JpaRepository< Vehicles, Integer> {
 	@Query(value = "select * from vehicles where location=:location", nativeQuery = true)
 	List<Vehicles> findAllByLocation(@Param("location") String location);
 	
+	
+	
 }
 
