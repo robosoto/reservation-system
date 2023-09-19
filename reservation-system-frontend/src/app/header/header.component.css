@@ -3,9 +3,17 @@ header {
     text-align: left;
     background-color: rgba(103, 58, 183, 0.90); ;
     text-transform: uppercase;
-    padding-top: .5em;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
     font-weight: bold;
-    height: 100px;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    
 }
 
 img {
