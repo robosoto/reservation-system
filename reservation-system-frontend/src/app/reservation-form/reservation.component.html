@@ -1,1 +1,42 @@
-<p>reservation works!</p>
+<main>
+     
+
+
+
+
+
+            <object>
+
+             <h1>Make a Reservation</h1>
+
+                <h2>Pick-up & Return Location</h2>
+   
+                    <div class="dropdown">
+                        <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
+                    </div>
+
+                <h2>Pick-up & Return Date</h2>
+
+                    <div class="date">
+                        <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
+                    </div>
+
+                    <div class="date">
+                        <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
+                    </div>
+                
+                <div class="button">
+                    <p-button label="Browse Vehicles"></p-button>
+                </div>
+
+            
+           
+            
+            </object> 
+
+
+   
+
+
+
+</main>

@@ -1,0 +1,21 @@
+footer {
+    background-color: #1B353C;
+    height: 7em;
+    text-align: center;
+    align-items: center;
+    margin-top: 3rem;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+}
+
+img {
+    height: 3em;
+    width: 3em;
+    padding-top: .5em;
+}
+
+p {
+    color: whitesmoke;
+    padding: 0%;
+}

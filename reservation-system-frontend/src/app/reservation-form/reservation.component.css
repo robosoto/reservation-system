@@ -1,0 +1,49 @@
+h1 {
+    text-align: left;
+    padding-left: 4rem;
+    padding-top: .5rem;
+}
+
+h2 {
+    text-align: left;
+    font-weight: lighter;
+    padding-left: 4rem;
+    padding-top: .5rem;
+    font-size: medium;
+}
+article{
+    text-align: center;
+    margin-top: 12rem;
+}
+
+object {
+    background-color: #b4b4b4;
+    color: black;
+    text-align: center;
+    margin: 12rem;
+    padding-bottom: 2rem;
+    border-radius: 15px;
+    display: inline-block;
+    width: 70%;
+    height: 45%;
+    box-shadow: gray 3px 3px 5px;
+    
+} 
+
+div.dropdown {
+    padding-left: 4rem;
+    text-align: left;
+}
+
+div.button {
+    margin-top: 2rem;
+    margin-left: 35rem;
+    margin-bottom: .01rem;
+}
+
+div.date {
+    padding-right: 6rem;
+    text-align: left;
+    display: inline-flex;
+    justify-content: left;
+}
