@@ -37,13 +37,15 @@ div.dropdown {
 
 div.button {
     margin-top: 2rem;
-    margin-left: 35rem;
+    padding-left: 65rem;
     margin-bottom: .01rem;
+    display: flex;
 }
 
 div.date {
-    padding-right: 6rem;
-    text-align: left;
-    display: inline-flex;
-    justify-content: left;
+    padding-left: 4rem;
+    display: inline-block;
+ 
+    
 }
+
