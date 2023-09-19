@@ -11,7 +11,7 @@ import { ReservationComponent } from './reservation-form/reservation.component';
 import { LocationComponent } from './location/location.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { UserInfoFormComponent } from './user-info-form/user-info-form.component';
-import { VehiclesComponent } from './available-vehicles/vehicles.component';
+import { VehiclesListComponent } from './available-vehicles/vehicles.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { NavComponent } from './nav/nav.component';
@@ -19,6 +19,7 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from "@angular/forms";
 import { CalendarModule } from 'primeng/calendar';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { CalendarModule } from 'primeng/calendar';
     LocationComponent,
     VehicleComponent,
     UserInfoFormComponent,
-    VehiclesComponent,
+    VehiclesListComponent,
     LoginComponent,
     UpdateReservationComponent,
     NavComponent
@@ -42,7 +43,8 @@ import { CalendarModule } from 'primeng/calendar';
     DropdownModule,
     FormsModule,
     BrowserAnimationsModule,
-    CalendarModule
+    CalendarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

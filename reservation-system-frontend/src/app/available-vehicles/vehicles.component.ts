@@ -7,7 +7,7 @@ import { VehicleService } from '../services/vehicle.service';
   templateUrl: './vehicles.component.html',
   styleUrls: ['./vehicles.component.css']
 })
-export class VehiclesComponent {
+export class VehiclesListComponent {
 
   vehicles: Vehicle[] = [];
 
