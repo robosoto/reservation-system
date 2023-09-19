@@ -21,6 +21,8 @@ import { FormsModule } from "@angular/forms";
 import { CalendarModule } from 'primeng/calendar';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { InputTextModule } from 'primeng/inputtext';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     BrowserAnimationsModule,
     CalendarModule,
     HttpClientModule,
-    SelectButtonModule
+    SelectButtonModule,
+    InputTextModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,7 +1,6 @@
 h1 {
     text-align: left;
-    padding-left: 4rem;
-    padding-top: .5rem;
+    padding-right: 1rem;
 }
 
 h2 {
@@ -11,6 +10,19 @@ h2 {
     padding-top: .5rem;
     font-size: medium;
 }
+
+h3 {
+    text-align: left;
+    padding-right: 1rem;
+    padding-top: .75rem;
+    text-decoration: underline;
+}
+
+h4 {
+    text-align: left;
+    padding-right: 1rem;
+    padding-top: .75rem;
+}
 article{
     text-align: center;
     margin-top: 12rem;
@@ -19,7 +31,6 @@ article{
 object {
     background-color: #b4b4b4;
     color: black;
-    text-align: center;
     margin: 12rem;
     padding-bottom: 2rem;
     border-radius: 15px;
@@ -43,9 +54,14 @@ div.button {
 }
 
 div.date {
-    padding-left: 4rem;
-    display: inline-block;
- 
     
+    padding-left: 4rem;
+    text-align: left;
+    
+}
+
+div.head {
+    margin-left: 3rem;
+    display: inline-flex;
 }
 
