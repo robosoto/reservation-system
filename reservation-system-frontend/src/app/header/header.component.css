@@ -1,7 +1,7 @@
 header {
     font-size: 30px;
     text-align: left;
-    background-color: rgba(103, 58, 183, 0.90); ;
+    background-color: rgba(103, 58, 183, 0.90); 
     text-transform: uppercase;
     padding-top: .2rem;
     padding-bottom: .2rem;
@@ -17,10 +17,19 @@ header {
 }
 
 img {
-    height: 80px;
-    width: 80px;
+    height: 6rem;
+    width: 8rem;
     vertical-align: middle;
     padding-left: 1em;
     padding-bottom: .5em;
     color:white;
+}
+
+div {
+   
+    padding-left: 52em;
+    margin-top: 1rem;
+    padding-bottom: .5em;
+   
+    
 }

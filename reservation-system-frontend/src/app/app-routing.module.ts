@@ -5,7 +5,7 @@ import { VehiclesListComponent } from './available-vehicles/vehicles.component';
 import { ReservationComponent } from './reservation-form/reservation.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'vehicles', component: VehiclesListComponent },
   { path: 'reservation-form', component: ReservationComponent}
 ];

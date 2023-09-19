@@ -20,6 +20,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from "@angular/forms";
 import { CalendarModule } from 'primeng/calendar';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FormsModule,
     BrowserAnimationsModule,
     CalendarModule,
-    HttpClientModule
+    HttpClientModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

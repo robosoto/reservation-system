@@ -1,11 +1,13 @@
 footer {
-    background-color: #1B353C;
+    background-color: rgba(103, 58, 183, 0.90); 
+    bottom: 0;
     height: 7em;
+    padding: 10px 10px 0px 10px;
     text-align: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 15rem;
     width: 100%;
-    position: absolute;
+    position: fixed;
     left: 0px;
 }
 
