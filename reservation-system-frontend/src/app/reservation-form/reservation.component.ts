@@ -17,7 +17,9 @@ export class ReservationComponent  {
 
   selectedLocation: Location | undefined;
 
-  date: Date | undefined;
+  rangeDates: Date[] | undefined;
+
+  value: string | undefined;
 
   ngOnInit() {
     this.location = [
