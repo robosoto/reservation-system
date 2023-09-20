@@ -17,7 +17,7 @@ export class VehiclesListComponent {
   vehicleTypes: string[] = environment.vehicleTypes;
   locations: string[] = ["Choose Location"].concat(environment.locations);
   selectedLocation?: string;
-  paginatorPageNum?: number;
+  paginatorPageNum: number = 1;
 
   constructor(
     private vehicleService: VehicleService
@@ -28,7 +28,6 @@ export class VehiclesListComponent {
   }
 
   getVehiclesByLocation(event: DropdownChangeEvent): void {
-    console.log("calling location")
     this.vehicleService.getVehiclesByLocation(this.selectedLocation!).subscribe(vehicles => this.vehicles = vehicles);
     this.paginatorPageNum = 1;
   }
