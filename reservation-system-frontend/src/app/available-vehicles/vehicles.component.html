@@ -1,22 +1,22 @@
-<h2>All Vehicles</h2>
-
-<p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Type</th>
-            <th>Location</th>
-            <th></th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-vehicle>
-        <tr>
-            <td>{{ vehicle.make | titlecase}}</td>
-            <td>{{ vehicle.model | titlecase}}</td>
-            <td>{{ vehicle.type.toUpperCase() === "SUV" ? (vehicle.type | uppercase) : (vehicle.type | titlecase)}}</td>
-            <td>{{ vehicle.location | titlecase}}</td>
-            <td><p-button label="Reserve Vehicle"></p-button></td>
-        </tr>
-    </ng-template>
-</p-table>
+<div class="container">
+    <p-table [value]="vehicles" [paginator]="true" [rows]=5>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-vehicle>
+            <tr>
+                <td>{{ vehicle.make | titlecase}}</td>
+                <td>{{ vehicle.model | titlecase}}</td>
+                <td>{{ vehicle.type.toUpperCase() === "SUV" ? (vehicle.type | uppercase) : (vehicle.type | titlecase)}}</td>
+                <td>{{ vehicle.location | titlecase}}</td>
+                <td><p-button label="Reserve Vehicle"></p-button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
