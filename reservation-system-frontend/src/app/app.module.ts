@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,14 +24,6 @@ import { VehiclesListComponent } from './available-vehicles/vehicles.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { NavComponent } from './nav/nav.component';
-import { ButtonModule } from 'primeng/button';
-import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from "@angular/forms";
-import { CalendarModule } from 'primeng/calendar';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { InputTextModule } from 'primeng/inputtext';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     SelectButtonModule,
     InputTextModule,
+    TableModule,
     RouterModule
   ],
   providers: [],
