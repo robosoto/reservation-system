@@ -1,5 +1,13 @@
 <div class="container">
-    <p-table [value]="vehicles" [paginator]="true" [rows]=5>
+    <div>
+        <p-dropdown 
+            [options]="locations" 
+            [(ngModel)]="selectedLocation" 
+            (onChange)="getVehiclesByLocation($event)">
+        </p-dropdown>
+    </div>
+
+    <p-table [value]="vehicles" [paginator]="true" [rows]=5 [(first)]="paginatorPageNum">
         <ng-template pTemplate="header">
             <tr>
                 <th>Make</th>
