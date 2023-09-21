@@ -5,6 +5,8 @@ import { VehiclesListComponent } from './available-vehicles/vehicles.component';
 import { ReservationComponent } from './reservation-form/reservation.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { LocationComponent } from './location/location.component'
+import { LoginComponent } from './login/login.component';
+import { UserInfoFormComponent } from './user-info-form/user-info-form.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: 'vehicles', component: VehiclesListComponent },
   { path: 'reservation-form', component: ReservationComponent},
   { path: 'update-reservation', component: UpdateReservationComponent},
-  { path: 'location', component: LocationComponent}
+  { path: 'location', component: LocationComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'signup', component: UserInfoFormComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,59 @@
+h1 {
+    text-align: center;
+    padding-right: 1rem;
+}
+
+h2 {
+    text-align: left;
+    font-weight: lighter;
+    font-size: medium;
+    padding: auto;
+    margin-left: 20.5rem;
+    padding-right: 0;
+}
+
+h3 {
+    text-align: center;
+    padding-right: 1rem;
+    padding-top: .75rem;
+    text-decoration: underline;
+}
+
+h4 {
+    text-align: center;
+    padding-right: 1rem;
+    padding-top: .75rem;
+}
+
+
+object {
+    background-color: white;
+    color: black;
+    margin: 12rem;
+    padding-bottom: 2rem;
+    border-radius: 15px;
+    display: inline-block;
+    width: 45%;
+    height: 45%;
+    box-shadow: gray 3px 3px 5px;
+    text-align: center;
+    margin-left: 30rem;
+} 
+
+
+div.button {
+    margin-top: 2rem;
+    padding-left: 65rem;
+    margin-bottom: .01rem;
+    display: flex;
+}
+
+div.head {
+    margin-left: 3rem;
+    display: inline-flex;
+}
+
+div.input {
+
+    text-align: center;
+}
