@@ -25,11 +25,22 @@ img {
     color:white;
 }
 
-div {
+
+div.lang {
    
-    padding-left: 52em;
+    padding: auto;
+    margin-left: 2rem;
     margin-top: 1rem;
-    padding-bottom: .5em;
-   
+    padding-bottom: .5em; 
+    float: right;
     
 }
+
+div.button {
+    padding: auto;
+    margin-left: 95rem;
+    margin-top: 1rem;
+    padding-bottom: .5em; 
+    float: right;
+}
+
