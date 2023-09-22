@@ -11,9 +11,7 @@ header {
     display: flex;
     position: absolute;
     top: 0px;
-    left: 0px;
-    
-    
+    left: 0px;   
 }
 
 img {
@@ -32,8 +30,7 @@ div.lang {
     margin-left: 2rem;
     margin-top: 1rem;
     padding-bottom: .5em; 
-    float: right;
-    
+    float: right;   
 }
 
 div.button {
@@ -41,6 +38,9 @@ div.button {
     margin-left: 95rem;
     margin-top: 1rem;
     padding-bottom: .5em; 
-    float: right;
+    float: right;  
 }
+
+
+
 

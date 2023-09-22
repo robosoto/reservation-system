@@ -1,5 +1,5 @@
 nav {
-    background-color: #344043;
+    background-color: rgba(104, 58, 183, 0.729);
     font-size: 15px;
     text-transform: capitalize;
     text-align: center;
@@ -18,14 +18,14 @@ nav {
 
 nav > a {
     text-decoration: none;
-    padding: 1em;
+    padding: 1.1em;
     display: inline-block;
     color: white;
-    width: 8em;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    width: 50em;
+    text-align: center;
+   
 }
 
 nav > a:hover {
-    background-color: darkgrey;
+    background-color: rgb(104, 58, 183);;
 }
