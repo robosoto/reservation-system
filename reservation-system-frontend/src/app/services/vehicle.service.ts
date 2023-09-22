@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.development';
 })
 export class VehicleService {
 
-  private vehicleUrl = environment.vehicleApiUrl;
+  private vehicleUrl = environment.apiUrl + "/vehicle";
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,11 @@ export class VehicleService {
   }
 
   getVehiclesByLocation(location: string): Observable<Vehicle[]> {
+    const url = `${this.vehicleUrl}/location/${location}`;
+    return this.http.get<Vehicle[]>(url);
+  }
+
+  getVehiclesByLocationAndType(location: string | undefined, type: string | undefined): Observable<Vehicle[]> {
     const url = `${this.vehicleUrl}/location/${location}`;
     return this.http.get<Vehicle[]>(url);
   }
