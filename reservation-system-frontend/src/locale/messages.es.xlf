@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6778699329691255576" datatype="html">
+        <source>©Copyright 2023 GECR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7567242449295775544" datatype="html">
+        <source>Welcome to Go Easy Car Rentals</source>
+        <target>Bienvenido a Go Easy Car Rentals</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1709243946834074421" datatype="html">
+        <source>We&apos;re here to help get you where you&apos;re going! </source>
+        <target>¡Estamos aquí para ayudarle a llegar a su destino!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7658056527030125130" datatype="html">
+        <source>We offer excellent customer serive, and reasonable pricing. </source>
+        <target>Ofrecemos un excelente servicio al cliente y precios razonables.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7463926651046524444" datatype="html">
+        <source> We have two convenient locations, with more opening soon! </source>
+        <target> Tenemos dos ubicaciones convenientes, ¡y pronto se abrirán más! </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4799567496930987786" datatype="html">
+        <source>Go Easy Car Rental Locations</source>
+        <target>Oficinas de alquiler de coches de Go Easy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4533356838038130941" datatype="html">
+        <source>We currently have two convenient locations to choose from!</source>
+        <target>¡Actualmente tenemos dos ubicaciones convenientes para elegir!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5226062149879084300" datatype="html">
+        <source>Location 1</source>
+        <target>Ubicación 1</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3172362174062248523" datatype="html">
+        <source>Street Address: 1200 Diamond Street </source>
+        <target>Dirección: 1200 Diamond Street</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="892122892778482748" datatype="html">
+        <source>City: Ambler</source>
+        <target>Ciudad: Ambler</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4899903942486834997" datatype="html">
+        <source>State: Pennsylvania</source>
+        <target>Estado: Pensilvania</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3593873811509449235" datatype="html">
+        <source>Contact: (215)907-9078</source>
+        <target>Contacto: (215)907-9078</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="907806247220331610" datatype="html">
+        <source>Location 2</source>
+        <target>Ubicación 2</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9152388400333509665" datatype="html">
+        <source>Street Address: 4054 Main Street </source>
+        <target>Dirección postal: 4054 calle principal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8649968002506597025" datatype="html">
+        <source>City: Mexico City</source>
+        <target>Ciudad: Ciudad de México</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7404426163295658137" datatype="html">
+        <source>State: Mexico</source>
+        <target>Estado: México</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="977755792876026852" datatype="html">
+        <source>Contact: +52 55 5083 1234</source>
+        <target>Contacto: +52 55 5083 1234</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/location/location.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6545183602232691048" datatype="html">
+        <source>Reservation</source>
+        <target>Reserva</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/nav/nav.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8938635024962224309" datatype="html">
+        <source>Vehicles</source>
+        <target>Vehículos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/nav/nav.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4022066031214545422" datatype="html">
+        <source>Locations</source>
+        <target>Ubicaciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/nav/nav.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2439586786933293669" datatype="html">
+        <source>Make a Reservation</source>
+        <target>Hacer una reserva</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reservation-form/reservation.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6627551976444260400" datatype="html">
+        <source>or</source>
+        <target>o</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reservation-form/reservation.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8126326291202431740" datatype="html">
+        <source>View/Update Existing Reservation</source>
+        <target>Ver/actualizar reserva existente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reservation-form/reservation.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7265149706470630508" datatype="html">
+        <source>Customer Name</source>
+        <target>Nombre del cliente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reservation-form/reservation.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1168828054297083528" datatype="html">
+        <source>Pick-up &amp; Return Location</source>
+        <target>Recogida y recogida Ubicación de regreso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reservation-form/reservation.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4572367475431941825" datatype="html">
+        <source>Pick-up &amp; Return Date</source>
+        <target>Recogida y recogida Fecha de regreso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reservation-form/reservation.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7966610864378668548" datatype="html">
+        <source>Update a Reservation</source>
+        <target>Actualizar una reserva</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1068926900547597404" datatype="html">
+        <source>Start a new Reservation</source>
+        <target>Iniciar una nueva Reserva</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14384833308849407" datatype="html">
+        <source>Reservation Number</source>
+        <target>Número de reserva</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1271506315520996874" datatype="html">
+        <source>Update Pick-up &amp; Return Location</source>
+        <target>Actualización de recogida y actualización Ubicación de regreso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1022156262789791540" datatype="html">
+        <source>Update pick-up &amp; Return Date</source>
+        <target>Actualización de recogida y actualización Fecha de regreso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/update-reservation/update-reservation.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

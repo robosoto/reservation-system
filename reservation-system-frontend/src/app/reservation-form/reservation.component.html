@@ -2,26 +2,26 @@
 
         <object>
                 <div class="head">
-                    <h1>Make a Reservation</h1>
-                    <h4>or</h4>
+                    <h1 i18n>Make a Reservation</h1>
+                    <h4 i18n>or</h4>
                     <a routerLink="update-reservation">
-                        <h3>View/Update Existing Reservation</h3>
+                        <h3 i18n>View/Update Existing Reservation</h3>
                     </a>
                 </div> 
                 
-            <h2>Customer Name</h2>
+            <h2 i18n>Customer Name</h2>
             
                 <div class="dropdown">
                     <input type="text" pInputText [(ngModel)]="value" />
                 </div>
 
-            <h2>Pick-up & Return Location</h2>
+            <h2 i18n>Pick-up & Return Location</h2>
    
                 <div class="dropdown">
                     <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
                 </div>
 
-            <h2>Pick-up & Return Date</h2>
+            <h2 i18n>Pick-up & Return Date</h2>
 
                 <div class="date">
                     <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [showIcon]="true"></p-calendar>
