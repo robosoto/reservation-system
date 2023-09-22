@@ -1,34 +1,40 @@
+main {
+    justify-content: center ;
+}
 h1 {
     text-align: center;
-    padding-top: 4em;
+    padding-top: 6em;
+    padding-bottom: 3rem;
+    justify-content: center;
 }
 
 h2 {
-    text-align: center;
     font-weight: lighter;
-}
-article{
-    text-align: center;
-}
-
-ul {
-    margin-top: 2em;
+    text-align: justify;
+    border: 1px solid blue;    
 }
 
-li {
-    color: white;
-    margin-top: 1em;
-    text-align: left;
+p {
+    margin-top: 2rem ;
+    font-size: 1rem;   
+    text-align: center; 
+    border: 1px solid blue;
 }
 
-object {
+
+div.object1 {
     background-color: #1B353C;
     color: white;
-    margin: .1srem;
+    margin: auto;
     padding: auto;
     border-radius: 15px;
-    display: inline-block;
-    width: 300px;
+    display: flex;
+    width: 75%;
+    height: 100%;
     box-shadow: gray 3px 3px 5px;
+    justify-content: center;
+    align-items: center;
+    
     
 } 
+

@@ -1,0 +1,41 @@
+name: Spring Build Pipeline
+run-name: Spring Build Pipeline
+
+on: 
+  push:
+    branches: main
+  workflow_dispatch:
+
+jobs:
+  # Jobs run in parallel unless using the needs keyword
+  build: #VM1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: AWS login
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+           # AWS Access Key ID. Provide this key if you want to assume a role using access keys rather than a web identity token.
+          aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          # AWS Secret Access Key. Required if aws-access-key-id is provided.
+          aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: JDK installation
+        uses: actions/setup-java@v1
+        with:
+          # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+          java-version: '17' # optional
+
+      - name: Build project in Maven
+        run: mvn -B package --file com.goeazycarrent.service/pom.xml
+
+      - name: list files
+        run: ls -la com.goeazycarrent.service/target
+
+      - name: deploy
+        working-directory: com.goeazycarrent.service/target
+        run: aws s3 cp *.jar s3://goeazystore/

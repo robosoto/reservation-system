@@ -9,12 +9,6 @@
                     </a>
                 </div> 
                 
-            <h2>Customer Name</h2>
-            
-                <div class="dropdown">
-                    <input type="text" pInputText [(ngModel)]="value" />
-                </div>
-
             <h2>Pick-up & Return Location</h2>
    
                 <div class="dropdown">
@@ -28,7 +22,9 @@
                 </div>
                 
                 <div class="button">
-                    <p-button label="Browse Vehicles"></p-button>
+                    <a routerLink="vehicles">
+                        <p-button label="Browse Vehicles"></p-button>
+                    </a>
                 </div>
 
         </object> 

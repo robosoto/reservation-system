@@ -1,3 +1,5 @@
 export const environment = {
-    vehicleApiUrl: "http://localhost:8080/vehicle"
+    apiUrl: "http://project2-goeazy-carrent-env.eba-xjdmbrhh.us-east-1.elasticbeanstalk.com:8080",
+    locations: ["Philadelphia", "Mumbai"],
+    vehicleTypes: ["Car", "SUV", "Truck", "Van"]
 };
