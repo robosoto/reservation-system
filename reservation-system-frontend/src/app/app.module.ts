@@ -19,7 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { ReservationComponent } from './reservation-form/reservation.component';
 import { LocationComponent } from './location/location.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { UserInfoFormComponent } from './user-info-form/user-info-form.component';
+import { UserInfoFormComponent } from './create-account/user-info-form.component';
 import { VehiclesListComponent } from './available-vehicles/vehicles.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';

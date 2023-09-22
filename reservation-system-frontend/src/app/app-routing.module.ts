@@ -6,7 +6,8 @@ import { ReservationComponent } from './reservation-form/reservation.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { LocationComponent } from './location/location.component'
 import { LoginComponent } from './login/login.component';
-import { UserInfoFormComponent } from './user-info-form/user-info-form.component';
+import { UserInfoFormComponent } from './create-account/user-info-form.component';
+
 
 
 const routes: Routes = [

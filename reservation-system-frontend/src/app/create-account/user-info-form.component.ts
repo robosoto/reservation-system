@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UserInfoFormComponent {
 
+  value: string | undefined;
+  value2: string | undefined;
+  value3: string | undefined;
+  
 }
