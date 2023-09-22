@@ -17,7 +17,7 @@ import com.goeazycarrent.service.services.CustomerService;
 
 @RestController
 @RequestMapping("/customer")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://goeazystore.s3.amazonaws.com", "https://goeazycarrent.s3.amazonaws.com"})
 @Transactional
 public class CustomerServiceController {
 
