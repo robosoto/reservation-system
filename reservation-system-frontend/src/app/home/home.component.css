@@ -10,31 +10,35 @@ h1 {
 
 h2 {
     font-weight: lighter;
-    text-align: justify;
-    border: 1px solid blue;    
+    text-align: center;
+      
 }
 
 p {
     margin-top: 2rem ;
     font-size: 1rem;   
     text-align: center; 
-    border: 1px solid blue;
+    
 }
 
 
-div.object1 {
-    background-color: #1B353C;
-    color: white;
-    margin: auto;
-    padding: auto;
-    border-radius: 15px;
-    display: flex;
-    width: 75%;
-    height: 100%;
-    box-shadow: gray 3px 3px 5px;
-    justify-content: center;
-    align-items: center;
-    
-    
+object {
+        background-color: rgba(104, 58, 183, 0.481);
+        color: black;
+        margin: auto;
+        margin-left: 15rem;
+        border-radius: 15px;
+        display: inline-block;
+        width: 75%;
+        height: 20rem;
+        box-shadow: gray 3px 3px 5px;
+        justify-content: center;
 } 
+    
+    
+ul {
+        padding: auto;
+        margin-top: 2rem;
+}
+
 

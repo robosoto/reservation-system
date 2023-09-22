@@ -35,7 +35,7 @@ object {
     display: inline-block;
     width: 45%;
     height: 45%;
-    box-shadow: gray 3px 3px 5px;
+  
     text-align: center;
     margin-left: 30rem;
 } 

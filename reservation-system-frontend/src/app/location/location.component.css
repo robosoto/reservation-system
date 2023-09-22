@@ -1,39 +1,38 @@
 h1 {
     text-align: center;
-    padding: 12rem 0rem 0rem 0rem;
+    padding: 12rem 0rem 0rem 0rem;;
 }
 
 h2 {
     text-align: center;
     font-weight: lighter;
-    padding: 3rem 0rem 3rem 2rem;
-    font-size: medium;
+    padding: auto;
+    font-size: x-large;
 }
 
 h3 {
     text-align: center;
     font-weight: lighter;
     padding: 1rem 0rem 3rem 2rem;
-    
 }
 
 
 object {
-    background-color: #b4b4b4;
+    background-color: rgba(104, 58, 183, 0.481);
     color: black;
-    margin: 0rem 0rem 2rem 18rem;
-    padding-bottom: 1rem;
+    margin: 1rem 0rem 4rem 18rem;
+    padding: auto;
     border-radius: 15px;
-    display: inline-flex;
+    display: inline-block;
     width: 25%;
     height: 20rem;
     box-shadow: gray 3px 3px 5px;
-    
-    
+    justify-content: center;
 } 
 
 ul {
-    margin-top: 6rem;
+    padding: auto;
+    margin-top: 2rem;
 }
 
 li {
@@ -41,4 +40,5 @@ li {
     margin-top: 1em;
     text-align: left;
 }
+
 
