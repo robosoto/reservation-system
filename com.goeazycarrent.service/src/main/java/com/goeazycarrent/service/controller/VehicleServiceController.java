@@ -22,7 +22,7 @@ import com.goeazycarrent.service.services.VehicleService;
  */
 @RestController
 @RequestMapping("/vehicle")
-@CrossOrigin(origins = { "http://localhost:4200", "https://goeazystore.s3.amazonaws.com/","https://goeazycarrent.s3.amazonaws.com" })
+@CrossOrigin(origins = { "http://localhost:4200","http://goeazystore.s3-website-us-east-1.amazonaws.com" })
 @Transactional
 public class VehicleServiceController {
 	@Autowired
