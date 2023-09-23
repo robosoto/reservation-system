@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Vehicle } from '../types/vehicle';
 import { environment } from 'src/environments/environment.development';
 
@@ -23,8 +23,15 @@ export class VehicleService {
     return this.http.get<Vehicle[]>(url);
   }
 
-  getVehiclesByLocationAndType(location: string | undefined, type: string | undefined): Observable<Vehicle[]> {
-    const url = `${this.vehicleUrl}/location/${location}`;
+  getVehiclesByLocationAndType(location: string, type: string): Observable<Vehicle[]> {
+    let url = `${this.vehicleUrl}/filter?`;
+
+    if (!location.startsWith("All")) {
+      url += `location=${location}&`;
+    }
+    if (!type.startsWith("All")) {
+      url += `vehicleType=${type}`
+    }
     return this.http.get<Vehicle[]>(url);
   }
 
