@@ -11,5 +11,7 @@ public interface VehicleService {
 	public List<Vehicles> getVehicleByType(String type) throws GoEazyException;
 	
 	public List<Vehicles> getVehicleByLocation(String location) throws GoEazyException;
+	
+	public List<Vehicles> getVehicleByLocationAndType(String location, String type) throws GoEazyException;
 
 }

@@ -32,6 +32,10 @@ public class VehicleServiceImpl implements  VehicleService{
 		return findAllByLocation;
 	}
 	
-	
+	@Override
+	public List<Vehicles> getVehicleByLocationAndType(String location, String type) throws GoEazyException {
+		List<Vehicles> findAllByLocationAndType = vehicleRepository.findAllByLocationAndType(location, type);
+		return findAllByLocationAndType;
+	}
 
 }
