@@ -2,30 +2,28 @@
 
         <object>
                 <div class="head">
-                    <h1>Make a Reservation</h1>
-                    <h4>or</h4>
+                    <h1>{{"makereserve" | translate}}</h1>
+                    <h4>{{"or" | translate}}</h4>
                     <a routerLink="update-reservation">
-                        <h3>View/Update Existing Reservation</h3>
+                        <h3>{{"viewupdate" | translate}}</h3>
                     </a>
                 </div> 
                 
-            <h2>Pick-up & Return Location</h2>
+            <h2>{{"pdLoc" |  translate }}</h2>
    
                 <div class="dropdown">
                     <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
                 </div>
 
-            <h2>Pick-up & Return Date</h2>
+            <h2>{{"pdDate" |  translate }}</h2>
 
                 <div class="date">
                     <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                   
                 </div>
-                
-                <div class="button">
-                    <a routerLink="vehicles">
-                        <p-button label="Browse Vehicles"></p-button>
-                    </a>
-                </div>
+                 <div class="button">
+                    <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
+                  </div>
 
         </object> 
 
