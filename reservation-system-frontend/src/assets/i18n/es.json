@@ -1,0 +1,43 @@
+{
+    "Vehicles": "Vehículos",
+    "Reservations": "Reservas",
+    "Locations": "Ubicaciones",
+    "Login":"Acceso",
+    "pdLoc":"Ubicación de recogida y devolución",
+    "pdDate":"Fecha de recogida y regreso",
+    "makereserve":"Hacer una reserva",
+    "viewupdate":"Ver/actualizar reserva existente",
+    "BrowseVehicles":"Explorar vehículos",
+    "Make":"Hacer",
+    "Model":"Modelo",
+    "Type":"Tipo",
+    "Location":"Ubicación",
+    "or":"o",
+    "ReserveVehicle": "Vehículo de reserva",
+    "primeng": {
+        "dayNamesMin": [
+            "D",
+            "L",
+            "M",
+            "X",
+            "J",
+            "V",
+            "S"
+        ],
+        "monthNames": [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre ",
+            "Novembre",
+            "Décembre"
+        ]
+    }
+
+}

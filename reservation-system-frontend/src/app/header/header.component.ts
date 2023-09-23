@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,4 +11,13 @@ export class HeaderComponent {
   stateOptions: any[] = [{label: 'es', value: 'es'}, {label: 'en', value: 'en'}];
 
   value: string = 'off';
+
+  constructor(public translate: TranslateService) {
+    this.changeLanguage('en');
+  }
+
+  public changeLanguage(language: string): void {
+    this.translate.use(language);
+  }
+
 }
