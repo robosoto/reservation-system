@@ -2,6 +2,7 @@ package com.goeazycarrent.service.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.goeazycarrent.service.exception.GoEazyException;
@@ -29,10 +31,11 @@ public class VehicleServiceController {
 	VehicleService vehicleService;
 
 	/**
-	 * Get vehicle by type
+	 * Get vehicles by type
 	 * 
-	 * @param id
-	 * @return
+	 * @param String type
+	 * 
+	 * @return HTTP 200 response with list of vehicles of requested type in response body
 	 */
 	@GetMapping("/type/{type}")
 	public ResponseEntity<List<Vehicles>> getVehicleByType(@PathVariable String type) throws GoEazyException {
@@ -50,7 +53,8 @@ public class VehicleServiceController {
 	/**
 	 * Get All vehicles
 	 * 
-	 * @return
+	 * @return HTTP 200 response with list of all vehicles in response body
+	 * 
 	 * @throws GoEazyException
 	 */
 	@GetMapping("/all")
@@ -62,10 +66,11 @@ public class VehicleServiceController {
 	}
 
 	/**
-	 * Get vehicle by Location
+	 * Get vehicles by Location
 	 * 
-	 * @param id
-	 * @return
+	 * @param String location
+	 * 
+	 * @return HTTP 200 response with list of vehicles of requested location in response body
 	 */
 	@GetMapping("/location/{location}")
 	public ResponseEntity<List<Vehicles>> getVehicleByLocation(@PathVariable String location) throws GoEazyException {
@@ -78,6 +83,34 @@ public class VehicleServiceController {
 		}
 		return new ResponseEntity<List<Vehicles>>(vehiclesByLocation, HttpStatus.OK);
 
+	}
+	
+	/**
+	 * Get vehicles by a combination of location and type. 
+	 * Either location or type may be null.
+	 * 
+	 * @param (String or null) location
+	 * @param (String or null) vehicleType
+	 * 
+	 * @return HTTP 200 response with list of vehicles of requested 
+	 * 		   type & location in response body
+	 * 
+	 * @throws GoEazyException
+	 */
+	@GetMapping("/filter")
+	public ResponseEntity<List<Vehicles>> getVehicleByLocationAndType(
+			@RequestParam(required = false) String location,
+			@RequestParam(required = false) String vehicleType) throws GoEazyException 
+	{
+		List<Vehicles> vehiclesByLocationAndType;
+		
+		try {
+			vehiclesByLocationAndType = vehicleService.getVehicleByLocationAndType(location, vehicleType);
+
+		} catch (GoEazyException e) {
+			vehiclesByLocationAndType = null;
+		}
+		return new ResponseEntity<List<Vehicles>>(vehiclesByLocationAndType, HttpStatus.OK);
 	}
 
 }

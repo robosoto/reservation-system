@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { Paginator } from 'primeng/paginator';
 
 import { Vehicle } from '../types/vehicle';
 import { VehicleService } from '../services/vehicle.service';
@@ -16,9 +15,11 @@ import { PrimeNGConfig } from 'primeng/api';
 export class VehiclesListComponent {
 
   vehicles: Vehicle[] = [];
-  vehicleTypes: string[] = environment.vehicleTypes;
-  locations: string[] = ["Choose Location"].concat(environment.locations);
-  selectedLocation?: string;
+  // TODO: regenerate data to match these vehicle types
+  vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
+  locations: string[] = ["All Locations"].concat(environment.locations);
+  selectedVehicleType: string = "All Vehicle Types";
+  selectedLocation: string = "All Locations";
   paginatorPageNum: number = 1;
 
   constructor(
@@ -29,17 +30,48 @@ export class VehiclesListComponent {
   ){} 
   
 
-  getAllVehicles(): void {
+  getAllVehicles() {
     this.vehicleService.getAllVehicles().subscribe(vehicles => this.vehicles = vehicles);
   }
 
-  getVehiclesByLocation(event: DropdownChangeEvent): void {
-    this.vehicleService.getVehiclesByLocation(this.selectedLocation!).subscribe(vehicles => this.vehicles = vehicles);
+  getVehiclesByLocationAndType(): void {
+    this.vehicleService.getVehiclesByLocationAndType(this.selectedLocation,
+                                                     this.selectedVehicleType)
+                       .subscribe(vehicles => this.vehicles = vehicles);
     this.paginatorPageNum = 1;
   }
 
   ngOnInit(): void {
     this.getAllVehicles();
   }
+
+  /**
+   * Filter full list of vehicles by location and vehicle type
+   * which the user selects via dropdown.
+   */
+  // filterVehiclesByLocationAndType() {
+  //   let filteredVehicles = this.allVehicles;
+  //   console.log(this.selectedLocation, this.selectedVehicleType)
+
+  //   if (!this.selectedLocation?.startsWith("All")) {
+  //     console.log("location filter")
+  //     // apply location filter
+  //     filteredVehicles = this.allVehicles.filter(vehicle => {
+  //       vehicle.location.toUpperCase() === this.selectedLocation?.toUpperCase();
+  //     });
+  //     console.log(filteredVehicles)
+  //   }
+
+  //   if (!this.selectedVehicleType?.startsWith("All")) {
+  //     console.log("type filter")
+  //     // apply vehicle type filter
+  //     filteredVehicles = filteredVehicles.filter(vehicle => {
+  //       vehicle.type.toUpperCase() === this.selectedVehicleType?.toUpperCase();
+  //     });
+  //   }
+
+  //   this.displayedVehicles = filteredVehicles;
+  //   this.paginatorPageNum = 1;
+  // }
 
 }

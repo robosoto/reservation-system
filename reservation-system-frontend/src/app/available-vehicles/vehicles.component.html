@@ -3,11 +3,16 @@
         <p-dropdown 
             [options]="locations" 
             [(ngModel)]="selectedLocation" 
-            (onChange)="getVehiclesByLocation($event)">
+            (onChange)="getVehiclesByLocationAndType()">
+        </p-dropdown>
+        <p-dropdown
+            [options]="vehicleTypes"
+            [(ngModel)]="selectedVehicleType"
+            (onChange)="getVehiclesByLocationAndType()">
         </p-dropdown>
     </div>
 
-    <p-table [value]="vehicles" [paginator]="true" [rows]=5 [(first)]="paginatorPageNum">
+    <p-table [value]="vehicles" [paginator]="true" [rows]=6 [(first)]="paginatorPageNum">
         <ng-template pTemplate="header">
             <tr>
                 <th>{{"Make" | translate}}</th>
