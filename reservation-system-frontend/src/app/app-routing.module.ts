@@ -11,7 +11,7 @@ import { UserInfoFormComponent } from './create-account/user-info-form.component
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'vehicles', component: VehiclesListComponent },
   { path: 'reservation-form', component: ReservationComponent},
   { path: 'update-reservation', component: UpdateReservationComponent},
