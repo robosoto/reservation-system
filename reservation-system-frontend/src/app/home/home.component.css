@@ -1,44 +1,64 @@
 main {
-    justify-content: center ;
+    border: 1px solid blue;
 }
 h1 {
     text-align: center;
-    padding-top: 6em;
-    padding-bottom: 3rem;
+    padding: auto;
+    margin: auto;
+    position: absolute;
+    left: 38%;
+    top: 20%;
     justify-content: center;
+    border: 1px solid green;
 }
 
 h2 {
     font-weight: lighter;
     text-align: center;
+    border: 1px solid red;
       
 }
 
 p {
     margin-top: 2rem ;
     font-size: 1rem;   
-    text-align: center; 
+    text-align: center;
+    border: 1px solid red; 
     
 }
 
 
 object {
-        background-color: rgba(104, 58, 183, 0.481);
+        background-color:#f3f3f3;
         color: black;
         margin: auto;
-        margin-left: 15rem;
-        border-radius: 15px;
-        display: inline-block;
-        width: 75%;
-        height: 20rem;
-        box-shadow: gray 3px 3px 5px;
-        justify-content: center;
+        padding: auto;
+        position: absolute;
+        left: 5%;
+        top: 30%;
+        border-radius: 5px;
+        display: flex;
+        width: 90%;
+        height: 45%;
+        border: 1px solid red; 
 } 
     
+div.check{
+    border: 1px solid red; 
+    padding: auto;
+    margin: auto;
+}
     
 ul {
         padding: auto;
         margin-top: 2rem;
+        border: 1px solid red; 
+}
+
+img {
+    border: 1px solid greenyellow;
+    height: 10rem;
+    width: 10rem;
 }
 
 

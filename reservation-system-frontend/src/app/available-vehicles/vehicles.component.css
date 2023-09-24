@@ -1,3 +1,11 @@
 .container {
-    margin: 12rem;
+    /* margin: 12rem; */
+    margin: auto;
+    padding: auto;
+    display: block;
+    position: absolute;
+    top: 16%;
+    left: 8.5%;
+    width: 85%;
+    
 }

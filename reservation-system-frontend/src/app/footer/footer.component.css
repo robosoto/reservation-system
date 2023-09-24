@@ -5,9 +5,9 @@ footer {
     padding: 10px 10px 0px 10px;
     text-align: center;
     align-items: center;
-    margin-top: 15rem;
+    top: 90%;
     width: 100%;
-    /* position: fixed; */
+    position: absolute;
     left: 0px;
 }
 
