@@ -31,10 +31,11 @@ public class VehicleServiceController {
 	VehicleService vehicleService;
 
 	/**
-	 * Get vehicle by type
+	 * Get vehicles by type
 	 * 
-	 * @param type
-	 * @return
+	 * @param String type
+	 * 
+	 * @return HTTP 200 response with list of vehicles of requested type in response body
 	 */
 	@GetMapping("/type/{type}")
 	public ResponseEntity<List<Vehicles>> getVehicleByType(@PathVariable String type) throws GoEazyException {
@@ -52,7 +53,8 @@ public class VehicleServiceController {
 	/**
 	 * Get All vehicles
 	 * 
-	 * @return
+	 * @return HTTP 200 response with list of all vehicles in response body
+	 * 
 	 * @throws GoEazyException
 	 */
 	@GetMapping("/all")
@@ -64,10 +66,11 @@ public class VehicleServiceController {
 	}
 
 	/**
-	 * Get vehicle by Location
+	 * Get vehicles by Location
 	 * 
-	 * @param location
-	 * @return
+	 * @param String location
+	 * 
+	 * @return HTTP 200 response with list of vehicles of requested location in response body
 	 */
 	@GetMapping("/location/{location}")
 	public ResponseEntity<List<Vehicles>> getVehicleByLocation(@PathVariable String location) throws GoEazyException {
@@ -82,6 +85,18 @@ public class VehicleServiceController {
 
 	}
 	
+	/**
+	 * Get vehicles by a combination of location and type. 
+	 * Either location or type may be null.
+	 * 
+	 * @param (String or null) location
+	 * @param (String or null) vehicleType
+	 * 
+	 * @return HTTP 200 response with list of vehicles of requested 
+	 * 		   type & location in response body
+	 * 
+	 * @throws GoEazyException
+	 */
 	@GetMapping("/filter")
 	public ResponseEntity<List<Vehicles>> getVehicleByLocationAndType(
 			@RequestParam(required = false) String location,
