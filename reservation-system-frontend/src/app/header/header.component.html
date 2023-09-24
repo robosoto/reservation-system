@@ -5,12 +5,12 @@
 
     <a routerLink="login">
         <div class="button">
-            <p-button label="Log in"></p-button>
+            <p-button  [label]="translate.instant('Login')"></p-button>
         </div>
     </a>
 
     <div class="lang">
-        <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"></p-selectButton>
+        <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value" (onChange)=changeLanguage(value)></p-selectButton>
     </div>
 
     <app-nav></app-nav> 

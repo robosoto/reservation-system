@@ -1,0 +1,42 @@
+{
+    "Vehicles": "Vehicles",
+    "Reservations": "Reservations",
+    "Locations": "Locations",
+    "Login":"Log In",
+    "pdLoc":"Pick-up & Return Location",
+    "pdDate":"Pick-up & Return Date",
+    "makereserve":"Make a Reservation",
+    "viewupdate":"View/Update Existing Reservation",
+    "BrowseVehicles":"Browse Vehicles",
+    "Make":"Make",
+    "Model":"Model",
+    "Type":"Type",
+    "Location":"Location",
+    "or":"or",
+    "ReserveVehicle": "Reserve Vehicle",
+    "primeng": {
+        "dayNamesMin": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ]
+    }
+}

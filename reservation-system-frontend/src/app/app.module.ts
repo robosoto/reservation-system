@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
@@ -24,7 +24,12 @@ import { VehiclesListComponent } from './available-vehicles/vehicles.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { NavComponent } from './nav/nav.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,9 +57,18 @@ import { NavComponent } from './nav/nav.component';
     SelectButtonModule,
     InputTextModule,
     TableModule,
-    RouterModule
+    RouterModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }
