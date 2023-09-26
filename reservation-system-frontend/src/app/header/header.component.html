@@ -7,12 +7,6 @@
         <p>Go Eazy</p>
     </div>
 
-    <a routerLink="login">
-        <div class="button">
-            <p-button  [label]="translate.instant('Login')"></p-button>
-        </div>
-    </a>
-
     <div class="lang">
         <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value" (onChange)=changeLanguage(value)></p-selectButton>
     </div>
