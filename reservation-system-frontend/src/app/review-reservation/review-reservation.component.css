@@ -7,11 +7,9 @@ h1 {
 }
 
 h2 {
-    text-align: left;
     font-weight: lighter;
-    padding-left: 4rem;
-    padding-top: .5rem;
     font-size: medium;
+    padding: auto;
 }
 
 h3 {
@@ -27,17 +25,11 @@ h4 {
     padding-top: .75rem;
 }
 
-article{
-    text-align: center;
-    margin-top: 12rem;
-}
-
 object {
     background-color: white;
     color: black;
     margin: auto;
     padding: auto;
-    display: inline-block;
     position: absolute;
     left: .5%;
     top: 17%;
@@ -46,17 +38,13 @@ object {
     text-align: center;
 } 
 
-div.input {
-    padding-left: 4rem;
-    text-align: left;
-}
 
 div.button {
     margin: auto;
     padding: auto;
     position: absolute;
-    left: 48%;
-    top: 70%;
+    left: 44%;
+    top: 80%;
 }
 
 div.date {
@@ -66,18 +54,55 @@ div.date {
 }
 
 div.head {
-    margin-left: 3rem;
+    position: relative;
+    margin: auto;
     display: inline-flex;
-    margin-top: 1rem;
+    margin-top: 4rem;
+    left: 0%;
+}
 
+div.blocks {
+    position: relative;
+   
+    height: 70%;
+    width: 75%;
+    left: 10.5%;
+    padding: auto;
+    margin: 2rem;
+    display: flex;
 }
 
 div.block {
     position: relative;
+    padding: auto;
+    margin: 0rem;
+    width: 50%;
+    height: 25%;
+    top: 5%;
+    left: 25%;
+    display: grid;
+}
+
+div.block1 {
+    position: absolute;
+    display: inline;
+    width: 50%;
+    left: 50%;
+}
+
+div.block2{
+    position: absolute;
+    display: inline;
+    width: 50%;
+}
+
+div.text {
+    position: relative;
     margin: auto;
     padding: auto;
-    width: 20%;
+    display: block;
+    width: 50%;
     left: 1%;
-    top: 7%;
-    
+    text-align: left;
 }
+
