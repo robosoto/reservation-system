@@ -24,8 +24,8 @@ export class UpdateReservationComponent {
 
   ngOnInit() {
     this.location = [
-        { name: 'Location 1', code: 'L1' },
-        { name: 'Location 2', code: 'L2' }
+        { name: 'Philadelphia', code: 'PHI' },
+        { name: 'Mumbai', code: 'BOM' }
     
     ];
 }

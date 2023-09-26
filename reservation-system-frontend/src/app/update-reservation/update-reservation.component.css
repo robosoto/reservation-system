@@ -1,3 +1,6 @@
+main {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 h1 {
     text-align: left;
     padding-right: 1rem;
@@ -6,9 +9,9 @@ h1 {
 h2 {
     text-align: left;
     font-weight: lighter;
+    font-size: medium;
     padding-left: 4rem;
     padding-top: .5rem;
-    font-size: medium;
 }
 
 h3 {
@@ -23,22 +26,24 @@ h4 {
     padding-right: 1rem;
     padding-top: .75rem;
 }
+
 article{
     text-align: center;
     margin-top: 12rem;
 }
 
 object {
-    background-color: #b4b4b4;
+    background-color: white;
     color: black;
-    margin: 12rem;
-    padding-bottom: 2rem;
-    border-radius: 15px;
+    margin: auto;
+    padding: auto;
     display: inline-block;
-    width: 70%;
-    height: 45%;
-    box-shadow: gray 3px 3px 5px;
-    
+    position: absolute;
+    left: .5%;
+    top: 17%;
+    width: 99%;
+    height: 77%;
+    text-align: center;
 } 
 
 div.dropdown {
@@ -47,21 +52,30 @@ div.dropdown {
 }
 
 div.button {
-    margin-top: 2rem;
-    padding-left: 65rem;
-    margin-bottom: .01rem;
-    display: flex;
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    left: 45%;
+    top: 88%;
 }
 
 div.date {
     
     padding-left: 4rem;
     text-align: left;
-    
 }
 
 div.head {
     margin-left: 3rem;
     display: inline-flex;
+    margin-top: 1rem;
 }
 
+div.block {
+    position: relative;
+    margin: auto;
+    padding: auto;
+    width: 20%;
+    left: 1%;
+    top: 7%;
+}

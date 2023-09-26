@@ -9,34 +9,41 @@
                 </a>
             </div>   
 
-        <h2>Reservation Number</h2>
-            
-            <div class="dropdown">
-                <input type="text" pInputText [(ngModel)]="value" />
+            <div class="block">
+                <h2>Reservation Number</h2>
+                    
+                    <div class="dropdown">
+                        <input type="text" pInputText [(ngModel)]="value" />
+                    </div>
             </div>
 
-        <h2>Customer Name</h2>
-            
-            <div class="dropdown">
-                <input type="text" pInputText [(ngModel)]="value2" />
+            <div class="block">
+                <h2>Email</h2>
+                    
+                    <div class="dropdown">
+                        <input type="text" pInputText [(ngModel)]="value2" />
+                    </div>
             </div>
 
-        <h2>Update Pick-up & Return Location</h2>
-   
-            <div class="dropdown">
-                <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
+            <div class="block">
+                <h2>Update Pick-up & Return Location</h2>
+        
+                    <div class="dropdown">
+                        <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
+                    </div>
             </div>
 
-        <h2>Update pick-up & Return Date</h2>
+            <div class="block">
+                <h2>Update pick-up & Return Date</h2>
 
-            <div class="date">
-                <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                    <div class="date">
+                        <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                    </div>
             </div>
-
           
             
             <div class="button">
-                <p-button label="Browse Vehicles"></p-button>
+                <p-button label="Update Reservation"></p-button>
             </div>
 
     </object> 
