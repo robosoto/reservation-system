@@ -1,29 +1,27 @@
 main {
-    justify-content: center;
-    display: flex;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 h1 {
-    text-align: center;
+    text-align: left;
     padding-right: 1rem;
 }
 
 h2 {
-    
+    text-align: left;
     font-weight: lighter;
+    padding-top: .5rem;
     font-size: medium;
-  
 }
 
 h3 {
-    text-align: center;
+    text-align: left;
     padding-right: 1rem;
     padding-top: .75rem;
     text-decoration: underline;
 }
 
 h4 {
-    text-align: center;
+    text-align: left;
     padding-right: 1rem;
     padding-top: .75rem;
 }
@@ -32,39 +30,62 @@ h4 {
 object {
     background-color: white;
     color: black;
-    margin: 12rem;
-    padding-bottom: 2rem;
-    border-radius: 5px;
-    display: block;
-    width: 40%;
-    height: 45%;
+    margin: auto;
+    padding: auto;
+    display: inline-block;
+    position: absolute;
+    left: .5%;
+    top: 17%;
+    width: 99%;
+    height: 77%;
     text-align: center;
-    
 } 
 
+div.dropdown {
+    padding-left: 4rem;
+    text-align: left;
+}
 
 div.button {
-    margin: 2rem;
+    margin: auto;
     padding: auto;
-    margin-bottom: 1rem;
-    display: block;
+    position: absolute;
+    left: 47%;
+    top: 75%;
+}
+
+div.date {
+    
+    padding-left: 4rem;
+    text-align: left;
 }
 
 div.head {
-    margin: auto;
+    margin-left: 3rem;
     display: inline-flex;
-    
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
 }
 
 div.input {
-    margin: 1rem;
-    padding:1rem;
+    position: relative;
+    margin: auto;
+    padding: auto;
+    display: block;
+    width: 50%;
+    left: 1%;
     text-align: left;
-    display: inline-block;
-    width: 30%;
+    
 }
 
-div.body {
-    margin: 1rem;
-    padding: 0;
+div.block {
+    position: relative;
+    padding: auto;
+    margin: auto;
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+    top: 80%;
+   
 }

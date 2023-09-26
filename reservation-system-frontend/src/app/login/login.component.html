@@ -10,16 +10,20 @@
             </div> 
             
 
+            <div class="block">
+                <h2>Username</h2>
+                    <div class="input">
+                        <input type="text" pInputText [(ngModel)]="value" />
+                    </div>
+            </div>
 
-        <h2>Username</h2>
-            <div class="input">
-                <input type="text" pInputText [(ngModel)]="value" />
+            <div class="block">
+                <h2>Password</h2>
+                    <div class="input">
+                        <input type="text" pInputText [(ngModel)]="value2" />
+                    </div>
             </div>
-        <h2>Password</h2>
-            <div class="input">
-                <input type="text" pInputText [(ngModel)]="value2" />
-            </div>
-      
+            
             <div class="button">
                 <a routerLink="vehicles">
                     <p-button label="Log In"></p-button>
