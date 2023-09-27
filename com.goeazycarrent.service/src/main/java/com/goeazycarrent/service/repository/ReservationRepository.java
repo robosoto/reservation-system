@@ -13,7 +13,7 @@ public interface ReservationRepository extends JpaRepository< Reservations, Inte
 	@Query(value = "select * from reservations where id=:id", nativeQuery = true)
 	Reservations findByUniqueId(@Param("id") String id);
 	
-	@Query(value = "select vehicle_id from reservations where start_date >= :fromDate AND end_date <=:toDate and status='Reserved' and location=:location", nativeQuery = true)
+	@Query(value = "select vehicle_id from reservations where :fromDate <= end_date AND :toDate >= start_date and status='Reserved' and location=:location", nativeQuery = true)
 	List<Integer> findVehiclesByDate(@Param("location") String location,@Param("fromDate") String fromDate,@Param("toDate") String toDate);
 	
 }
