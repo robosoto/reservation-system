@@ -27,6 +27,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReviewReservationComponent } from './review-reservation/review-reservation.component';
 import { ConfirmReservationComponent } from './confirm-reservation/confirm-reservation.component';
+import { AvailableVehiclesListComponent } from './available-vehicles/available-vehicles.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +46,8 @@ export function createTranslateLoader(http: HttpClient) {
     UpdateReservationComponent,
     NavComponent,
     ReviewReservationComponent,
-    ConfirmReservationComponent
+    ConfirmReservationComponent,
+    AvailableVehiclesListComponent
   ],
   imports: [
     BrowserModule,

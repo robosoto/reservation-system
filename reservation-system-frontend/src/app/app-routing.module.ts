@@ -9,12 +9,14 @@ import { LoginComponent } from './login/login.component';
 import { UserInfoFormComponent } from './create-account/user-info-form.component';
 import { ReviewReservationComponent } from './review-reservation/review-reservation.component';
 import { ConfirmReservationComponent } from './confirm-reservation/confirm-reservation.component';
+import { AvailableVehiclesListComponent } from './available-vehicles/available-vehicles.component';
 
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'vehicles', component: VehiclesListComponent },
+  { path: 'available-vehicles', component: AvailableVehiclesListComponent},
   { path: 'reservation-form', component: ReservationComponent},
   { path: 'update-reservation', component: UpdateReservationComponent},
   { path: 'location', component: LocationComponent},
