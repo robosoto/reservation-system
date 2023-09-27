@@ -20,7 +20,9 @@ export class ReservationComponent  {
     name: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],
     location: [[], Validators.required],
-    dateRange: [[], Validators.required]
+    dateRange: [[], Validators.required],
+    vehicleMake: "",
+    vehicleModel: ""
   });
 
   name: string = "";
