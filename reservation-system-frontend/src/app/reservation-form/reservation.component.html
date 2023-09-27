@@ -10,27 +10,35 @@
         </div>
         <form [formGroup]="reservationForm">
             <div class="block">
-                <h2>{{"pdName" | translate}}</h2>
-                <input type="text" pInputText formControlName="name">
+                <div class="input">
+                    <h2>{{"pdName" | translate}}</h2>
+                    <input type="text" pInputText formControlName="name">
+                </div>
             </div>
 
             <div class="block">
-                <h2>{{"pdEmail" | translate}}</h2>
-                <input type="email" pInputText formControlName="email">
+                <div class="input">
+                    <h2>{{"pdEmail" | translate}}</h2>
+                    <input type="email" pInputText formControlName="email">
+                </div>
             </div>
         
             <div class="block">
-                <h2>{{"pdLoc" |  translate }}</h2>
-                <div class="dropdown">
-                    <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
+                <div class="input">
+                    <h2>{{"pdLoc" |  translate }}</h2>
+                    <div class="dropdown">
+                        <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
+                    </div>
                 </div>
             </div>
             <div class="block">
-                <h2>{{"pdDate" |  translate }}</h2>
-                <div class="date">
-                    <p-calendar formControlName="dateRange" selectionMode="range" 
-                                [readonlyInput]="true" [showIcon]="true"
-                                dateFormat="yy-mm-dd" dataType="string"></p-calendar>
+                <div class="input">
+                    <h2>{{"pdDate" |  translate }}</h2>
+                    <div class="date">
+                        <p-calendar formControlName="dateRange" selectionMode="range" 
+                                    [readonlyInput]="true" [showIcon]="true"
+                                    dateFormat="yy-mm-dd" dataType="string"></p-calendar>
+                    </div>
                 </div>
             </div>
 

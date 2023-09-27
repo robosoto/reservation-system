@@ -1,0 +1,27 @@
+div.container {
+    background-color:white ;
+    display: block;
+    position: relative;
+    text-align: center;
+    top: 16rem;
+    left: .5rem;
+    height: 25rem;
+    padding: 1rem;
+}
+
+h2 {
+    position: relative;
+    left: 17%;
+    font-size: medium;
+    text-align: left;
+}
+
+div.button {
+    display: block;
+    position: relative;
+    top: 4rem;
+}
+
+div.head {
+    margin: 1rem;
+}
