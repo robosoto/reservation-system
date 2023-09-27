@@ -1,31 +1,57 @@
 <main>
 
-        <object>
-                <div class="head">
-                    <h1>{{"makereserve" | translate}}</h1>
-                    <h4>{{"or" | translate}}</h4>
-                    <a routerLink="/update-reservation">
-                        <h3>{{"viewupdate" | translate}}</h3>
-                    </a>
-                </div> 
+    <object>
+        <div class="head">
+            <h1>{{"makereserve" | translate}}</h1>
+            <h4>{{"or" | translate}}</h4>
+            <a routerLink="/update-reservation">
+                <h3>{{"viewupdate" | translate}}</h3>
+            </a>
+        </div>
+        <form [formGroup]="reservationForm">
+            <div class="block">
+                <h2>{{"pdName" | translate}}</h2>
+                <input type="text" pInputText formControlName="name">
+            </div>
+
+            <div class="block">
+                <h2>{{"pdEmail" | translate}}</h2>
+                <input type="email" pInputText formControlName="email">
+            </div>
+        
+            <div class="block">
+                <h2>{{"pdLoc" |  translate }}</h2>
+                <div class="dropdown">
+                    <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
+                </div>
+            </div>
+            <div class="block">
+                <h2>{{"pdDate" |  translate }}</h2>
+                <div class="date">
+                    <p-calendar formControlName="dateRange" selectionMode="range" 
+                                [readonlyInput]="true" [showIcon]="true"
+                                dateFormat="yy-mm-dd" dataType="string"></p-calendar>
+                </div>
+            </div>
             
-                <div class="block">
-                    <h2>{{"pdLoc" |  translate }}</h2>
-                    <div class="dropdown">
-                        <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
-                    </div>
-                </div>
-                    <div class="block">
-                        <h2>{{"pdDate" |  translate }}</h2>
-                        <div class="date">
-                            <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [showIcon]="true"></p-calendar>
-                        </div>
-                    </div>
+            <!-- <div class="button">
+                <p-button [label]="translate.instant('BrowseVehicles')" ></p-button>
+            </div> -->
 
-                <div class="button" routerLink="/available-vehicles">
-                        <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
-                </div>
+            <div class="button" (click)="loadAvailableVehicles()">
+                    <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
+            </div>
+            <!-- <div class="button" routerLink="/available-vehicles">
+                    <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
+            </div> -->
+        </form>
 
-        </object> 
+    </object> 
+
+    <app-available-vehicles *ngIf="showVehicles" [name]="name"
+                                                 [email]="email"
+                                                 [location]="location" 
+                                                 [dateRange]="dateRange"
+    ></app-available-vehicles>
 
 </main>

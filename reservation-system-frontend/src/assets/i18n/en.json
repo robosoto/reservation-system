@@ -3,6 +3,8 @@
     "Reservations": "Reservations",
     "Locations": "Locations",
     "Login":"Log In",
+    "pdName":"Name",
+    "pdEmail":"Email",
     "pdLoc":"Pick-up & Return Location",
     "pdDate":"Pick-up & Return Date",
     "makereserve":"Make a Reservation",

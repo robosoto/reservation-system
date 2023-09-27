@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
@@ -55,6 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
     ButtonModule,
     DropdownModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     CalendarModule,
     HttpClientModule,
