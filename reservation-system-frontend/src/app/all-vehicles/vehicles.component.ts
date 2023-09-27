@@ -18,7 +18,7 @@ export class VehiclesListComponent {
   locations: string[] = ["All Locations"].concat(environment.locations);
   selectedVehicleType: string = "All Vehicle Types";
   selectedLocation: string = "All Locations";
-  paginatorPageNum: number = 1;
+  paginatorPageNum: number = 0;
 
   constructor(
     public translate: TranslateService,

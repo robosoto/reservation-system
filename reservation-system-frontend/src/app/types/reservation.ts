@@ -1,5 +1,5 @@
 export interface Reservation {
-    id: number;
+    reservationId: number;
     startDate: Date;
     endDate: Date;
     location: string;
