@@ -18,9 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ReservationComponent } from './reservation-form/reservation.component';
 import { LocationComponent } from './location/location.component';
-import { VehicleComponent } from './vehicle/vehicle.component';
 import { UserInfoFormComponent } from './create-account/user-info-form.component';
-import { VehiclesListComponent } from './available-vehicles/vehicles.component';
+import { VehiclesListComponent } from './all-vehicles/vehicles.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { NavComponent } from './nav/nav.component';
@@ -28,6 +27,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReviewReservationComponent } from './review-reservation/review-reservation.component';
 import { ConfirmReservationComponent } from './confirm-reservation/confirm-reservation.component';
+import { AvailableVehiclesListComponent } from './available-vehicles/available-vehicles.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,14 +40,14 @@ export function createTranslateLoader(http: HttpClient) {
     HomeComponent,
     ReservationComponent,
     LocationComponent,
-    VehicleComponent,
     UserInfoFormComponent,
     VehiclesListComponent,
     LoginComponent,
     UpdateReservationComponent,
     NavComponent,
     ReviewReservationComponent,
-    ConfirmReservationComponent
+    ConfirmReservationComponent,
+    AvailableVehiclesListComponent
   ],
   imports: [
     BrowserModule,

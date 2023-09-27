@@ -5,3 +5,15 @@
 html {
     background-color: rgb(238, 238, 238);
 }
+
+.container {
+    /* margin: 12rem; */
+    margin: auto;
+    padding: auto;
+    display: block;
+    position: absolute;
+    top: 16%;
+    left: 8.5%;
+    width: 85%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

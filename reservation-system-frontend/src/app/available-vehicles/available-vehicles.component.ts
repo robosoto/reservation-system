@@ -1,48 +1,58 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Vehicle } from '../types/vehicle';
 import { VehicleService } from '../services/vehicle.service';
+import { ReservationService } from '../services/reservation.service';
 import { environment } from 'src/environments/environment.development';
-import { DropdownChangeEvent } from 'primeng/dropdown';
 import { TranslateService } from '@ngx-translate/core';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-vehicles',
-  templateUrl: './vehicles.component.html',
-  styleUrls: ['./vehicles.component.css']
+  templateUrl: './available-vehicles.component.html',
+  styleUrls: ['./available-vehicles.component.css']
 })
-export class VehiclesListComponent {
+export class AvailableVehiclesListComponent {
 
   vehicles: Vehicle[] = [];
-  // TODO: regenerate data to match these vehicle types
+  displayedVehicles: Vehicle[] = [];
+  location: string = "Philadelphia"; // TODO pass in from reservations page
+  startDate: string = "2023-10-20 11:11:11";
+  endDate: string = "2023-10-27 11:11:11";
   vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
-  locations: string[] = ["All Locations"].concat(environment.locations);
   selectedVehicleType: string = "All Vehicle Types";
-  selectedLocation: string = "All Locations";
   paginatorPageNum: number = 1;
 
   constructor(
     public translate: TranslateService,
     public primeNGConfig: PrimeNGConfig,
-    private vehicleService: VehicleService
-    
+    private vehicleService: VehicleService,
+    private reservationService: ReservationService
   ){} 
-  
 
-  getAllVehicles() {
-    this.vehicleService.getAllVehicles().subscribe(vehicles => this.vehicles = vehicles);
+  getAvailableVehicles() {
+    this.vehicleService.getAllVehicles().subscribe(vehicles => {
+      this.reservationService.getReservedVehicleIdsByDateRange(this.location, this.startDate, this.endDate)
+                             .subscribe(reservedIds => {
+                                console.log(vehicles.length);
+                                console.log(reservedIds);
+                               this.displayedVehicles = vehicles.filter(vehicle => !reservedIds.includes(vehicle.id));
+                             });
+    });
   }
 
-  getVehiclesByLocationAndType(): void {
-    this.vehicleService.getVehiclesByLocationAndType(this.selectedLocation,
-                                                     this.selectedVehicleType)
-                       .subscribe(vehicles => this.vehicles = vehicles);
-    this.paginatorPageNum = 1;
+  filterVehiclesByAvailability() {
+
+  }
+
+  filterVehiclesByType(): void {
+    // this.vehicleService.getVehiclesByLocationAndType(this.selectedVehicleType)
+    //                    .subscribe(vehicles => this.vehicles = vehicles);
+    // this.paginatorPageNum = 1;
   }
 
   ngOnInit(): void {
-    this.getAllVehicles();
+    this.getAvailableVehicles();
   }
 
   /**
