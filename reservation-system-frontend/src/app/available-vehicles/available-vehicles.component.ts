@@ -6,6 +6,7 @@ import { ReservationService } from '../services/reservation.service';
 import { environment } from 'src/environments/environment.development';
 import { TranslateService } from '@ngx-translate/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-available-vehicles',
@@ -14,14 +15,13 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AvailableVehiclesListComponent {
 
+  @Input() reservationForm?: FormGroup;
   vehicles: Vehicle[] = [];
   displayedVehicles: Vehicle[] = [];
-  @Input() location: string = "";
-  @Input() dateRange: string[] = [];
+  isVehicleSelected: boolean = false;
+  location: string = "";
   startDate: string = "";
   endDate: string = "";
-  @Input() name: string = "";
-  @Input() email: string = "";
 
   vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
   selectedVehicleType: string = "All Vehicle Types";
@@ -56,13 +56,18 @@ export class AvailableVehiclesListComponent {
     }
   }
 
-  submitReservation() {
-
+  confirmVehicleSelection(make: string, model: string) {
+    this.reservationForm!.patchValue({
+      vehicleMake: make,
+      vehicleModel: model
+    });
+    this.isVehicleSelected = true;
   }
 
   ngOnInit(): void {
-    this.startDate = this.dateRange[0] + " 11:11:11";
-    this.endDate = this.dateRange[1] + " 11:11:11";
+    this.location = this.reservationForm!.value.location.name;
+    this.startDate = this.reservationForm!.value.dateRange[0] + " 11:11:11";
+    this.endDate = this.reservationForm!.value.dateRange[1] + " 11:11:11";
     this.getAvailableVehicles();
   }
 

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'vehicles', component: VehiclesListComponent },
   { path: 'available-vehicles', component: AvailableVehiclesListComponent},
   { path: 'reservation-form', component: ReservationComponent},
+  { path: 'confirm-reservation', component: ConfirmReservationComponent},
   { path: 'update-reservation', component: UpdateReservationComponent},
   { path: 'location', component: LocationComponent},
   { path: 'login', component: LoginComponent},

@@ -19,9 +19,10 @@ export class ReservationComponent  {
   reservationForm = this.fb.group({
     name: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],
-    // TODO: start location dropdown as "Choose a location", require that a value is selected
     location: [[], Validators.required],
-    dateRange: [[], Validators.required]
+    dateRange: [[], Validators.required],
+    vehicleMake: "",
+    vehicleModel: ""
   });
 
   name: string = "";

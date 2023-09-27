@@ -63,6 +63,7 @@ div.date {
 div.head {
     margin-left: 3rem;
     display: inline-flex;
+
     margin-top: 1rem;
 }
 
@@ -80,4 +81,7 @@ div.block {
 input{
     position: absolute;
     text-align: left;
+
+    margin-top: 4rem;
+
 }
