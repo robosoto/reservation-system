@@ -3,6 +3,8 @@
     "Reservations": "Reservas",
     "Locations": "Ubicaciones",
     "Login":"Acceso",
+    "pdName": "Nombre",
+    "pdEmail": "Correo electrónico",
     "pdLoc":"Ubicación de recogida y devolución",
     "pdDate":"Fecha de recogida y regreso",
     "makereserve":"Hacer una reserva",

@@ -57,33 +57,4 @@ export class AvailableVehiclesListComponent {
     this.getAvailableVehicles();
   }
 
-  /**
-   * Filter full list of vehicles by location and vehicle type
-   * which the user selects via dropdown.
-   */
-  // filterVehiclesByLocationAndType() {
-  //   let filteredVehicles = this.allVehicles;
-  //   console.log(this.selectedLocation, this.selectedVehicleType)
-
-  //   if (!this.selectedLocation?.startsWith("All")) {
-  //     console.log("location filter")
-  //     // apply location filter
-  //     filteredVehicles = this.allVehicles.filter(vehicle => {
-  //       vehicle.location.toUpperCase() === this.selectedLocation?.toUpperCase();
-  //     });
-  //     console.log(filteredVehicles)
-  //   }
-
-  //   if (!this.selectedVehicleType?.startsWith("All")) {
-  //     console.log("type filter")
-  //     // apply vehicle type filter
-  //     filteredVehicles = filteredVehicles.filter(vehicle => {
-  //       vehicle.type.toUpperCase() === this.selectedVehicleType?.toUpperCase();
-  //     });
-  //   }
-
-  //   this.displayedVehicles = filteredVehicles;
-  //   this.paginatorPageNum = 1;
-  // }
-
 }
