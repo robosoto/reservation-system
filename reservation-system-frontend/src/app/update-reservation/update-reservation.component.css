@@ -27,11 +27,6 @@ h4 {
     padding-top: .75rem;
 }
 
-article{
-    text-align: center;
-    margin-top: 12rem;
-}
-
 object {
     background-color: white;
     color: black;
@@ -46,17 +41,23 @@ object {
     text-align: center;
 } 
 
-div.dropdown {
+div.input {
     padding-left: 4rem;
     text-align: left;
 }
 
-div.button {
+div.buttons {
+    display: inline-flex;
+    position: relative;
     margin: auto;
     padding: auto;
-    position: absolute;
-    left: 45%;
-    top: 88%;
+    top: 10%;
+}
+
+div.button {
+    margin: 1rem;
+    padding: auto;
+    position: relative;   
 }
 
 div.date {
@@ -77,5 +78,5 @@ div.block {
     padding: auto;
     width: 20%;
     left: 1%;
-    top: 7%;
+    top: 0%;
 }

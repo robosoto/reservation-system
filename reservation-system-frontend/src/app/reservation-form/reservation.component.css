@@ -9,8 +9,6 @@ h1 {
 h2 {
     text-align: left;
     font-weight: lighter;
-    padding-left: 4rem;
-    padding-top: .5rem;
     font-size: medium;
 }
 
@@ -47,7 +45,6 @@ object {
 } 
 
 div.dropdown {
-    padding-left: 4rem;
     text-align: left;
 }
 
@@ -55,28 +52,32 @@ div.button {
     margin: auto;
     padding: auto;
     position: absolute;
-    
     left: 46%;
-    top: 80%;
+    top: 87%;
 }
 
 div.date {
-    
-    padding-left: 4rem;
     text-align: left;
 }
 
 div.head {
     margin-left: 3rem;
     display: inline-flex;
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 div.block {
     position: relative;
-    margin: auto;
-    padding: 0rem 0rem 1rem 0rem;
-    width: 20%;
-    left: 1%;
+    text-align: left;
+    margin: 0rem;
+    padding: 0rem;
+    width: 12%;
+    height: 6rem;
+    left: 44%;
     top: 10%;
+}
+
+input{
+    position: absolute;
+    text-align: left;
 }
