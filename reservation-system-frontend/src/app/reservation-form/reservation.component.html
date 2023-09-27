@@ -1,6 +1,6 @@
 <main>
 
-    <object>
+    <object *ngIf="!showVehicles">
         <div class="head">
             <h1>{{"makereserve" | translate}}</h1>
             <h4>{{"or" | translate}}</h4>
@@ -33,25 +33,14 @@
                                 dateFormat="yy-mm-dd" dataType="string"></p-calendar>
                 </div>
             </div>
-            
-            <!-- <div class="button">
-                <p-button [label]="translate.instant('BrowseVehicles')" ></p-button>
-            </div> -->
 
             <div class="button" (click)="loadAvailableVehicles()">
                     <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
             </div>
-            <!-- <div class="button" routerLink="/available-vehicles">
-                    <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
-            </div> -->
         </form>
 
     </object> 
 
-    <app-available-vehicles *ngIf="showVehicles" [name]="name"
-                                                 [email]="email"
-                                                 [location]="location" 
-                                                 [dateRange]="dateRange"
-    ></app-available-vehicles>
+    <app-available-vehicles *ngIf="showVehicles" [reservationForm]="reservationForm"></app-available-vehicles>
 
 </main>
