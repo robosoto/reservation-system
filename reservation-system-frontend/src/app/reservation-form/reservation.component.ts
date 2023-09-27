@@ -19,13 +19,17 @@ export class ReservationComponent  {
   reservationForm = this.fb.group({
     name: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],
-    location: ["", Validators.required],
+    // TODO: start location dropdown as "Choose a location", require that a value is selected
+    location: [[], Validators.required],
     dateRange: [[], Validators.required]
   });
 
-  name?: string;
-  email?: string;
+  name: string = "";
+  email: string = "";
+  location: string = "";
+  dateRange: string[] = [];
   locations = [
+    { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
     { name: 'Mumbai', code: 'BOM' }
   ];
@@ -43,6 +47,12 @@ export class ReservationComponent  {
   }
 
   loadAvailableVehicles() {
+    let formLocationValue = this.reservationForm.value.location as any;
+
+    this.name = this.reservationForm.value.name!;
+    this.email = this.reservationForm.value.email!;
+    this.location = formLocationValue.name;
+    this.dateRange = this.reservationForm.value.dateRange!;
     this.showVehicles = true;
   }
 

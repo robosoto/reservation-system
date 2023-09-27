@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Vehicle } from '../types/vehicle';
 import { VehicleService } from '../services/vehicle.service';
@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
-  selector: 'app-vehicles',
+  selector: 'app-available-vehicles',
   templateUrl: './available-vehicles.component.html',
   styleUrls: ['./available-vehicles.component.css']
 })
@@ -16,9 +16,13 @@ export class AvailableVehiclesListComponent {
 
   vehicles: Vehicle[] = [];
   displayedVehicles: Vehicle[] = [];
-  location: string = "Mumbai"; // TODO pass in from reservations page
-  startDate: string = "2023-10-20 11:11:11";
-  endDate: string = "2023-10-27 11:11:11";
+  @Input() location: string = "";
+  @Input() dateRange: string[] = [];
+  startDate: string = "";
+  endDate: string = "";
+  @Input() name: string = "";
+  @Input() email: string = "";
+
   vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
   selectedVehicleType: string = "All Vehicle Types";
   paginatorPageNum: number = 0;
@@ -31,13 +35,13 @@ export class AvailableVehiclesListComponent {
   ){} 
 
   getAvailableVehicles() {
-    this.vehicleService.getAllVehicles().subscribe(vehicles => {
+    this.vehicleService.getVehiclesByLocation(this.location).subscribe(vehicles => {
       this.vehicles = vehicles;
       this.reservationService.getReservedVehicleIdsByDateRange(this.location, this.startDate, this.endDate)
                              .subscribe(reservedIds => {
-                                console.log(reservedIds);
-                               this.displayedVehicles = vehicles.filter(vehicle => !reservedIds.includes(vehicle.vehicleId));
-                               console.log(JSON.stringify(this.displayedVehicles));
+                               this.displayedVehicles = vehicles.filter(vehicle => {
+                                 return !reservedIds.includes(vehicle.vehicleId)
+                               });
                              });
     });
   }
@@ -49,11 +53,16 @@ export class AvailableVehiclesListComponent {
       this.displayedVehicles = this.vehicles.filter(vehicle => {
         return vehicle.type.toUpperCase() === this.selectedVehicleType.toUpperCase();
       });
-      console.log(this.displayedVehicles)
     }
   }
 
+  submitReservation() {
+
+  }
+
   ngOnInit(): void {
+    this.startDate = this.dateRange[0] + " 11:11:11";
+    this.endDate = this.dateRange[1] + " 11:11:11";
     this.getAvailableVehicles();
   }
 
