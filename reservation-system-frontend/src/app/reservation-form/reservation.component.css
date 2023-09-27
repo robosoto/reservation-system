@@ -10,6 +10,7 @@ h2 {
     text-align: left;
     font-weight: lighter;
     font-size: medium;
+  
 }
 
 h3 {
@@ -52,8 +53,8 @@ div.button {
     margin: auto;
     padding: auto;
     position: absolute;
-    left: 46%;
-    top: 87%;
+    left: 45%;
+    top: 85%;
 }
 
 div.date {
@@ -61,10 +62,9 @@ div.date {
 }
 
 div.head {
-    margin-left: 3rem;
+    position: relative;
     display: inline-flex;
-
-    margin-top: 1rem;
+    
 }
 
 div.block {
@@ -76,12 +76,13 @@ div.block {
     height: 6rem;
     left: 44%;
     top: 10%;
+   
 }
 
-input{
+div.input{
     position: absolute;
     text-align: left;
 
-    margin-top: 4rem;
+   
 
 }

@@ -13,11 +13,7 @@ export class ConfirmReservationComponent {
   @Input() reservationForm?: FormGroup;
   name: string = "";
   email: string = "";
-  location: string = "";
-  startDate: string = "";
-  endDate: string = "";
-  vehicleMake: string = "";
-  vehicleModel: string = "";
+  confirmation: string = "";
 
   constructor(
     public translate: TranslateService,
@@ -29,11 +25,12 @@ export class ConfirmReservationComponent {
     const reservationValues = this.reservationForm!.value;
     this.name = reservationValues.name;
     this.email = reservationValues.email;
-    this.location = reservationValues.location.name;
-    this.startDate = reservationValues.dateRange[0] + " 11:11:11";
-    this.endDate = reservationValues.dateRange[1] + " 11:11:11";
-    this.vehicleMake = reservationValues.vehicleMake;
-    this.vehicleModel = reservationValues.vehicleModel;
+    this.confirmation = reservationValues.confirmation;
+    // this.location = reservationValues.location.name;
+    // this.startDate = reservationValues.dateRange[0] + " 11:11:11";
+    // this.endDate = reservationValues.dateRange[1] + " 11:11:11";
+    // this.vehicleMake = reservationValues.vehicleMake;
+    // this.vehicleModel = reservationValues.vehicleModel;
   }
 
   submitReservation() {
