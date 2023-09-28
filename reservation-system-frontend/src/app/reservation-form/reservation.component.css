@@ -37,13 +37,13 @@ object {
     margin: auto;
     padding: auto;
     display: inline-block;
-    position: absolute;
+    position: fixed;
     left: .5%;
-    top: 17%;
+    top: 16%;
     width: 99%;
-    height: 77%;
+    height: 70%;
     text-align: center;
-    overflow: visible;
+    overflow:auto;
 } 
 
 div.dropdown {
@@ -56,7 +56,7 @@ div.button {
     padding: auto;
     position: absolute;
     left: 45%;
-    top: 80%;
+    top: 84%;
 }
 
 div.date {

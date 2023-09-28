@@ -1,12 +1,12 @@
 div.container{
     background-color: white;
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: auto;
-    top: 8rem;
-    left: 0%;
-    width: 99.9%;
-    height: 47rem;
+    left: .5%;
+    top: 16%;
+    width: 99%;
+    height: 70%;
     text-align: center;
 }
 
@@ -27,12 +27,12 @@ div.head {
 
 div.blocks {
     position: relative;
-    height: 70%;
+    height: 60%;
     width: 75%;
     left: 0%;
     padding: 0;
     margin: .5rem;
-    display: inline-table;
+    display: inline-flex;
 } 
 
 div.block {
@@ -51,7 +51,13 @@ div.button {
     left: 45%;
     top: 80%;
 }
+div.column1 {
+    width: 100%;
+}
 
+div.column2 {
+    width: 100%;
+}
 /* 
 h1 {
     text-align: left;
