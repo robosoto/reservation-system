@@ -35,14 +35,13 @@ div.blocks {
     display: inline-table;
 } 
 
- div.block {
-    border: 1px solid transparent;
+div.block {
     position: relative;
-    padding: auto;
-    margin: 1rem;
-    height: 20%;
-    top: 0%;
-    left: 42%;
+    margin: auto;
+    padding: 0rem 0rem 1rem 0rem;
+    width: 20%;
+    left: 1%;
+    top: 10%;
 }
 
 div.button {
