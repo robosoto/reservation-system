@@ -43,6 +43,7 @@ object {
     width: 99%;
     height: 77%;
     text-align: center;
+    overflow: visible;
 } 
 
 div.dropdown {
@@ -61,6 +62,7 @@ div.button {
 div.date {
     text-align: left;
     width: 12.5rem;
+    overflow: visible;
 }
 
 div.head {
