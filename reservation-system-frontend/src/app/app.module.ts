@@ -28,6 +28,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReviewReservationComponent } from './review-reservation/review-reservation.component';
 import { ConfirmReservationComponent } from './confirm-reservation/confirm-reservation.component';
 import { AvailableVehiclesListComponent } from './available-vehicles/available-vehicles.component';
+import { CancelReservationComponent } from './cancel-reservation/cancel-reservation.component';
+import { ConfirmCancelationComponent } from './confirm-cancelation/confirm-cancelation.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,7 +49,9 @@ export function createTranslateLoader(http: HttpClient) {
     NavComponent,
     ReviewReservationComponent,
     ConfirmReservationComponent,
-    AvailableVehiclesListComponent
+    AvailableVehiclesListComponent,
+    CancelReservationComponent,
+    ConfirmCancelationComponent
   ],
   imports: [
     BrowserModule,

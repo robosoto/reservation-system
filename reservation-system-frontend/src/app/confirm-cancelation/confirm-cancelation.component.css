@@ -34,7 +34,9 @@ div.head {
 }
 
 div.text {
-    color: green;
+    color: red;
+    margin: 3rem 0rem 0rem 0rem;
+    font-size: larger;
 }
 
 div.block {
