@@ -10,7 +10,8 @@ header {
     display: flex;
     position: fixed;
     top: 0px;
-    left: 0px;   
+    left: 0px; 
+    overflow: visible;  
 }
 
 img {
@@ -47,6 +48,9 @@ div.button {
     left: 84%;
 }
 
+p.calendar{
+    overflow: visible;
+}
 
 
 
