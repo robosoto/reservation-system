@@ -16,8 +16,25 @@
     "Location":"Location",
     "or":"or",
     "ReserveVehicle": "Reserve Vehicle",
+    "WelcomeMsg": "Welcome to Go Easy Car Rentals!",
+    "GreatService": "Great Service",
+    "GreatServiceMsg": "We strive to maintain the highest levels of service throughout our reservation process",
+    "GreatPrice": "Great Prices" ,
+    "GreatPriceMsg":"We always rent our vehicles at the lowest sustainable prices",
+    "ReserveTab": "Reserve Now",
+    "AvailVehicle": "Browse Available Vehicles",
+    "ExploreLocation": "Explore our locations",
+    "LocatioMsg": "We currently have two convenient locations to choose from!",
+    "BranchLocation" : "Go Easy Car Rental Locations",
+    "StreetAddress" : "Street Address",
+    "City" : "City",
+    "State" : "State",
+    "Country" : "Country",
+    "Contact" :"Contact",
+
+
     "primeng": {
-        "dayNamesMin": [
+        "dayNamesMin": [ 
             "Su",
             "Mo",
             "Tu",
