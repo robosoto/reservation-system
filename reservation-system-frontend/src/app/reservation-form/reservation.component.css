@@ -47,6 +47,7 @@ object {
 
 div.dropdown {
     text-align: left;
+    width: auto;
 }
 
 div.button {
@@ -54,11 +55,12 @@ div.button {
     padding: auto;
     position: absolute;
     left: 45%;
-    top: 85%;
+    top: 80%;
 }
 
 div.date {
     text-align: left;
+    width: 12.5rem;
 }
 
 div.head {
@@ -76,13 +78,13 @@ div.block {
     height: 6rem;
     left: 44%;
     top: 10%;
-   
 }
 
 div.input{
     position: absolute;
     text-align: left;
+}
 
-   
-
+div.box {
+    width: auto;
 }
