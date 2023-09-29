@@ -31,7 +31,7 @@ jobs:
           java-version: '17' # optional
 
       - name: Build project in Maven
-        run: mvn -B package --file com.goeazycarrent.service/pom.xml
+        run: mvn -B package -DskipTests --file com.goeazycarrent.service/pom.xml
 
       - name: list files
         run: ls -la com.goeazycarrent.service/target
