@@ -30,8 +30,8 @@ export class ReviewReservationComponent {
     this.name = reservationValues.name;
     this.email = reservationValues.email;
     this.location = reservationValues.location.name;
-    this.startDate = reservationValues.dateRange[0] + " 11:11:11";
-    this.endDate = reservationValues.dateRange[1] + " 11:11:11";
+    this.startDate = reservationValues.dateRange[0];
+    this.endDate = reservationValues.dateRange[1];
     this.vehicleMake = reservationValues.vehicleMake;
     this.vehicleModel = reservationValues.vehicleModel;
   }
