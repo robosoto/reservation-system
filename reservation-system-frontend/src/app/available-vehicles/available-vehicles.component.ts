@@ -66,8 +66,8 @@ export class AvailableVehiclesListComponent {
 
   ngOnInit(): void {
     this.location = this.reservationForm!.value.location.name;
-    this.startDate = this.reservationForm!.value.dateRange[0] + " 11:11:11";
-    this.endDate = this.reservationForm!.value.dateRange[1] + " 11:11:11";
+    this.startDate = this.reservationForm!.value.dateRange[0];
+    this.endDate = this.reservationForm!.value.dateRange[1];
     this.getAvailableVehicles();
   }
 
