@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { ReservationConfirmForm } from '../types/reservation-confirm-form';
+import { FormBuilder, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { PrimeNGConfig } from 'primeng/api';
+import { Subscription } from 'rxjs';
+import { ReservationService } from '../services/reservation.service';
+import { Router } from '@angular/router';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 interface Location {
   name: string;
@@ -12,21 +20,93 @@ interface Location {
 })
 export class UpdateReservationComponent {
 
-  location: Location[] | undefined;
+  updateReservationForm = this.fb.group({
+    reservationId: ["", Validators.required],
+    email: ["", [Validators.required, Validators.email]],
+    location: [[], Validators.required],
+    dateRange: [[], Validators.required]
+  
+  });
 
-  selectedLocation: Location | undefined;
+  cancelReservationForm = this.fb.group({
+    reservationId: ["", Validators.required],
+  });
 
-  rangeDates: Date[] | undefined;
+  localDateRange: string[] = [];
 
-  value: string | undefined;
+  locations = [
+    { name: 'Choose Location', code: 'N/A'},
+    { name: 'Philadelphia', code: 'PHI' },
+    { name: 'Mumbai', code: 'BOM' }
+  ];
+  showVehicles: boolean = false;
+  subscription: Subscription;
 
-  value2: string | undefined;
-
+  constructor(
+    public translate: TranslateService,
+    public primeNGConfig: PrimeNGConfig,
+    private _router:Router,
+    private reservationService:ReservationService,
+    private fb: FormBuilder,
+    private confirmService: ConfirmationService
+  ) {
+    this.subscription = this.translate.stream('primeng').subscribe(data => {
+      this.primeNGConfig.setTranslation(data);
+    });
+  }
   ngOnInit() {
-    this.location = [
-        { name: 'Philadelphia', code: 'PHI' },
-        { name: 'Mumbai', code: 'BOM' }
     
-    ];
 }
+
+updateReservation() {
+  let resForm ={} as ReservationConfirmForm;
+   
+     resForm.reservationId = this.updateReservationForm.value.reservationId
+     this.localDateRange = this.updateReservationForm.value.dateRange!;
+     let formLocationValue = this.updateReservationForm.value.location as any;
+
+     resForm.pickupDate = this.localDateRange[0];
+     resForm.dropoffDate = this.localDateRange[1];
+     resForm.location = formLocationValue.name;
+     resForm.email = this.updateReservationForm.value.email;
+    console.log(resForm);
+     this.reservationService.modifyReservation(resForm)?.subscribe(
+        data => {
+        
+         console.log(data);
+         this._router.navigate(['confirm-reservation']);
+         
+        },
+        error => {
+         // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
+          console.log('Errror occured');
+        }
+     )
+
+  
+  }
+
+  cancelReservation() {
+    let resForm ={} as ReservationConfirmForm;
+    console.log(this.cancelReservationForm.value.reservationId);
+    this.confirmService.confirm({
+      message: 'Are you sure that you want to Cancel this Reservation?',
+      accept: () => {
+        resForm.reservationId = this.cancelReservationForm.value.reservationId
+       console.log(resForm.reservationId);
+       this.reservationService.cancelReservation(resForm)?.subscribe(
+        data => {
+        
+         console.log(data);
+         this._router.navigate(['cancel']);
+         
+        },
+        error => {
+         // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
+          console.log('Errror occured');
+        }
+     )
+      }
+    });
+  }
 }

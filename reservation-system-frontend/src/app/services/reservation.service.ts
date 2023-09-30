@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Vehicle } from '../types/vehicle';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
+import { ReservationConfirmForm } from '../types/reservation-confirm-form';
 
 
 @Injectable({
@@ -32,5 +33,26 @@ export class ReservationService {
     const url = `${this.reservationUrl}/${location}/${startDate}/${endDate}`;
     return this.http.get<number[]>(url);
   }
+
+  submitReservation(reservationForm:ReservationConfirmForm){
+    if(reservationForm){
+     return this.http.post(`${this.reservationUrl}/confirm`, reservationForm );
+    }
+    return null;
+}
+
+modifyReservation(reservationForm:ReservationConfirmForm){
+  if(reservationForm){
+   return this.http.put(`${this.reservationUrl}/modify`, reservationForm );
+  }
+  return null;
+}
+
+cancelReservation(reservationForm:ReservationConfirmForm){
+  if(reservationForm){
+    return this.http.put(`${this.reservationUrl}/cancel`, reservationForm.reservationId );
+   }
+   return null;
+}
 
 }
