@@ -6,8 +6,6 @@ public class CustomerServiceRequestDto {
 	
 	private String email;
 	
-	private String password;
-	
 	private String name;
 
 	/**
@@ -22,20 +20,6 @@ public class CustomerServiceRequestDto {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/**
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	/**

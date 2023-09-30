@@ -7,5 +7,5 @@ import com.goeazycarrent.service.model.Customers;
 public interface CustomerService {
 	
 	public Customers saveCustomerDetails(CustomerServiceRequestDto customerDto) throws GoEazyException;
-
+	public Integer findCustomerDetails(String email) throws GoEazyException;
 }

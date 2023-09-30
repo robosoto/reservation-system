@@ -26,7 +26,10 @@ public class Vehicles {
 	@Column(name = "Location")
 	private String location;
 	
+	@Column(name = "price_per_day")
+	private int pricePerDay;
 	
+
 	/**
 	 * @return the vehicleId
 	 */
@@ -87,6 +90,17 @@ public class Vehicles {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
+	/**
+	 * @return the price per day
+	 */
+	public int getPricePerDay() {
+		return pricePerDay;
+	}
+	/**
+	 * @param pricePerDay the price per day to set
+	 */
+	public void setPricePerDay(int pricePerDay) {
+		this.pricePerDay = pricePerDay;
+	}
 
 }

@@ -1,5 +1,6 @@
 package com.goeazycarrent.service.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,9 +26,25 @@ public class CustomerServiceController {
 	CustomerService customerService;
 	
 	@PostMapping("/signup")
-	public ResponseEntity<Customers> storeCustomer(@RequestBody CustomerServiceRequestDto customerServiceRequestdto) throws GoEazyException{
-		Customers saveCustomer = customerService.saveCustomerDetails(customerServiceRequestdto);
-		return new ResponseEntity<>(saveCustomer, HttpStatus.OK);
+	public ResponseEntity<Integer> storeCustomer(@RequestBody CustomerServiceRequestDto customerServiceRequestdto) throws GoEazyException{
+		if(StringUtils.isNotBlank(customerServiceRequestdto.getEmail())) {
+			Integer findCustomerDetails = customerService.findCustomerDetails(StringUtils.trim(customerServiceRequestdto.getEmail()));
+			if(findCustomerDetails!=null && findCustomerDetails > 0) {
+				return new ResponseEntity<>(findCustomerDetails, HttpStatus.OK);
+			}else {
+				customerServiceRequestdto.setEmail(StringUtils.trim(customerServiceRequestdto.getEmail()));
+				customerServiceRequestdto.setName(StringUtils.trim(customerServiceRequestdto.getName()));
+				Customers saveCustomer = customerService.saveCustomerDetails(customerServiceRequestdto);
+				if(saveCustomer !=null && saveCustomer.getCustomerId()!=null) {
+					return new ResponseEntity<>(saveCustomer.getCustomerId(), HttpStatus.OK);
+				}else {
+					throw new GoEazyException("Failed to Create Customer");
+				}
+			}
+			
+		}else {
+			throw new GoEazyException("Email Id is missing");
+		}
 		 
 	}
 }

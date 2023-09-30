@@ -2,7 +2,6 @@ package com.goeazycarrent.service.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,11 +41,11 @@ public class VehicleServiceController {
 		List<Vehicles> vehicle;
 		try {
 			vehicle = vehicleService.getVehicleByType(type);
-
+			return new ResponseEntity<List<Vehicles>>(vehicle, HttpStatus.OK);
 		} catch (GoEazyException e) {
-			vehicle = null;
+			throw new GoEazyException("Failed to Retrieve Vehicles by Type");
 		}
-		return new ResponseEntity<List<Vehicles>>(vehicle, HttpStatus.OK);
+	
 
 	}
 
@@ -77,11 +76,11 @@ public class VehicleServiceController {
 		List<Vehicles> vehiclesByLocation;
 		try {
 			vehiclesByLocation = vehicleService.getVehicleByLocation(location);
-
+			return new ResponseEntity<List<Vehicles>>(vehiclesByLocation, HttpStatus.OK);
 		} catch (GoEazyException e) {
-			vehiclesByLocation = null;
+			throw new GoEazyException("Failed to Retrieve Vehicles by Location");
 		}
-		return new ResponseEntity<List<Vehicles>>(vehiclesByLocation, HttpStatus.OK);
+		
 
 	}
 	
@@ -106,11 +105,11 @@ public class VehicleServiceController {
 		
 		try {
 			vehiclesByLocationAndType = vehicleService.getVehicleByLocationAndType(location, vehicleType);
-
+			return new ResponseEntity<List<Vehicles>>(vehiclesByLocationAndType, HttpStatus.OK);
 		} catch (GoEazyException e) {
-			vehiclesByLocationAndType = null;
+			throw new GoEazyException("Failed to Retrieve Vehicles by Location and Type");
 		}
-		return new ResponseEntity<List<Vehicles>>(vehiclesByLocationAndType, HttpStatus.OK);
+	
 	}
 
 }

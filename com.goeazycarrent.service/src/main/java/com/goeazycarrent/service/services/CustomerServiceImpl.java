@@ -25,4 +25,10 @@ public class CustomerServiceImpl implements  CustomerService{
 		
 	}
 
+	@Override
+	public Integer findCustomerDetails(String email) throws GoEazyException {
+		return customerRepository.findByUniqueEmail(email);
+		
+	}
+
 }

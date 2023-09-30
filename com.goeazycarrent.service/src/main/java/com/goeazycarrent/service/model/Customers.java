@@ -17,9 +17,6 @@ public class Customers {
 	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "password")
-	private String password;
-	
 	@Column(name = "name")
 	private String name;
 	/**
@@ -46,18 +43,7 @@ public class Customers {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-	/**
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
 	/**
 	 * @return the name
 	 */
