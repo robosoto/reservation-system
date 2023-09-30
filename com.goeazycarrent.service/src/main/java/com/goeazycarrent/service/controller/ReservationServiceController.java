@@ -41,6 +41,7 @@ public class ReservationServiceController {
 
 		} catch (GoEazyException e) {
 			reservation = null;
+			throw new GoEazyException("Failed to Retrieve Data");
 		}
 		return new ResponseEntity<Reservations>(reservation, HttpStatus.OK);
 
@@ -57,16 +58,20 @@ public class ReservationServiceController {
 	public ResponseEntity<Reservations> confirmReservation(@RequestBody ReservationRequestDto reservationRequestdto)
 			throws GoEazyException {
 		Reservations saveReservation = reservationService.confirmReservation(reservationRequestdto);
+		if(saveReservation!=null && saveReservation.getReservationId()!=null) {
+			Mail mail = new Mail();
+			mail.setMailFrom("sender@gmail.com");
+			mail.setMailTo(reservationRequestdto.getEmail());
+			mail.setMailSubject("GoEazyCarRent Rental Confirmation #"+ saveReservation.getReservationId());
+			mail.setMailContent("Congratulation You have Succesfully reserved your Car Rental and Confirmation id is : "
+					+ saveReservation.getReservationId());
+			mailService.sendEmail(mail);
+			return new ResponseEntity<>(saveReservation, HttpStatus.OK);
+		}else {
+			throw new GoEazyException("Reservation Failed");
+		}
 
-		Mail mail = new Mail();
-		mail.setMailFrom("sender@gmail.com");
-		mail.setMailTo("receiver@gmail.com");
-		mail.setMailSubject("GoEazyCarRent Rental Confirmation #"+ saveReservation.getReservationId());
-		mail.setMailContent("Congratulation You have Succesfully reserved your Car Rental and Confirmation id is : "
-				+ saveReservation.getReservationId());
-		mailService.sendEmail(mail);
-
-		return new ResponseEntity<>(saveReservation, HttpStatus.OK);
+		
 
 	}
 
@@ -76,9 +81,11 @@ public class ReservationServiceController {
 	 * @param id
 	 * @throws GoEazyException
 	 */
-	@PutMapping("/cancel/{id}")
-	public void cancelReservationById(@PathVariable String id) throws GoEazyException {
-		reservationService.cancelReservation(id);
+	@PutMapping("/cancel")
+	public ResponseEntity<String> cancelReservation(@RequestBody String reservationId)
+			throws GoEazyException {
+		reservationService.cancelReservation(reservationId);
+		return new ResponseEntity<>("", HttpStatus.OK);
 
 	}
 
@@ -107,6 +114,7 @@ public class ReservationServiceController {
 
 		} catch (GoEazyException e) {
 			vehicles = null;
+			throw new GoEazyException("Failed to Retrieve Data");
 		}
 
 		return vehicles;

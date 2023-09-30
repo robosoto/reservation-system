@@ -11,6 +11,7 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class ConfirmReservationComponent {
   @Input() reservationForm?: FormGroup;
+  @Input() emailToSend:string = '';
   name: string = "";
   email: string = "";
   confirmation: string = "";
@@ -22,10 +23,10 @@ export class ConfirmReservationComponent {
   ) {}
 
   ngOnInit() {
-    const reservationValues = this.reservationForm!.value;
-    this.name = reservationValues.name;
-    this.email = reservationValues.email;
-    this.confirmation = reservationValues.confirmation;
+    // const reservationValues = this.reservationForm!.value;
+    // this.name = reservationValues.name;
+    this.email = this.emailToSend;
+    //this.confirmation = reservationValues.confirmation;
     // this.location = reservationValues.location.name;
     // this.startDate = reservationValues.dateRange[0] + " 11:11:11";
     // this.endDate = reservationValues.dateRange[1] + " 11:11:11";

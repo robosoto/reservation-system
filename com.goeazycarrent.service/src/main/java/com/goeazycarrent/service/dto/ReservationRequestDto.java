@@ -3,6 +3,7 @@ package com.goeazycarrent.service.dto;
 public class ReservationRequestDto {
 	
 	private String reservationId;
+	private String email;
 	private String pickupDate;
 	private String dropoffDate;
 	private String location;
@@ -82,6 +83,13 @@ public class ReservationRequestDto {
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	
 	
 

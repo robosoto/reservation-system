@@ -29,7 +29,7 @@
                 <td>{{ vehicle.location | titlecase}}</td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${{ vehicle.pricePerDay }}</td>
                 <td>
-                    <p-button (click)="confirmVehicleSelection(vehicle.make, vehicle.model)"
+                    <p-button (click)="confirmVehicleSelection(vehicle.make, vehicle.model,vehicle.vehicleId)"
                               [label]="translate.instant('ReserveVehicle')"></p-button>
                 </td>
             </tr>

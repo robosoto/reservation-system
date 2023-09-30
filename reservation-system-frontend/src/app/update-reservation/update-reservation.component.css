@@ -76,3 +76,21 @@ div.block {
     left: 5%;
     top: 0%;
 }
+
+.split-view-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+  
+    div {
+      width: 50%;
+    }
+  
+    .left {
+      background: lightskyblue;
+    }
+  
+    .right {
+      background: lightgray;
+    }
+  }

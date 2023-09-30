@@ -1,57 +1,88 @@
 <main>
 
     <object>
+       <div class="split-view-container">
+        <div class="left">
+       
             <div class="head">
                 <h1>Update a Reservation</h1>
                 <h4>or</h4>
                 <a routerLink="/reservation-form">
                     <h3>Start a new Reservation</h3>
                 </a>
-            </div>   
-
+            </div> 
+            
+            <form [formGroup]="updateReservationForm">
             <div class="block">
-                <h2>Reservation Number</h2>
-                    <div class="input">
-                        <input type="text" pInputText [(ngModel)]="value" />
+                
+                <div class="input">
+                   <h2>Reservation Number</h2>
+                    <div class="box">
+                        <input type="text" pInputText formControlName="reservationId">
                     </div>
+                </div>
             </div>
 
             <div class="block">
-                <h2>Email</h2> 
-                    <div class="input">
-                        <div class="textbox">
-                            <input type="text" pInputText [(ngModel)]="value2" />
-                        </div>
+                <div class="input">
+                    <h2>{{"pdEmail" | translate}}</h2>
+                    <div class="box">
+                        <input type="email" pInputText formControlName="email">
                     </div>
+                </div>
             </div>
 
             <div class="block">
-                <h2>Update Pick-up & Return Location</h2>
-                    <div class="input">
-                        <div class="textbox">
-                            <p-dropdown [options]="location" [(ngModel)]="selectedLocation" optionLabel="name"></p-dropdown>
-                        </div>
+                <div class="input">
+                    <h2>{{"pdLoc" |  translate }}</h2>
+                    <div class="dropdown">
+                        <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
                     </div>
+                </div>
             </div>
 
             <div class="block">
                 <h2>Update pick-up & Return Date</h2>
                     <div class="date">
-                        <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                        <p-calendar formControlName="dateRange" selectionMode="range" 
+                                    [readonlyInput]="true" [showIcon]="true"
+                                    [showTime]="true"
+                                    [showSeconds]="true"
+                                    dateFormat="yy-mm-dd" dataType="string"></p-calendar>
                     </div>
             </div>
 
 
             <div class="buttons">
                 <div class="button">
-                    <p-button label="Update Reservation" routerLink="/review"></p-button>
+                    <p-button label="Update Reservation" (click)="updateReservation()"></p-button>
                 </div>
 
-                <div class="button">
-                    <p-button label="Cancel Reservation" routerLink="/confirm-cancelation"></p-button>
-                </div>
+           
             </div>
-
+            </form>
+        </div>  
+        <div class="right">
+            <div class="head">
+                <h1>Cancel  Reservation</h1>
+            </div> 
+            <p-confirmDialog header="Delete"></p-confirmDialog>
+            <form [formGroup]="cancelReservationForm">
+                <div class="block">
+                
+                    <div class="input">
+                       <h2>Reservation Number</h2>
+                        <div class="box">
+                            <input type="text" pInputText formControlName="reservationId">
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <p-button label="Cancel Reservation" (click)="cancelReservation()"></p-button>
+                </div>
+            </form> 
+        </div>  
+    </div>  
     </object> 
 
 </main>
