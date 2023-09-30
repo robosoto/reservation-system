@@ -17,6 +17,7 @@
                 <th>{{"Model" | translate}}</th>
                 <th>{{"Type" | translate}}</th>
                 <th>{{"Location" | translate}}</th>
+                <th>Price per day</th>
                 <th></th>
             </tr>
         </ng-template>
@@ -26,6 +27,7 @@
                 <td>{{ vehicle.model | titlecase}}</td>
                 <td>{{ vehicle.type.toUpperCase() === "SUV" ? (vehicle.type | uppercase) : (vehicle.type | titlecase)}}</td>
                 <td>{{ vehicle.location | titlecase}}</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${{ vehicle.pricePerDay }}</td>
                 <td>
                     <p-button (click)="confirmVehicleSelection(vehicle.make, vehicle.model,vehicle.vehicleId)"
                               [label]="translate.instant('ReserveVehicle')"></p-button>

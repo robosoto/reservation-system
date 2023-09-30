@@ -1,10 +1,11 @@
+
 div.container {
     background-color:white ;
     display: block;
-    position: relative;
+    position: fixed;
     text-align: center;
     top: 16rem;
-    left: .5rem;
+    left: 7%;
     height: 25rem;
     padding: 1rem;
 }

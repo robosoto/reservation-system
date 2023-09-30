@@ -33,7 +33,7 @@ export class ReservationComponent  {
   locations = [
     { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
-    { name: 'Mumbai', code: 'BOM' }
+    { name: 'Cancún', code: 'CAN' }
   ];
   showVehicles: boolean = false;
   subscription: Subscription;

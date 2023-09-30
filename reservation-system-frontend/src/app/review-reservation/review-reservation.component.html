@@ -5,111 +5,43 @@
     </div>  
 
     <div class="blocks">
-        <div class="block">
-            <h2>{{"pdName" | translate}}</h2>
-            <span>{{name}}</span>
+        <div class="column1">
+            <div class="block">
+                <h2>{{"pdName" | translate}}</h2>
+                <span>{{name}}</span>
+            </div>
+
+            <div class="block">
+                <h2>{{"pdEmail" | translate}}</h2>
+                <span>{{email}}</span>
+            </div>
+
+            <div class="block">
+                <h2>{{"pdLoc" | translate}}</h2>
+                <span>{{location}}</span>
+            </div>
         </div>
+        <div class="column2">
+            <div class="block">
+                <h2>Vehicle Make/Model</h2>
+                <span>{{vehicleMake}} {{vehicleModel}}</span>
+            </div>
 
-        <div class="block">
-            <h2>{{"pdEmail" | translate}}</h2>
-            <span>{{email}}</span>
-        </div>
+            <div class="block">
+                <h2>{{"pdDate" | translate}}</h2>
+                <span>{{startDate}}</span>
+            </div>
 
-        <div class="block">
-            <h2>{{"pdLoc" | translate}}</h2>
-            <span>{{location}}</span>
-        </div>
-
-        <div class="block">
-            <h2>Vehicle Make</h2>
-            <span>{{vehicleMake}}</span>
-        </div>
-
-        <div class="block">
-            <h2>Vehicle Model</h2>
-            <span>{{vehicleModel}}</span>
-        </div> 
-
-        <div class="block">
-            <h2>{{"pdDate" | translate}}</h2>
-            <span>{{startDate}}</span>
-        </div>
-
-        <div class="block">
-            <h2>{{"pdDate" | translate}}</h2>
-            <span>{{endDate}}</span>
+            <div class="block">
+                <h2>{{"pdDate" | translate}}</h2>
+                <span>{{endDate}}</span>
+            </div>
         </div>
     </div>
 
     <div class="button">
         <p-button (click)="submitReservation()">Confirm Reservation</p-button>
+
     </div>
-
-    <!-- <app-confirm-reservation ></app-confirm-reservation> -->
 </div>
-
-
-<!-- <main>
-
-    <object>
-            <div class="head">
-                <h1>Review Reservation</h1>
-            </div> 
-            
-        <div class="blocks">
-            <div class="block1">
-                <div class="block">
-                    <div class="text">
-                        <h2>Email :</h2>
-                                <p>place holder</p>
-                    </div>
-                </div>
-
-                <div class="block">
-                    <div class="text">
-                        <h2>Name :</h2>
-                                <p>place holder</p>
-                    </div>
-                </div>
-
-                <div class="block">
-                    <div class="text">
-                        <h2>Total cost :</h2>
-                                <p>place holder</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="block2">
-                <div class="block">
-                    <div class="text">
-                        <h2>Reservation Date(s) :</h2>
-                                <p>place holder</p>
-                    </div>
-                </div>
-
-                <div class="block">
-                    <div class="text">
-                        <h2>Vehicle :</h2>
-                                <p>place holder</p>
-                    </div>
-                </div>
-
-                <div class="block">
-                    <div class="text">
-                        <h2>Location :</h2>
-                                <p>place holder</p>
-                    </div>
-                </div>
-            </div>
-        </div> 
-            <div class="button">
-                <a routerLink="/confirm">
-                    <p-button label="Confirm Reservation"></p-button>
-                </a>
-            </div>
-
-    </object> 
-
-</main> -->
 
