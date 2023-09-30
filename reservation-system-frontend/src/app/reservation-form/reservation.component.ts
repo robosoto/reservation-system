@@ -22,7 +22,8 @@ export class ReservationComponent  {
     location: [[], Validators.required],
     dateRange: [[], Validators.required],
     vehicleMake: "",
-    vehicleModel: ""
+    vehicleModel: "",
+    vehicleId: 0
   });
 
   name: string = "";
@@ -32,7 +33,7 @@ export class ReservationComponent  {
   locations = [
     { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
-    { name: 'Mumbai', code: 'BOM' }
+    { name: 'Cancún', code: 'CAN' }
   ];
   showVehicles: boolean = false;
   subscription: Subscription;

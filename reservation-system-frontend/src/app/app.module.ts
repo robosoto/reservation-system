@@ -30,6 +30,12 @@ import { ConfirmReservationComponent } from './confirm-reservation/confirm-reser
 import { AvailableVehiclesListComponent } from './available-vehicles/available-vehicles.component';
 import { CancelReservationComponent } from './cancel-reservation/cancel-reservation.component';
 import { ConfirmCancelationComponent } from './confirm-cancelation/confirm-cancelation.component';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ToastModule } from 'primeng/toast';
+
+import { MessageService } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -62,11 +68,13 @@ export function createTranslateLoader(http: HttpClient) {
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CalendarModule,
+    ConfirmDialogModule,
     HttpClientModule,
     SelectButtonModule,
     InputTextModule,
     TableModule,
     RouterModule,
+    ToastModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -76,7 +84,7 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en',
     })
   ],
-  providers: [],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
 })
 

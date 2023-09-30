@@ -5,4 +5,5 @@ export interface Reservation {
     location: string;
     customerId: number;
     vehicleId: number;
+    status: string;
 }
