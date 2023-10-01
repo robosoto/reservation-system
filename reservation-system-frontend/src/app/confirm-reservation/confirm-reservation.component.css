@@ -2,7 +2,7 @@
 div.container {
     background-color:white ;
     display: block;
-    position: fixed;
+    position: relative;
     text-align: center;
     top: 16rem;
     left: 7%;
