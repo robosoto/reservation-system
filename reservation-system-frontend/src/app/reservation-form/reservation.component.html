@@ -8,7 +8,7 @@
                 <h3>{{"viewupdate" | translate}}</h3>
             </a>
         </div>
-        <form [formGroup]="reservationForm">
+        <form [formGroup]="reservationForm" #resForm="ngForm">
             
                     <h2>{{"pdName" | translate}}</h2>
                         <input type="text" pInputText formControlName="name">
@@ -30,7 +30,9 @@
                                     [showSeconds]="true"
                                     dateFormat="yy-mm-dd" dataType="string"></p-calendar>
                     <h2></h2>
-                    <p-button [label]="translate.instant('BrowseVehicles')" (click)="loadAvailableVehicles()"></p-button>
+                    <p-button [label]="translate.instant('BrowseVehicles')"
+                                (click)="validateFormAndLoadAvailableVehicles()"
+                                [disabled]="resForm.form.invalid"></p-button>
             
 
            

@@ -26,10 +26,6 @@ export class ReservationComponent  {
     vehicleId: 0
   });
 
-  name: string = "";
-  email: string = "";
-  location: string = "";
-  dateRange: string[] = [];
   locations = [
     { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
@@ -48,14 +44,26 @@ export class ReservationComponent  {
     });
   }
 
-  loadAvailableVehicles() {
-    let formLocationValue = this.reservationForm.value.location as any;
+  /**
+   * Check if reservation form is valid and mark all fields as touched
+   * in order to show error messages to the user
+   * 
+   * @returns boolean true if all fields in reservation form are valid
+   */ 
+  isReservationFormValid(): boolean {
+    if (this.reservationForm.invalid) {
+      this.reservationForm.markAllAsTouched();
+    }
+    return !this.reservationForm.invalid;
+  }
 
-    this.name = this.reservationForm.value.name!;
-    this.email = this.reservationForm.value.email!;
-    this.location = formLocationValue.name;
-    this.dateRange = this.reservationForm.value.dateRange!;
-    this.showVehicles = true;
+  /**
+   * Validate reservation form and load available vehicles component if it is valid
+   */
+  validateFormAndLoadAvailableVehicles() {
+    if (this.isReservationFormValid()) {
+      this.showVehicles = true;
+    }
   }
 
 }
