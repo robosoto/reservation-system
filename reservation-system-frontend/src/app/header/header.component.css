@@ -8,7 +8,7 @@ header {
     height: 5rem;
     width: 100%;
     display: flex;
-    position: fixed;
+    position: relative;
     top: 0px;
     left: 0px; 
     overflow: visible;  
@@ -26,9 +26,8 @@ img {
 div.text {
     color: white;
     padding: auto;
-    margin: auto;
-    position: fixed;
-    left: 5%;
+    margin: left;
+    position: relative;
     top: -.5%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -36,15 +35,15 @@ div.text {
 
 div.lang {
     padding: 1rem;
-    margin: auto;  
-    position: fixed;
-    left: 90%;
+    margin: left;  
+    position: relative;
+    left: 35em;
 }
 
 div.button {
     padding: 1rem;
     margin: auto; 
-    position: fixed;
+    position: relative;
     left: 84%;
 }
 
