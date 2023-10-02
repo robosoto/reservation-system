@@ -48,14 +48,24 @@ export class ReservationComponent  {
     });
   }
 
-  loadAvailableVehicles() {
-    let formLocationValue = this.reservationForm.value.location as any;
-
-    this.name = this.reservationForm.value.name!;
-    this.email = this.reservationForm.value.email!;
-    this.location = formLocationValue.name;
-    this.dateRange = this.reservationForm.value.dateRange!;
-    this.showVehicles = true;
+  /**
+   * Check if reservation form is valid and mark all fields as touched
+   * in order to show error messages to the user
+   * 
+   * @returns boolean true if all fields in reservation form are valid
+   */ 
+  isReservationFormValid(): boolean {
+    if (this.reservationForm.invalid) {
+      this.reservationForm.markAllAsTouched();
+    }
+    return !this.reservationForm.invalid;
   }
 
-}
+  /**
+   * Validate reservation form and load available vehicles if it is valid
+   */
+  validateFormAndLoadAvailableVehicles() {
+    if (this.isReservationFormValid()) {}
+      this.showVehicles = true;
+    }
+  }

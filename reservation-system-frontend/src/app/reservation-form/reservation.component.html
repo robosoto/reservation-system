@@ -8,7 +8,7 @@
                 <h3>{{"viewupdate" | translate}}</h3>
             </a>
         </div>
-        <form [formGroup]="reservationForm">
+        <form [formGroup]="reservationForm" #resForm="ngForm">
             <div class="block">
                 <div class="input">
                     <h2>{{"pdName" | translate}}</h2>
@@ -47,10 +47,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="button" (click)="loadAvailableVehicles()">
-                    <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
-            </div>
+            <br>
+            <p-button [label]="translate.instant('BrowseVehicles')"
+                        (click)="validateFormAndLoadAvailableVehicles()"
+                        [disabled]="resForm.form.invalid"></p-button>
         </form>
 
     </object> 
