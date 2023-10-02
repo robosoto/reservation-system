@@ -1,3 +1,4 @@
+
 div.container {
     background-color:white ;
     display: block;
@@ -10,7 +11,7 @@ div.container {
 }
 
 h2 {
-    position: fixed;
+    position: relative;
     left: 17%;
     font-size: medium;
     text-align: left;
@@ -22,7 +23,7 @@ div.buttons {
 
 div.button {
     display: block;
-    position: fixed;
+    position: relative;
     top: 5rem;
     padding: auto;
     margin: 1rem;
@@ -34,9 +35,7 @@ div.head {
 }
 
 div.text {
-    color: red;
-    margin: 3rem 0rem 0rem 0rem;
-    font-size: larger;
+    color: green;
 }
 
 div.block {
