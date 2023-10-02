@@ -19,6 +19,7 @@ export class VehiclesListComponent {
   selectedVehicleType: string = "All Vehicle Types";
   selectedLocation: string = "All Locations";
   paginatorPageNum: number = 0;
+  dollarsToPesosMultiplier: number = environment.dollarsToPesosMultiplier;
 
   constructor(
     public translate: TranslateService,
