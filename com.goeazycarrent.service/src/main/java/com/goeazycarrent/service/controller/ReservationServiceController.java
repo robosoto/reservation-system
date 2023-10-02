@@ -57,6 +57,14 @@ public class ReservationServiceController {
 	@PostMapping("/confirm")
 	public ResponseEntity<Reservations> confirmReservation(@RequestBody ReservationRequestDto reservationRequestdto)
 			throws GoEazyException {
+		List<Integer> vehicles;
+		vehicles = reservationService.getAllVehiclesByDate(reservationRequestdto.getLocation(), reservationRequestdto.getPickupDate(), reservationRequestdto.getDropoffDate());
+		
+		if(vehicles!=null && vehicles.contains(reservationRequestdto.getVehicleId())) {
+			throw new GoEazyException("Vehicle has already been reserved");
+		}
+		
+		
 		Reservations saveReservation = reservationService.confirmReservation(reservationRequestdto);
 		if(saveReservation!=null && saveReservation.getReservationId()!=null) {
 			Mail mail = new Mail();
@@ -101,7 +109,19 @@ public class ReservationServiceController {
 	public ResponseEntity<Reservations> modifyReservation(@RequestBody ReservationRequestDto reservationRequestdto)
 			throws GoEazyException {
 		Reservations saveReservation = reservationService.modifyReservation(reservationRequestdto);
-		return new ResponseEntity<>(saveReservation, HttpStatus.OK);
+		if(saveReservation!=null && saveReservation.getReservationId()!=null) {
+			Mail mail = new Mail();
+			mail.setMailFrom("sender@gmail.com");
+			mail.setMailTo(reservationRequestdto.getEmail());
+			mail.setMailSubject("GoEazyCarRent Rental Confirmation #"+ saveReservation.getReservationId());
+			mail.setMailContent("Congratulation You have Succesfully Updated your Car Rental and Confirmation id is : "
+					+ saveReservation.getReservationId());
+			mailService.sendEmail(mail);
+			return new ResponseEntity<>(saveReservation, HttpStatus.OK);
+		}else {
+			throw new GoEazyException("Updation Failed");
+		}
+		
 
 	}
 
