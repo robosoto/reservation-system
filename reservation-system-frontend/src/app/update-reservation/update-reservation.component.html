@@ -8,7 +8,7 @@
                     <h3>{{"newReservation" | translate }}</h3>
                 </a>
           
-                <form [formGroup]="updateReservationForm">
+                <form [formGroup]="updateReservationForm" #resForm="ngForm">
 
                     <h2>{{"ReservationNumber" | translate }}</h2>
                     <input type="text" pInputText formControlName="reservationId">

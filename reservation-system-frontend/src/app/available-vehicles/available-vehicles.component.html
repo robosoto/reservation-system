@@ -13,11 +13,11 @@
     <p-table [value]="displayedVehicles" [paginator]="true" [rows]=6 [(first)]="paginatorPageNum">
         <ng-template pTemplate="header">
             <tr>
-                <th>{{"Make" | translate}}</th>
-                <th>{{"Model" | translate}}</th>
-                <th>{{"Type" | translate}}</th>
-                <th>{{"Location" | translate}}</th>
-                <th>Price per day</th>
+                <th style="width:15%">{{"Make" | translate}}</th>
+                <th style="width:15%">{{"Model" | translate}}</th>
+                <th style="width:15%">{{"Type" | translate}}</th>
+                <th style="width:15%">{{"Location" | translate}}</th>
+                <th style="width:15%">Price per day</th>
                 <th></th>
             </tr>
         </ng-template>
@@ -27,7 +27,11 @@
                 <td>{{ vehicle.model | titlecase}}</td>
                 <td>{{ vehicle.type.toUpperCase() === "SUV" ? (vehicle.type | uppercase) : (vehicle.type | titlecase)}}</td>
                 <td>{{ vehicle.location | titlecase}}</td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${{ vehicle.pricePerDay }}</td>
+                <td><span *ngIf="vehicle.location === 'Philadelphia'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span *ngIf="vehicle.location === 'Cancún'">&nbsp;</span>
+                    {{ vehicle.location === "Philadelphia" ? 
+                        "$" + vehicle.pricePerDay : 
+                        "Mex$" + ((vehicle.pricePerDay * dollarsToPesosMultiplier) | number: '1.0-0') }}</td>
                 <td>
                     <p-button (click)="confirmVehicleSelection(vehicle.make, vehicle.model,vehicle.vehicleId)"
                               [label]="translate.instant('ReserveVehicle')"></p-button>
