@@ -1,6 +1,6 @@
 <main>
 
-    <div *ngIf="!showVehicles">
+    <object *ngIf="!showVehicles">
         <div class="head">
             <h1>{{"makereserve" | translate}}</h1>
             <h4>{{"or" | translate}}</h4>
@@ -9,34 +9,51 @@
             </a>
         </div>
         <form [formGroup]="reservationForm">
-            
+            <div class="block">
+                <div class="input">
                     <h2>{{"pdName" | translate}}</h2>
+                    <div class="box">
                         <input type="text" pInputText formControlName="name">
-                    
+                    </div>
+                </div>
+            </div>
 
-         
+            <div class="block">
+                <div class="input">
                     <h2>{{"pdEmail" | translate}}</h2>
+                    <div class="box">
                         <input type="email" pInputText formControlName="email">
-                   
+                    </div>
+                </div>
+            </div>
         
-          
+            <div class="block">
+                <div class="input">
                     <h2>{{"pdLoc" |  translate }}</h2>
+                    <div class="dropdown">
                         <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
-                  
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="input">
                     <h2>{{"pdDate" |  translate }}</h2>
+                    <div class="date">
                         <p-calendar formControlName="dateRange" selectionMode="range" 
                                     [readonlyInput]="true" [showIcon]="true"
                                     [showTime]="true"
                                     [showSeconds]="true"
                                     dateFormat="yy-mm-dd" dataType="string"></p-calendar>
-                    <h2></h2>
-                    <p-button [label]="translate.instant('BrowseVehicles')" (click)="loadAvailableVehicles()"></p-button>
-            
+                    </div>
+                </div>
+            </div>
 
-           
+            <div class="button" (click)="loadAvailableVehicles()">
+                    <p-button [label]="translate.instant('BrowseVehicles')"></p-button>
+            </div>
         </form>
 
-    </div>
+    </object> 
 
     <app-available-vehicles *ngIf="showVehicles" [reservationForm]="reservationForm"></app-available-vehicles>
 

@@ -1,7 +1,7 @@
 div.container {
     background-color:white ;
     display: block;
-    position: relative;
+    position: fixed;
     text-align: center;
     top: 16rem;
     left: 7%;
@@ -10,7 +10,7 @@ div.container {
 }
 
 h2 {
-    position: relative;
+    position: fixed;
     left: 17%;
     font-size: medium;
     text-align: left;
@@ -22,7 +22,7 @@ div.buttons {
 
 div.button {
     display: block;
-    position: relative;
+    position: fixed;
     top: 5rem;
     padding: auto;
     margin: 1rem;

@@ -11,7 +11,7 @@ html {
     margin: auto;
     padding: 0rem;
     display: block;
-    position: relative;
+    position: fixed;
     top: 15.5%;
     left: 8.5%;
     width: 85%;
@@ -19,7 +19,7 @@ html {
 }
 
 div.block {
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: 0rem 0rem 1rem 0rem;
     width: 20%;

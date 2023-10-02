@@ -8,7 +8,7 @@ header {
     height: 5rem;
     width: 100%;
     display: flex;
-    position: relative;
+    position: fixed;
     top: 0px;
     left: 0px; 
     overflow: visible;  
@@ -26,8 +26,9 @@ img {
 div.text {
     color: white;
     padding: auto;
-    margin: left;
-    position: relative;
+    margin: auto;
+    position: fixed;
+    left: 5%;
     top: -.5%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -35,22 +36,18 @@ div.text {
 
 div.lang {
     padding: 1rem;
-    margin: left;  
-    position: relative;
-    left: 35em;
+    margin: auto;  
+    position: fixed;
+    left: 90%;
 }
 
 div.button {
     padding: 1rem;
     margin: auto; 
-    position: relative;
+    position: fixed;
     left: 84%;
 }
 
 p.calendar{
     overflow: visible;
 }
-
-
-
-

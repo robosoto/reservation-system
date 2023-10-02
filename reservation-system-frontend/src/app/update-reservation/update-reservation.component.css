@@ -1,6 +1,14 @@
-main {
+container {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: white;
+    position: fixed;
+    margin: auto;
+    padding: auto;
+    left: .5%;
+    top: 16%;
+    width: 99%;
+    height: 70%;
+    text-align: center;
 }
 h1 {
     text-align: left;
@@ -42,11 +50,12 @@ object {
 
 div.input {
     text-align: left;
+    margin: left;
 }
 
 div.buttons {
     display: inline-flex;
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: auto;
     top: 5%;
@@ -56,7 +65,7 @@ div.buttons {
 div.button {
     margin: 1rem;
     padding: auto;
-    position: relative;   
+    position: fixed;   
 }
 
 div.date {
@@ -70,7 +79,7 @@ div.head {
 }
 
 div.block {
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: auto;
     width: 20%;
@@ -79,9 +88,11 @@ div.block {
 }
 
 .split-view-container {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
+    background-color: white;
     justify-content: space-evenly;
-    height: 100%;
+    
   
     div {
       width: 50%;
