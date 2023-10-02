@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="head">
-        <h1>Verify your reservation information</h1>
+        <h1>{{"verifyReservation" | translate}}</h1>
     </div>  
 
     <div class="blocks">
@@ -40,7 +40,9 @@
     </div>
 
     <div class="button">
-        <p-button (click)="submitReservation()">Confirm Reservation</p-button>
+        <p-button [label]="translate.instant('ConfirmReservation')"
+        (click)="submitReservation()">
+    </p-button> 
 
     </div>
 </div>

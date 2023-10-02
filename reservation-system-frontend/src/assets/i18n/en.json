@@ -31,6 +31,21 @@
     "State" : "State",
     "Country" : "Country",
     "Contact" :"Contact",
+    "UpdateReservation" : "Update a Reservation",
+    "CancelReservation" : "Cancel Reservation",
+    "pickupReturnDate" : "Update pick-up & Return Date",
+    "ReservationNumber" : "Reservation Number",
+    "newReservation" : "Start a new Reservation",
+    "verifyReservation" : "Verify your reservation information",
+    "ConfirmReservation" : "Confirm Reservation",
+    "Confirmation" : "Confirmation",
+    "confirmationMsg" : "Your reservation has been confirmed! An email has been sent to your email with the details of your confirmation.",
+    "homeButton" : "Back to home",
+    "ModifyReservation" : "Modify Reservation",
+    
+    "cancelmsg": "Your reservation has been canceled!",
+    "newreserve": "New Reservation",
+    "cancellation": "Cancellation",
 
 
     "primeng": {

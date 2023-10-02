@@ -37,7 +37,7 @@ export class UpdateReservationComponent {
   locations = [
     { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
-    { name: 'Mumbai', code: 'BOM' }
+    { name: 'Cancún', code: 'CAN' }
   ];
   showVehicles: boolean = false;
   subscription: Subscription;
@@ -57,6 +57,18 @@ export class UpdateReservationComponent {
   ngOnInit() {
     
 }
+
+isUpdationFormValid(): boolean {
+  
+  return this.updateReservationForm.invalid;
+}
+
+isCancellationFormValid(): boolean {
+  
+  return this.cancelReservationForm.invalid;
+}
+
+
 
 updateReservation() {
   let resForm ={} as ReservationConfirmForm;
