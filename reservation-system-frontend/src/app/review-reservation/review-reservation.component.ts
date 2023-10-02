@@ -56,8 +56,7 @@ export class ReviewReservationComponent {
       this.bookreservation(6);
     },
     error => {
-      // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
-       console.log('Errror occured');
+       console.log('Error occured');
      })
 
     
@@ -82,8 +81,7 @@ export class ReviewReservationComponent {
          
         },
         error => {
-         // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
-          console.log('Errror occured');
+          console.log('Error occured');
         }
      )
   }
