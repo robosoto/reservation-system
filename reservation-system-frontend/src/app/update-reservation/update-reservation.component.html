@@ -8,7 +8,7 @@
                     <h3>Start a new Reservation</h3>
                 </a>
           
-                <form [formGroup]="updateReservationForm">
+                <form [formGroup]="updateReservationForm" #resForm="ngForm">
 
                     <h2>Reservation Number</h2>
                     <input type="text" pInputText formControlName="reservationId">
@@ -29,7 +29,7 @@
                         dataType="string"></p-calendar>
 
                     <h2></h2>
-                    <p-button label="Update Reservation" (click)="updateReservation()"></p-button>
+                    <p-button label="Update Reservation" [disabled]="resForm.form.invalid" (click)="updateReservation()"></p-button>
 
                 </form>
              
@@ -43,7 +43,7 @@
                     <h2>Reservation Number</h2>
                     <input type="text" pInputText formControlName="reservationId">
                     <h2></h2>
-                    <p-button label="Cancel Reservation" (click)="cancelReservation()"></p-button>
+                    <p-button label="Cancel Reservation" [disabled]="isCencelledFormValid()" (click)="cancelReservation()"></p-button>
 
                 </form>
             </div>
