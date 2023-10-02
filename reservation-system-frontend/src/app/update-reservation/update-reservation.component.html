@@ -1,89 +1,53 @@
 <main>
+    <div class="container">
+        <div class="split-view-container">
+               <div class="object">   
+                <h1>Update a Reservation /</h1>
 
-    <object>
-       <div class="split-view-container">
-        <div class="left">
-       
-            <div class="head">
-                <h1>Update a Reservation</h1>
-                <h4>or</h4>
                 <a routerLink="/reservation-form">
                     <h3>Start a new Reservation</h3>
                 </a>
-            </div> 
-            
-            <form [formGroup]="updateReservationForm">
-            <div class="block">
-                
-                <div class="input">
-                   <h2>Reservation Number</h2>
-                    <div class="box">
-                        <input type="text" pInputText formControlName="reservationId">
-                    </div>
-                </div>
-            </div>
+          
+                <form [formGroup]="updateReservationForm">
 
-            <div class="block">
-                <div class="input">
+                    <h2>Reservation Number</h2>
+                    <input type="text" pInputText formControlName="reservationId">
+
+
+
                     <h2>{{"pdEmail" | translate}}</h2>
-                    <div class="box">
-                        <input type="email" pInputText formControlName="email">
-                    </div>
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="input">
-                    <h2>{{"pdLoc" |  translate }}</h2>
-                    <div class="dropdown">
-                        <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
-                    </div>
-                </div>
-            </div>
-
-            <div class="block">
-                <h2>Update pick-up & Return Date</h2>
-                    <div class="date">
-                        <p-calendar formControlName="dateRange" selectionMode="range" 
-                                    [readonlyInput]="true" [showIcon]="true"
-                                    [showTime]="true"
-                                    [showSeconds]="true"
-                                    dateFormat="yy-mm-dd" dataType="string"></p-calendar>
-                    </div>
-            </div>
+                    <input type="email" pInputText formControlName="email">
 
 
-            <div class="buttons">
-                <div class="button">
+
+                    <h2>{{"pdLoc" | translate }}</h2>
+                    <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
+
+                    <h2>Update pick-up & Return Date</h2>
+                    <p-calendar formControlName="dateRange" selectionMode="range" [readonlyInput]="true"
+                        [showIcon]="true" [showTime]="true" [showSeconds]="true" dateFormat="yy-mm-dd"
+                        dataType="string"></p-calendar>
+
+                    <h2></h2>
                     <p-button label="Update Reservation" (click)="updateReservation()"></p-button>
-                </div>
 
-           
+                </form>
+             
             </div>
-            </form>
-        </div>  
-        <div class="right">
-            <div class="head">
-                <h1>Cancel  Reservation</h1>
-            </div> 
-            <p-confirmDialog header="Delete"></p-confirmDialog>
-            <form [formGroup]="cancelReservationForm">
-                <div class="block">
-                
-                    <div class="input">
-                       <h2>Reservation Number</h2>
-                        <div class="box">
-                            <input type="text" pInputText formControlName="reservationId">
-                        </div>
-                    </div>
-                </div>
-                <div class="button">
+            <div class="right">
+                <h1>Cancel Reservation</h1>
+
+                <p-confirmDialog header="Delete"></p-confirmDialog>
+                <form [formGroup]="cancelReservationForm">
+
+                    <h2>Reservation Number</h2>
+                    <input type="text" pInputText formControlName="reservationId">
+                    <h2></h2>
                     <p-button label="Cancel Reservation" (click)="cancelReservation()"></p-button>
-                </div>
-            </form> 
-        </div>  
-    </div>  
-    </object> 
+
+                </form>
+            </div>
+        </div>
+    </div>
 
 </main>
-
