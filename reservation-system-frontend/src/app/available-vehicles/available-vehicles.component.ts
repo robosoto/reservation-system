@@ -57,11 +57,12 @@ export class AvailableVehiclesListComponent {
     }
   }
 
-  confirmVehicleSelection(make: string, model: string, vehicleId: number) {
+  confirmVehicleSelection(make: string, model: string, vehicleId: number, pricePerDay: number) {
     this.reservationForm!.patchValue({
       vehicleMake: make,
       vehicleModel: model,
-      vehicleId: vehicleId
+      vehicleId: vehicleId,
+      pricePerDay: pricePerDay
     });
     this.isVehicleSelected = true;
   }

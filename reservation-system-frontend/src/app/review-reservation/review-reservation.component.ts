@@ -7,6 +7,7 @@ import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { Router } from '@angular/router';
 import { ReservationConfirmForm } from '../types/reservation-confirm-form';
 import { CustomerForm } from '../types/customer-form';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-review-reservation',
@@ -23,6 +24,8 @@ export class ReviewReservationComponent {
   vehicleMake: string = "";
   vehicleModel: string = "";
   vehicleId: number = 0;
+  pricePerDay: number = 0;
+  totalReservationPrice: number = 0;
   confirmation: string = '';
 
   emailToSend:string = '';
@@ -46,6 +49,8 @@ export class ReviewReservationComponent {
     this.vehicleMake = reservationValues.vehicleMake;
     this.vehicleModel = reservationValues.vehicleModel;
     this.vehicleId = reservationValues.vehicleId;
+    this.pricePerDay = reservationValues.pricePerDay;
+    this.totalReservationPrice = this.calculateTotalReservationPrice();
   }
 
   submitReservation() {
@@ -59,10 +64,27 @@ export class ReviewReservationComponent {
     },
     error => {
        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
-       console.log('Errror occured');
+       console.log('Error occured');
      })
 
     
+  }
+
+  calculateTotalReservationPrice(): number {
+    const start = Math.floor(new Date(this.startDate).getTime() / 1000);
+    const end = Math.floor(new Date(this.endDate).getTime() / 1000);
+    const totalReservationSeconds = end - start;
+    const totalReservationDays = totalReservationSeconds / (60*60*24);
+    const price = Math.round(
+      this.location === "Cancún" 
+                        ? this.pricePerDay * environment.dollarsToPesosMultiplier
+                        : this.pricePerDay
+    );
+    
+    // totalPrice = pricerPerDay * numDays
+    // any amount of time over n days is counted as n + 1 days
+    // e.g. 2.1 days is counted as 3 days
+    return Math.ceil(totalReservationDays) * price;
   }
 
   bookreservation(customerid:number){
@@ -86,7 +108,7 @@ export class ReviewReservationComponent {
         error => {
           console.log(error.error);
          this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
-          console.log('Errror occured');
+          console.log('Error occured');
         }
      )
   }

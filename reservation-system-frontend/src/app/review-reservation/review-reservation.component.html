@@ -23,7 +23,7 @@
         </div>
         <div class="column2">
             <div class="block">
-                <h2>Vehicle Make/Model</h2>
+                <h2>{{"pdVehicleDetails" | translate}}</h2>
                 <span>{{vehicleMake}} {{vehicleModel}}</span>
             </div>
 
@@ -35,6 +35,12 @@
             <div class="block">
                 <h2>{{"pdDate" | translate}}</h2>
                 <span>{{endDate}}</span>
+            </div>
+
+            <div class="block">
+                <h2>{{"pdTotalPrice" | translate}}</h2>
+                <span *ngIf="location === 'Philadelphia'">${{totalReservationPrice}}</span>
+                <span *ngIf="location === 'Cancún'">Mex${{totalReservationPrice}}</span>
             </div>
         </div>
     </div>

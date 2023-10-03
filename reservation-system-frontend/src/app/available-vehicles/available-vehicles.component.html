@@ -33,7 +33,7 @@
                         "$" + vehicle.pricePerDay : 
                         "Mex$" + ((vehicle.pricePerDay * dollarsToPesosMultiplier) | number: '1.0-0') }}</td>
                 <td>
-                    <p-button (click)="confirmVehicleSelection(vehicle.make, vehicle.model,vehicle.vehicleId)"
+                    <p-button (click)="confirmVehicleSelection(vehicle.make, vehicle.model, vehicle.vehicleId, vehicle.pricePerDay)"
                               [label]="translate.instant('ReserveVehicle')"></p-button>
                 </td>
             </tr>
