@@ -1,6 +1,7 @@
 package com.goeazycarrent.service.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -117,6 +118,25 @@ public class Reservations {
 	 */
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(customerId, endDate, location, reservationId, startEnd, status, vehicleId);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Reservations other = (Reservations) obj;
+		return Objects.equals(customerId, other.customerId) && Objects.equals(endDate, other.endDate)
+				&& Objects.equals(location, other.location) && Objects.equals(reservationId, other.reservationId)
+				&& Objects.equals(startEnd, other.startEnd) && Objects.equals(status, other.status)
+				&& Objects.equals(vehicleId, other.vehicleId);
 	}
 	
 	
