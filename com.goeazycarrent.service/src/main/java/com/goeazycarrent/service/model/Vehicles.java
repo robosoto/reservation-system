@@ -1,5 +1,7 @@
 package com.goeazycarrent.service.model;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +30,6 @@ public class Vehicles {
 	
 	@Column(name = "price_per_day")
 	private int pricePerDay;
-	
 
 	/**
 	 * @return the vehicleId
@@ -101,6 +102,24 @@ public class Vehicles {
 	 */
 	public void setPricePerDay(int pricePerDay) {
 		this.pricePerDay = pricePerDay;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(location, make, model, pricePerDay, type, vehicleId);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vehicles other = (Vehicles) obj;
+		return Objects.equals(location, other.location) && Objects.equals(make, other.make)
+				&& Objects.equals(model, other.model) && pricePerDay == other.pricePerDay
+				&& Objects.equals(type, other.type) && Objects.equals(vehicleId, other.vehicleId);
 	}
 
 }
