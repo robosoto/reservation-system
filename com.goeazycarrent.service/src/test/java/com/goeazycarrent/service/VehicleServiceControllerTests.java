@@ -58,20 +58,116 @@ public class VehicleServiceControllerTests {
 		mockVehicles.add(v2);
 	}
 	
+	/**
+	 * GET /vehicle/all
+	 */
 	@Test
-	public void getAllReturnsGetAllVehicles() throws Exception {
+	public void getAllVehicles() throws Exception {
 		when(service.getAllVehicles()).thenReturn(mockVehicles);
 		
+		// check that route returns 200
 		MvcResult result =  this.mvc.perform(get("/vehicle/all"))
-								    .andDo(print())
 								    .andExpect(status().isOk())
 								    .andReturn();
 		
+		// check that response content is a list of vehicles
 		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 												   new TypeReference<List<Vehicles>>() {});
 		
 		assertEquals(vehicles, mockVehicles);
 	}
 	
+	/**
+	 * GET /vehicle/type/{type}
+	 */
+	@Test
+	public void getVehicleByType() throws Exception {
+		when(service.getVehicleByType("SUV")).thenReturn(mockVehicles);
+		
+		// check that route returns 200
+		MvcResult result =  this.mvc.perform(get("/vehicle/type/" + "SUV"))
+								    .andExpect(status().isOk())
+								    .andReturn();
+		
+		// check that response content is a list of vehicles
+		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
+									   				new TypeReference<List<Vehicles>>() {});
+		
+		assertEquals(vehicles, mockVehicles);
+	}
+	
+	/**
+	 * GET /vehicle/location/{location}
+	 */
+	@Test
+	public void getVehicleByLocation() throws Exception {
+		when(service.getVehicleByLocation("Philadelphia")).thenReturn(mockVehicles);
+		
+		// check that route returns 200
+		MvcResult result =  this.mvc.perform(get("/vehicle/location/" + "Philadelphia"))
+								    .andExpect(status().isOk())
+								    .andReturn();
+		
+		// check that response content is a list of vehicles
+		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
+						   							new TypeReference<List<Vehicles>>() {});
+		
+		assertEquals(vehicles, mockVehicles);
+	}
+	
+	/**
+	 * GET /vehicle/filter
+	 */
+	@Test
+	public void getVehicleByLocationAndType() throws Exception {
+		when(service.getVehicleByLocationAndType(null, null)).thenReturn(mockVehicles);
+		when(service.getVehicleByLocationAndType(null, "Truck")).thenReturn(mockVehicles);
+		when(service.getVehicleByLocationAndType("Philadelphia", null)).thenReturn(mockVehicles);
+		when(service.getVehicleByLocationAndType("Philadelphia", "Truck")).thenReturn(mockVehicles);
+		
+		// check that route returns 200, both params null
+		MvcResult result =  this.mvc.perform(get("/vehicle/filter"))
+								    .andExpect(status().isOk())
+								    .andReturn();
+		
+		// check that response content is a list of vehicles
+		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
+						   							new TypeReference<List<Vehicles>>() {});
+		
+		assertEquals(vehicles, mockVehicles);
+		
+		// check that route returns 200, location null
+		result =  this.mvc.perform(get("/vehicle/filter?vehicleType=Truck"))
+								    .andExpect(status().isOk())
+								    .andReturn();
+		
+		// check that response content is a list of vehicles
+		vehicles = mapper.readValue(result.getResponse().getContentAsString(),
+						   							new TypeReference<List<Vehicles>>() {});
+		
+		assertEquals(vehicles, mockVehicles);
+		
+		// check that route returns 200, vehicleType null
+		result =  this.mvc.perform(get("/vehicle/filter?location=Philadelphia"))
+								    .andExpect(status().isOk())
+								    .andReturn();
+		
+		// check that response content is a list of vehicles
+		vehicles = mapper.readValue(result.getResponse().getContentAsString(),
+						   							new TypeReference<List<Vehicles>>() {});
+		
+		assertEquals(vehicles, mockVehicles);
+		
+		// check that route returns 200, both location and vehicleType non null
+		result =  this.mvc.perform(get("/vehicle/filter?location=Philadelphia&vehicleType=Truck"))
+								    .andExpect(status().isOk())
+								    .andReturn();
+		
+		// check that response content is a list of vehicles
+		vehicles = mapper.readValue(result.getResponse().getContentAsString(),
+						   							new TypeReference<List<Vehicles>>() {});
+		
+		assertEquals(vehicles, mockVehicles);
+	}
 
 }
