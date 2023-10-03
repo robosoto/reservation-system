@@ -1,5 +1,5 @@
 main {
-    position: relative;
+    position: fixed;
     background-color: white;
     left: .5%;
     top: 16%;

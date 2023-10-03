@@ -22,6 +22,7 @@ export class AvailableVehiclesListComponent {
   location: string = "";
   startDate: string = "";
   endDate: string = "";
+  dollarsToPesosMultiplier: number = environment.dollarsToPesosMultiplier;
 
   vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
   selectedVehicleType: string = "All Vehicle Types";
@@ -40,7 +41,7 @@ export class AvailableVehiclesListComponent {
       this.reservationService.getReservedVehicleIdsByDateRange(this.location, this.startDate, this.endDate)
                              .subscribe(reservedIds => {
                                this.displayedVehicles = vehicles.filter(vehicle => {
-                                 return !reservedIds.includes(vehicle.vehicleId)
+                                 return !reservedIds.includes(vehicle.vehicleId);
                                });
                              });
     });

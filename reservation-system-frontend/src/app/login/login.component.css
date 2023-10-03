@@ -73,7 +73,7 @@ div.head {
 }
 
 div.block {
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: auto;
     width: 20%;

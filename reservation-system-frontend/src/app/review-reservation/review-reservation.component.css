@@ -1,6 +1,6 @@
 div.container{
     background-color: white;
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: auto;
     left: .5%;

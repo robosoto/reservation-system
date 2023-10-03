@@ -31,6 +31,21 @@
     "State" : "Estado",
     "Country" : "País",
     "Contact" :"Contacto",
+    "UpdateReservation" : "Modificar reserva",
+    "CancelReservation" : "Cancelar la reserva",
+    "pickupReturnDate" : "Modificar fecha de recogida y devolución",
+    "ReservationNumber" : "Número de reserva",
+    "newReservation" : "Iniciar una nueva Reserva",
+    "verifyReservation" : "Verifica la información de tu reserva",
+    "ConfirmReservation" : "Confirmar reservación",
+    "Confirmation" : "Confirmación",
+    "confirmationMsg" : "¡Tu reserva ha sido confirmada! Se ha enviado un correo electrónico a su correo electrónico con los detalles de su confirmación.",
+    "homeButton" : "De vuelta a casa",
+    "ModifyReservation" : "Modificar Reserva",
+    "cancelmsg": "¡Tu reserva ha sido cancelada!",
+    "newreserve": "Nueva Reserva",
+    "cancellation": "Cancelación",
+
     "primeng": {
         "dayNamesMin": [
             "D",

@@ -9,8 +9,8 @@ import java.util.Date;
 import com.goeazycarrent.service.exception.GoEazyException;
 
 public class DateUtil {
-	private static final String ASIA_KOLKATA = "Asia/Kolkata";
-	private static final String MUMBAI = "Mumbai";
+	private static final String CST_TIMEZONE = "America/Chicago";
+	private static final String CANCUN = "Cancun";
 	private static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static String DEFAULT_TIMEZONE = "America/New_York";
 	/**
@@ -39,8 +39,8 @@ public class DateUtil {
     
     public static Date convertDateByTimezone(String location,String date) throws GoEazyException {
 		String timezone= DEFAULT_TIMEZONE;
-		if(MUMBAI.equalsIgnoreCase(location)) {
-			timezone = ASIA_KOLKATA;
+		if(CANCUN.equalsIgnoreCase(location) || "Cancún".equalsIgnoreCase(location)){
+			timezone = CST_TIMEZONE;
 		}
 		try {
 			return getConvertedDateFromString(date, timezone);

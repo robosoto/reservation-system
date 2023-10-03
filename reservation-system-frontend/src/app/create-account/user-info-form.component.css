@@ -69,7 +69,7 @@ div.head {
 }
 
 div.input {
-    position: relative;
+    position: fixed;
     margin: auto;
     padding: auto;
     display: block;
@@ -80,7 +80,7 @@ div.input {
 }
 
 div.block {
-    position: relative;
+    position: fixed;
     padding: auto;
     margin: auto;
     display: inline-block;

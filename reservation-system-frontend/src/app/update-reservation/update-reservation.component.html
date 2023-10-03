@@ -1,56 +1,53 @@
 <main>
-<div class="main">
-       <div class="split-view-container">
-        <div class="left">
-       
-                <h1>Update a Reservation</h1>
-                <h4>or</h4>
+    <div class="container">
+        <div class="split-view-container">
+               <div class="object">   
+                <h1>{{"UpdateReservation" | translate }}/</h1>
+
                 <a routerLink="/reservation-form">
-                    <h3>Start a new Reservation</h3>
+                    <h3>{{"newReservation" | translate }}</h3>
                 </a>
-            
-            <form [formGroup]="updateReservationForm">
-           
-                   <h2>Reservation Number</h2>
-                        <input type="text" pInputText formControlName="reservationId">
-                   
-
           
+                <form [formGroup]="updateReservationForm" #resForm="ngForm">
+
+                    <h2>{{"ReservationNumber" | translate }}</h2>
+                    <input type="text" pInputText formControlName="reservationId">
+
+
+
                     <h2>{{"pdEmail" | translate}}</h2>
-                        <input type="email" pInputText formControlName="email">
-                 
+                    <input type="email" pInputText formControlName="email">
 
-           
-                    <h2>{{"pdLoc" |  translate }}</h2>
-                        <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
-                 
-                <h2>Update pick-up & Return Date</h2>
-                        <p-calendar formControlName="dateRange" selectionMode="range" 
-                                    [readonlyInput]="true" [showIcon]="true"
-                                    [showTime]="true"
-                                    [showSeconds]="true"
-                                    dateFormat="yy-mm-dd" dataType="string"></p-calendar>
-       
-                                    <h2></h2>
-                    <p-button label="Update Reservation" (click)="updateReservation()"></p-button>
-               
-            </form>
-        </div>  
-        <div class="right">
-                <h1>Cancel  Reservation</h1>
-          
-            <p-confirmDialog header="Delete"></p-confirmDialog>
-            <form [formGroup]="cancelReservationForm">
+
+
+                    <h2>{{"pdLoc" | translate }}</h2>
+                    <p-dropdown [options]="locations" formControlName="location" optionLabel="name"></p-dropdown>
+
+                    <h2>{{"pickupReturnDate"| translate }}</h2>
+                    <p-calendar formControlName="dateRange" selectionMode="range" [readonlyInput]="true"
+                        [showIcon]="true" [showTime]="true" [showSeconds]="true" dateFormat="yy-mm-dd"
+                        dataType="string"></p-calendar>
+
+                    <h2></h2>
+                    <p-button [label]="translate.instant('UpdateReservation')" [disabled]="isUpdationFormValid()" (click)="updateReservation()"></p-button>
+
+                </form>
              
-                       <h2>Reservation Number</h2>
-                            <input type="text" pInputText formControlName="reservationId">
-                            <h2></h2>
-                    <p-button label="Cancel Reservation" (click)="cancelReservation()"></p-button>
-            
-            </form> 
-        </div>  
-    </div>  
-</div>
+            </div>
+            <div class="right">
+                <h1>{{"CancelReservation" | translate}}</h1>
+
+                <p-confirmDialog header="Delete"></p-confirmDialog>
+                <form [formGroup]="cancelReservationForm">
+
+                    <h2>{{"ReservationNumber"| translate}}</h2>
+                    <input type="text" pInputText formControlName="reservationId">
+                    <h2></h2>
+                    <p-button [label]="translate.instant('CancelReservation')" [disabled]="isCancellationFormValid()"  (click)="cancelReservation()"></p-button>
+
+                </form>
+            </div>
+        </div>
+    </div>
 
 </main>
-

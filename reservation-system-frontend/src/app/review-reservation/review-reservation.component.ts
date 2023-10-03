@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ReservationService } from '../services/reservation.service';
 import { CustomerService } from '../services/customer.service';
 import { TranslateService } from '@ngx-translate/core';
-import { PrimeNGConfig } from 'primeng/api';
+import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { Router } from '@angular/router';
 import { ReservationConfirmForm } from '../types/reservation-confirm-form';
 import { CustomerForm } from '../types/customer-form';
@@ -31,6 +31,7 @@ export class ReviewReservationComponent {
     public primeNGConfig: PrimeNGConfig,
     private reservationService: ReservationService,
     private customerService: CustomerService,
+    private messageService:MessageService,
     private _router:Router
    
   ) {}
@@ -54,9 +55,10 @@ export class ReviewReservationComponent {
     this.customerService.signupCustomer(custForm)?.subscribe(data =>{
       console.log("customer - " + data);
       this.bookreservation(6);
+    
     },
     error => {
-      // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
+       this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
        console.log('Errror occured');
      })
 
@@ -73,7 +75,7 @@ export class ReviewReservationComponent {
     resForm.pickupDate = this.startDate;
     resForm.location = this.location;
     resForm.email = this.email;
-
+    
      this.reservationService.submitReservation(resForm)?.subscribe(
         data => {
          this.emailToSend = this.email;
@@ -82,7 +84,8 @@ export class ReviewReservationComponent {
          
         },
         error => {
-         // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
+          console.log(error.error);
+         this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
           console.log('Errror occured');
         }
      )

@@ -37,7 +37,7 @@ export class UpdateReservationComponent {
   locations = [
     { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
-    { name: 'Mumbai', code: 'BOM' }
+    { name: 'Cancún', code: 'CAN' }
   ];
   showVehicles: boolean = false;
   subscription: Subscription;
@@ -57,6 +57,18 @@ export class UpdateReservationComponent {
   ngOnInit() {
     
 }
+
+isUpdationFormValid(): boolean {
+  
+  return this.updateReservationForm.invalid;
+}
+
+isCancellationFormValid(): boolean {
+  
+  return this.cancelReservationForm.invalid;
+}
+
+
 
 updateReservation() {
   let resForm ={} as ReservationConfirmForm;
@@ -84,6 +96,24 @@ updateReservation() {
      )
 
   
+  }
+
+  
+  /**
+   * Check if reservation form is valid and mark all fields as touched
+   * in order to show error messages to the user
+   * 
+   * @returns boolean true if all fields in reservation form are valid
+   */ 
+  isReservationFormValid(): boolean {
+    if (this.updateReservationForm.invalid) {
+      this.updateReservationForm.markAllAsTouched();
+    }
+    return !this.updateReservationForm.invalid;
+  }
+
+  isCencelledFormValid():boolean{
+    return this.cancelReservationForm.invalid
   }
 
   cancelReservation() {
