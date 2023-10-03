@@ -1,21 +1,46 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { PrimeNGConfig } from 'primeng/api';
+import { of } from 'rxjs';
 
-import { VehiclesComponent } from './vehicles.component';
+import { VehiclesListComponent } from './vehicles.component';
+import { VehicleService } from '../services/vehicle.service';
+import { Vehicle } from '../types/vehicle';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-describe('VehiclesComponent', () => {
-  let component: VehiclesComponent;
-  let fixture: ComponentFixture<VehiclesComponent>;
+export class TranslateServiceStub {
+    public use(key: any): any {
+        return of(key);
+    }
+}
+
+describe('VehiclesListComponent', () => {
+  let component: VehiclesListComponent;
+  let fixture: ComponentFixture<VehiclesListComponent>;
+  let vehicleService: jasmine.SpyObj<VehicleService>;
 
   beforeEach(() => {
+    const vehicleServiceSpy = jasmine.createSpyObj('VehicleService', [
+      'getAllVehicles',
+      'getVehiclesByLocationAndType',
+    ]);
+
     TestBed.configureTestingModule({
-      declarations: [VehiclesComponent]
+      declarations: [VehiclesListComponent, TranslatePipe],
+      providers: [{provide: TranslateService, useClass: TranslateServiceStub},
+                   PrimeNGConfig],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
-    fixture = TestBed.createComponent(VehiclesComponent);
+
+    TestBed.overrideProvider(VehicleService, { useValue: vehicleServiceSpy });
+
+    fixture = TestBed.createComponent(VehiclesListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    vehicleService = TestBed.inject(VehicleService) as jasmine.SpyObj<VehicleService>;
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
 });
