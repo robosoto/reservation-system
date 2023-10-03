@@ -23,7 +23,7 @@ import { VehiclesListComponent } from './all-vehicles/vehicles.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 import { NavComponent } from './nav/nav.component';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReviewReservationComponent } from './review-reservation/review-reservation.component';
 import { ConfirmReservationComponent } from './confirm-reservation/confirm-reservation.component';
@@ -83,6 +83,24 @@ export function createTranslateLoader(http: HttpClient) {
       },
       defaultLanguage: 'en',
     })
+  ],
+  exports: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    ReservationComponent,
+    LocationComponent,
+    UserInfoFormComponent,
+    VehiclesListComponent,
+    LoginComponent,
+    UpdateReservationComponent,
+    NavComponent,
+    ReviewReservationComponent,
+    ConfirmReservationComponent,
+    AvailableVehiclesListComponent,
+    CancelReservationComponent,
+    ConfirmCancelationComponent
   ],
   providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
