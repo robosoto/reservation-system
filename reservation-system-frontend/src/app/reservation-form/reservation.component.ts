@@ -23,7 +23,8 @@ export class ReservationComponent  {
     dateRange: [[], Validators.required],
     vehicleMake: "",
     vehicleModel: "",
-    vehicleId: 0
+    vehicleId: 0,
+    pricePerDay: 0
   });
 
   name: string = "";
