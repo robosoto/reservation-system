@@ -2,6 +2,7 @@ package com.goeazycarrent.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -59,6 +60,7 @@ public class ReservationServiceControllerTests {
 	private String takenReservationRequestJson = "{\"customerId\":6,\"vehicleId\":1,\"dropoffDate\":\"2023-10-31 20:35:48\"," +
 			"\"pickupDate\":\"2023-10-30 20:35:48\",\"location\":\"Philadelphia\"," +
 			"\"email\":\"test@mail.com\"}";
+	private String cancelReservationRequestJson = "{\"reservationId\":\"1a2b3c\"}";
 	
 	private static List<Integer> reservedVehicleIds = new ArrayList<>();
 	
@@ -148,13 +150,27 @@ public class ReservationServiceControllerTests {
 		assertEquals(HttpStatus.CONFLICT.value(), response.getStatus());
 	}
 	
-//	/**
-//	 * PUT /reservation/cancel
-//	 */
-//	@Test
-//	public void putReservationCancel() throws Exception {
-//
-//	}
+	/**
+	 * PUT /reservation/cancel
+	 */
+	@Test
+	public void putReservationCancel() throws Exception {
+		doNothing().when(resService).cancelReservation(any(String.class));
+		
+		RequestBuilder request = MockMvcRequestBuilders.put("/reservation/cancel")
+													   .accept(MediaType.APPLICATION_JSON)
+													   .content(cancelReservationRequestJson)
+													   .contentType(MediaType.APPLICATION_JSON);
+
+		MvcResult result = mvc.perform(request).andReturn();
+		MockHttpServletResponse response = result.getResponse();
+		
+		// expect response status of 200 OK
+		assertEquals(HttpStatus.OK.value(), response.getStatus());
+		
+		// expect response content to be empty string
+		assertEquals("", response.getContentAsString());
+	}
 	
 	/**
 	 * PUT /reservation/modify
