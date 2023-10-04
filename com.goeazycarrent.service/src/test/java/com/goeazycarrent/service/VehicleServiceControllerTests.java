@@ -74,7 +74,7 @@ public class VehicleServiceControllerTests {
 		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 												   new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 	}
 	
 	/**
@@ -93,7 +93,7 @@ public class VehicleServiceControllerTests {
 		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 									   				new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 	}
 	
 	/**
@@ -112,7 +112,7 @@ public class VehicleServiceControllerTests {
 		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 						   							new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 	}
 	
 	/**
@@ -134,7 +134,7 @@ public class VehicleServiceControllerTests {
 		List<Vehicles> vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 						   							new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 		
 		// check that route returns 200, location null
 		result =  this.mvc.perform(get("/vehicle/filter?vehicleType=Truck"))
@@ -145,7 +145,7 @@ public class VehicleServiceControllerTests {
 		vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 						   							new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 		
 		// check that route returns 200, vehicleType null
 		result =  this.mvc.perform(get("/vehicle/filter?location=Philadelphia"))
@@ -156,7 +156,7 @@ public class VehicleServiceControllerTests {
 		vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 						   							new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 		
 		// check that route returns 200, both location and vehicleType non null
 		result =  this.mvc.perform(get("/vehicle/filter?location=Philadelphia&vehicleType=Truck"))
@@ -167,7 +167,7 @@ public class VehicleServiceControllerTests {
 		vehicles = mapper.readValue(result.getResponse().getContentAsString(),
 						   							new TypeReference<List<Vehicles>>() {});
 		
-		assertEquals(vehicles, mockVehicles);
+		assertEquals(mockVehicles, vehicles);
 	}
 
 }
