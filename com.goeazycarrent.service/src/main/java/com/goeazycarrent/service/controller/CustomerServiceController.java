@@ -36,7 +36,7 @@ public class CustomerServiceController {
 				customerServiceRequestdto.setName(StringUtils.trim(customerServiceRequestdto.getName()));
 				Customers saveCustomer = customerService.saveCustomerDetails(customerServiceRequestdto);
 				if(saveCustomer !=null && saveCustomer.getCustomerId()!=null) {
-					return new ResponseEntity<>(saveCustomer.getCustomerId(), HttpStatus.OK);
+					return new ResponseEntity<>(saveCustomer.getCustomerId(), HttpStatus.CREATED);
 				}else {
 					throw new GoEazyException("Failed to Create Customer");
 				}

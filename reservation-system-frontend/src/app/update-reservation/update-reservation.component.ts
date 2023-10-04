@@ -120,7 +120,7 @@ updateReservation() {
     let resForm ={} as ReservationConfirmForm;
     console.log(this.cancelReservationForm.value.reservationId);
     this.confirmService.confirm({
-      message: 'Are you sure that you want to Cancel this Reservation?',
+      message: 'Are you sure that you want to cancel this reservation?',
       accept: () => {
         resForm.reservationId = this.cancelReservationForm.value.reservationId
        console.log(resForm.reservationId);
