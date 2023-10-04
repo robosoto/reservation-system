@@ -61,7 +61,7 @@ public class ReservationServiceController {
 		vehicles = reservationService.getAllVehiclesByDate(reservationRequestdto.getLocation(), reservationRequestdto.getPickupDate(), reservationRequestdto.getDropoffDate());
 		
 		if(vehicles!=null && vehicles.contains(reservationRequestdto.getVehicleId())) {
-			throw new GoEazyException("Vehicle has already been reserved");
+			return new ResponseEntity<>(null, HttpStatus.CONFLICT);
 		}
 		
 		
@@ -70,11 +70,11 @@ public class ReservationServiceController {
 			Mail mail = new Mail();
 			mail.setMailFrom("sender@gmail.com");
 			mail.setMailTo(reservationRequestdto.getEmail());
-			mail.setMailSubject("GoEazyCarRent Rental Confirmation #"+ saveReservation.getReservationId());
-			mail.setMailContent("Congratulation You have Succesfully reserved your Car Rental and Confirmation id is : "
+			mail.setMailSubject("GoEazyCarRental Rental Confirmation #"+ saveReservation.getReservationId());
+			mail.setMailContent("Congratulations, you have successfully reserved a vehicle. Your confirmation ID is: "
 					+ saveReservation.getReservationId());
 			mailService.sendEmail(mail);
-			return new ResponseEntity<>(saveReservation, HttpStatus.OK);
+			return new ResponseEntity<>(saveReservation, HttpStatus.CREATED);
 		}else {
 			throw new GoEazyException("Reservation Failed");
 		}
@@ -113,20 +113,20 @@ public class ReservationServiceController {
 			Mail mail = new Mail();
 			mail.setMailFrom("sender@gmail.com");
 			mail.setMailTo(reservationRequestdto.getEmail());
-			mail.setMailSubject("GoEazyCarRent Rental Confirmation #"+ saveReservation.getReservationId());
-			mail.setMailContent("Congratulation You have Succesfully Updated your Car Rental and Confirmation id is : "
+			mail.setMailSubject("GoEazyCarRental Rental Confirmation #"+ saveReservation.getReservationId());
+			mail.setMailContent("Congratulations, you have successfully updated your rental reservation. Your confirmation ID is: "
 					+ saveReservation.getReservationId());
 			mailService.sendEmail(mail);
 			return new ResponseEntity<>(saveReservation, HttpStatus.OK);
 		}else {
-			throw new GoEazyException("Updation Failed");
+			throw new GoEazyException("Update Failed");
 		}
 		
 
 	}
 
 	@GetMapping("{location}/{fromDate}/{toDate}")
-	public List<Integer> getReservationById(@PathVariable String location, @PathVariable String fromDate,
+	public List<Integer> getReservedVehiclesByLocationAndDateRange(@PathVariable String location, @PathVariable String fromDate,
 			@PathVariable String toDate) throws GoEazyException {
 		List<Integer> vehicles;
 		try {
