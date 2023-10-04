@@ -81,17 +81,15 @@ updateReservation() {
      resForm.dropoffDate = this.localDateRange[1];
      resForm.location = formLocationValue.name;
      resForm.email = this.updateReservationForm.value.email;
-    console.log(resForm);
      this.reservationService.modifyReservation(resForm)?.subscribe(
         data => {
         
-         console.log(data);
          this._router.navigate(['confirm-reservation']);
          
         },
         error => {
          // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
-          console.log('Errror occured');
+          console.log('Error occured');
         }
      )
 
@@ -118,22 +116,19 @@ updateReservation() {
 
   cancelReservation() {
     let resForm ={} as ReservationConfirmForm;
-    console.log(this.cancelReservationForm.value.reservationId);
     this.confirmService.confirm({
       message: 'Are you sure that you want to cancel this reservation?',
       accept: () => {
         resForm.reservationId = this.cancelReservationForm.value.reservationId
-       console.log(resForm.reservationId);
        this.reservationService.cancelReservation(resForm)?.subscribe(
         data => {
         
-         console.log(data);
          this._router.navigate(['cancel']);
          
         },
         error => {
          // this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
-          console.log('Errror occured');
+          console.log('Error occured');
         }
      )
       }

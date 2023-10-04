@@ -50,7 +50,7 @@ modifyReservation(reservationForm:ReservationConfirmForm){
 
 cancelReservation(reservationForm:ReservationConfirmForm){
   if(reservationForm){
-    return this.http.put(`${this.reservationUrl}/cancel`, reservationForm.reservationId );
+    return this.http.put(`${this.reservationUrl}/cancel`, reservationForm );
    }
    return null;
 }

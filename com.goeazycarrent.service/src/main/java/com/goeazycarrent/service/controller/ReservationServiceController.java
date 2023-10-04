@@ -86,12 +86,14 @@ public class ReservationServiceController {
 	/**
 	 * Cancel Reservation from id
 	 * 
-	 * @param id
+	 * @param ReservationRequestDto
+	 * @return
 	 * @throws GoEazyException
 	 */
 	@PutMapping("/cancel")
-	public ResponseEntity<String> cancelReservation(@RequestBody String reservationId)
+	public ResponseEntity<String> cancelReservation(@RequestBody ReservationRequestDto reservationRequestDto)
 			throws GoEazyException {
+		String reservationId = reservationRequestDto.getReservationId();
 		reservationService.cancelReservation(reservationId);
 		return new ResponseEntity<>("", HttpStatus.OK);
 
@@ -104,7 +106,6 @@ public class ReservationServiceController {
 	 * @return
 	 * @throws GoEazyException
 	 */
-
 	@PutMapping("/modify")
 	public ResponseEntity<Reservations> modifyReservation(@RequestBody ReservationRequestDto reservationRequestdto)
 			throws GoEazyException {
@@ -125,6 +126,17 @@ public class ReservationServiceController {
 
 	}
 
+	/**
+	 * Get vehicle IDs from all existing reservations given a location and date range
+	 * 
+	 * @param location
+	 * @param fromDate
+	 * @param toDate
+	 * 
+	 * @return list of reserved vehicle IDs
+	 * 
+	 * @throws GoEazyException
+	 */
 	@GetMapping("{location}/{fromDate}/{toDate}")
 	public List<Integer> getReservedVehiclesByLocationAndDateRange(@PathVariable String location, @PathVariable String fromDate,
 			@PathVariable String toDate) throws GoEazyException {
