@@ -34,7 +34,7 @@
     "UpdateReservation" : "Modificar reserva",
     "CancelReservation" : "Cancelar la reserva",
     "pickupReturnDate" : "Modificar fecha de recogida y devolución",
-    "ReservationNumber" : "Número de reserva",
+    "ReservationId" : "Identificación de reserva",
     "newReservation" : "Iniciar una nueva Reserva",
     "verifyReservation" : "Verifica la información de tu reserva",
     "ConfirmReservation" : "Confirmar reservación",

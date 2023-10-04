@@ -10,7 +10,7 @@
           
                 <form [formGroup]="updateReservationForm" #resForm="ngForm">
 
-                    <h2>{{"ReservationNumber" | translate }}</h2>
+                    <h2>{{"ReservationId" | translate }}</h2>
                     <input type="text" pInputText formControlName="reservationId">
 
 
@@ -40,7 +40,7 @@
                 <p-confirmDialog header="Delete"></p-confirmDialog>
                 <form [formGroup]="cancelReservationForm">
 
-                    <h2>{{"ReservationNumber"| translate}}</h2>
+                    <h2>{{"ReservationId"| translate}}</h2>
                     <input type="text" pInputText formControlName="reservationId">
                     <h2></h2>
                     <p-button [label]="translate.instant('CancelReservation')" [disabled]="isCancellationFormValid()"  (click)="cancelReservation()"></p-button>

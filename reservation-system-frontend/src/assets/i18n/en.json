@@ -34,7 +34,7 @@
     "UpdateReservation" : "Update a Reservation",
     "CancelReservation" : "Cancel Reservation",
     "pickupReturnDate" : "Update pick-up & Return Date",
-    "ReservationNumber" : "Reservation Number",
+    "ReservationId" : "Reservation ID",
     "newReservation" : "Start a new Reservation",
     "verifyReservation" : "Verify your reservation information",
     "ConfirmReservation" : "Confirm Reservation",
