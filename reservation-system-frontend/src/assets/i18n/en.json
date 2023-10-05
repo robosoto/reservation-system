@@ -19,6 +19,7 @@
     "Model":"Model",
     "Type":"Type",
     "Location":"Location",
+    "PricePerDay":"Price per day",
     "selectVehicleType": "Choose vehicle type",
     "selectLocation": "Choose location",
     "or":"or",
