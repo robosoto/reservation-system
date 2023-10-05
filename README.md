@@ -33,7 +33,7 @@ Before you begin, ensure you have met the following requirements:
 
 - [Node.js](https://nodejs.org/) installed
 - [Angular CLI](https://angular.io/cli) installed
-- [Backend API](https://example.com/api) up and running (if applicable)
+- [Spring](https://spring.io/quickstart) 
 
 ### Installation
 
