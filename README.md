@@ -33,6 +33,7 @@ Before you begin, ensure you have met the following requirements:
 
 - [Node.js](https://nodejs.org/) installed
 - [Angular CLI](https://angular.io/cli) installed
+- [Swagger Docs](eba-xjdmbrhh.us-east-1.elasticbeanstalk.com))
 - [Spring](https://spring.io/quickstart) 
 
 ### Installation
