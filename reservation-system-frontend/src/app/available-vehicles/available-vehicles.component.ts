@@ -24,8 +24,8 @@ export class AvailableVehiclesListComponent {
   endDate: string = "";
   dollarsToPesosMultiplier: number = environment.dollarsToPesosMultiplier;
 
-  vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
-  selectedVehicleType: string = "All Vehicle Types";
+  vehicleTypes: string[] = ["-----"].concat(environment.vehicleTypes);
+  selectedVehicleType: string = "-----";
   paginatorPageNum: number = 0;
 
   constructor(
@@ -48,7 +48,7 @@ export class AvailableVehiclesListComponent {
   }
 
   filterVehiclesByType(): void {
-    if (this.selectedVehicleType?.startsWith("All")) {
+    if (this.selectedVehicleType?.startsWith("-")) {
       this.displayedVehicles = JSON.parse(JSON.stringify(this.vehicles));
     } else {
       this.displayedVehicles = this.vehicles.filter(vehicle => {

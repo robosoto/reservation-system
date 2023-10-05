@@ -26,10 +26,10 @@ export class VehicleService {
   getVehiclesByLocationAndType(location: string, type: string): Observable<Vehicle[]> {
     let url = `${this.vehicleUrl}/filter?`;
 
-    if (!location.startsWith("All")) {
+    if (!location.startsWith("-")) {
       url += `location=${location}&`;
     }
-    if (!type.startsWith("All")) {
+    if (!type.startsWith("-")) {
       url += `vehicleType=${type}`
     }
     return this.http.get<Vehicle[]>(url);

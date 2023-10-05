@@ -1,9 +1,9 @@
 <div *ngIf="!isVehicleSelected" class="container">
     <h1>
-        Showing available vehicles in {{location}} between {{startDate}} and {{endDate}}
+        {{"availableVehicleMsg" | translate}} {{location}} {{"between" | translate}} {{startDate}} {{"and" | translate}} {{endDate}}
     </h1>
-    <div>
-        <p-dropdown
+    <div style="font-weight: bold;">
+        {{"selectVehicleType" | translate}}: <p-dropdown
             [options]="vehicleTypes"
             [(ngModel)]="selectedVehicleType"
             (onChange)="filterVehiclesByType()">
