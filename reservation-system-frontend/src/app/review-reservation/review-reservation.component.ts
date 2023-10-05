@@ -58,7 +58,6 @@ export class ReviewReservationComponent {
     custForm.email = this.email;
     custForm.name = this.name;
     this.customerService.signupCustomer(custForm)?.subscribe(data =>{
-      console.log("customer - " + data);
       this.bookreservation(6);
     
     },
@@ -81,7 +80,7 @@ export class ReviewReservationComponent {
                         : this.pricePerDay
     );
     
-    // totalPrice = pricerPerDay * numDays
+    // totalPrice = pricePerDay * numDays
     // any amount of time over n days is counted as n + 1 days
     // e.g. 2.1 days is counted as 3 days
     return Math.ceil(totalReservationDays) * price;
@@ -101,7 +100,6 @@ export class ReviewReservationComponent {
      this.reservationService.submitReservation(resForm)?.subscribe(
         data => {
          this.emailToSend = this.email;
-         console.log(data);
          this._router.navigate(['confirm-reservation']);
          
         },
