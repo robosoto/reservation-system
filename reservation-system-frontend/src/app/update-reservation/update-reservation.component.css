@@ -1,4 +1,4 @@
-container {
+div.container {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: white;
     position: fixed;
@@ -8,7 +8,7 @@ container {
     top: 16%;
     width: 99%;
     height: 70%;
-    text-align: center;
+    text-align: left;
 }
 h1 {
     text-align: left;
@@ -19,6 +19,7 @@ h2 {
     text-align: left;
     font-weight: lighter;
     font-size: medium;
+    margin-bottom: 1rem
 }
 
 h3 {
@@ -53,21 +54,6 @@ div.input {
     margin: left;
 }
 
-div.buttons {
-    display: inline-flex;
-    position: fixed;
-    margin: auto;
-    padding: auto;
-    top: 5%;
-    left: 2%;
-}
-
-div.button {
-    margin: 1rem;
-    padding: auto;
-    position: fixed;   
-}
-
 div.date {
     text-align: left;
 }
@@ -92,10 +78,11 @@ div.block {
     display: flex;
     background-color: white;
     justify-content: space-evenly;
+    height: 75%;
     
   
     div {
-      width: 50%;
+      width: 50% ;
     }
   
     .left {
