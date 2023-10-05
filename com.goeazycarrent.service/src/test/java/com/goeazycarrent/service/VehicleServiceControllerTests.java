@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.goeazycarrent.service.controller.VehicleServiceController;
+import com.goeazycarrent.service.exception.GoEazyException;
 import com.goeazycarrent.service.model.Vehicles;
 import com.goeazycarrent.service.services.VehicleService;
 
@@ -96,6 +97,16 @@ public class VehicleServiceControllerTests {
 		assertEquals(mockVehicles, vehicles);
 	}
 	
+	@Test
+	public void getVehicleByTypeException() throws Exception {
+		when(service.getVehicleByType("SUV")).thenThrow(GoEazyException.class);
+		
+		// check that route returns 200
+		this.mvc.perform(get("/vehicle/type/" + "SUV"))
+								    .andExpect(status().is5xxServerError());
+		
+	}
+	
 	/**
 	 * GET /vehicle/location/{location}
 	 */
@@ -113,6 +124,16 @@ public class VehicleServiceControllerTests {
 						   							new TypeReference<List<Vehicles>>() {});
 		
 		assertEquals(mockVehicles, vehicles);
+	}
+	
+	@Test
+	public void getVehicleByLocationException() throws Exception {
+		when(service.getVehicleByLocation("Philadelphia")).thenThrow(GoEazyException.class);
+		
+		// check that route returns 200
+		this.mvc.perform(get("/vehicle/location/" + "Philadelphia")).andExpect(status().is5xxServerError());
+		
+		
 	}
 	
 	/**

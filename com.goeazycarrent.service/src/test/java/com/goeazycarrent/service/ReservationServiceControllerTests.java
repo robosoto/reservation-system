@@ -32,6 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.goeazycarrent.service.controller.ReservationServiceController;
 import com.goeazycarrent.service.dto.ReservationRequestDto;
 import com.goeazycarrent.service.email.MailService;
+import com.goeazycarrent.service.exception.GoEazyException;
 import com.goeazycarrent.service.model.Reservations;
 import com.goeazycarrent.service.model.Vehicles;
 import com.goeazycarrent.service.services.ReservationService;
@@ -109,6 +110,17 @@ public class ReservationServiceControllerTests {
 											 new TypeReference<Reservations>() {});
 		
 		assertEquals(r1, res);
+	}
+	
+	@Test
+	public void getReservationByInvalidId() throws Exception {
+		when(resService.getReservationById("sdssd")).thenThrow(GoEazyException.class);
+		
+		// check that route returns 200
+		this.mvc.perform(get("/reservation/id/sdssd")).andExpect(status().is5xxServerError());
+		
+		
+		//assertEquals(r1, result.getResponse());
 	}
 	
 	/**

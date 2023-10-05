@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.goeazycarrent.service.controller.CustomerServiceController;
 import com.goeazycarrent.service.dto.CustomerServiceRequestDto;
+import com.goeazycarrent.service.exception.GoEazyException;
 import com.goeazycarrent.service.model.Customers;
 import com.goeazycarrent.service.services.CustomerService;
 
@@ -32,13 +33,16 @@ public class CustomerServiceControllerTests {
 	private CustomerService customerService;
 	
 	private static Customers testCustomer = new Customers();
+	private static Customers testNullCustomer = new Customers();
 	private String customerRequestJson = "{\"email\":\"test@mail.com\",\"name\":\"Test Name\"}";
+	private String customerRequestJsonWithMissingEmail = "{\"email\":\"\",\"name\":\"Test Name\"}";
 	
 	@BeforeAll
 	public static void init() {
 		testCustomer.setCustomerId(1);
 		testCustomer.setEmail("customer@mail.com");
 		testCustomer.setName("Test Name");
+		
 	}
 	
 	/**
@@ -74,5 +78,24 @@ public class CustomerServiceControllerTests {
 		
 		// expect response status of 201 CREATED
 		assertEquals(HttpStatus.CREATED.value(), response.getStatus());
+	}
+	
+	@Test
+	public void customerSignupWithException() throws Exception {
+		when(customerService.saveCustomerDetails(any(CustomerServiceRequestDto.class))).thenThrow(GoEazyException.class);
+		
+		// when customer already exists
+		when(customerService.findCustomerDetails("test@mail.com")).thenReturn(1);
+		
+		RequestBuilder request = MockMvcRequestBuilders.post("/customer/signup")
+													   .accept(MediaType.APPLICATION_JSON)
+													   .content(customerRequestJsonWithMissingEmail)
+													   .contentType(MediaType.APPLICATION_JSON);
+		
+		MvcResult result = mvc.perform(request).andReturn();
+		MockHttpServletResponse response = result.getResponse();
+		
+		assertEquals(500, response.getStatus());
+	
 	}
 }
