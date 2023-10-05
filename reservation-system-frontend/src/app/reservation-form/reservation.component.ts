@@ -31,6 +31,7 @@ export class ReservationComponent  {
   email: string = "";
   location: string = "";
   dateRange: string[] = [];
+  minimumDate: Date = new Date(); // the current DateTime will be the minimum the user can select
   locations = [
     { name: 'Choose Location', code: 'N/A'},
     { name: 'Philadelphia', code: 'PHI' },
