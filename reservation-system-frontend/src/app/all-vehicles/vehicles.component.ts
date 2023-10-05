@@ -14,10 +14,10 @@ import { PrimeNGConfig } from 'primeng/api';
 export class VehiclesListComponent {
 
   vehicles: Vehicle[] = [];
-  vehicleTypes: string[] = ["All Vehicle Types"].concat(environment.vehicleTypes);
-  locations: string[] = ["All Locations"].concat(environment.locations);
-  selectedVehicleType: string = "All Vehicle Types";
-  selectedLocation: string = "All Locations";
+  vehicleTypes: string[] = ["-----"].concat(environment.vehicleTypes);
+  locations: string[] = ["-----"].concat(environment.locations);
+  selectedVehicleType: string = "-----";
+  selectedLocation: string = "-----";
   paginatorPageNum: number = 0;
   dollarsToPesosMultiplier: number = environment.dollarsToPesosMultiplier;
 

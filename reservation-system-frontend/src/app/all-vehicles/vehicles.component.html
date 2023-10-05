@@ -1,11 +1,11 @@
 <div class="container">
-    <div>
-        <p-dropdown 
+    <div style="font-weight: bold;">
+        {{"selectLocation" | translate}}: <p-dropdown 
             [options]="locations" 
             [(ngModel)]="selectedLocation" 
             (onChange)="getVehiclesByLocationAndType()">
         </p-dropdown>
-        <p-dropdown
+        {{"selectVehicleType" | translate}}: <p-dropdown
             [options]="vehicleTypes"
             [(ngModel)]="selectedVehicleType"
             (onChange)="getVehiclesByLocationAndType()">
