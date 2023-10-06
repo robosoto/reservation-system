@@ -1,3 +1,7 @@
+# Go Eazy Car Rentals
+
+Angular application for our Car Rental reservation creation and management system.
+
 # ReservationSystemFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
