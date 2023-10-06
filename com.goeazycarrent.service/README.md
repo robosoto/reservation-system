@@ -1,17 +1,9 @@
-# GoEazy Car Rent Service 
+# Go Eazy Car Rentals Service 
 
-####Description
-This Service provides endpoint for Car Rent Service app. Service contains CRUD operations 
-to Create , Update, Delete Product and Warehouses.
-
-####BITBUCKET REPO
-
-https://github.com/robosoto/reservation-system/tree/main/com.goeazycarrent.service
+This Service provides API endpoints for our Go Eazy Car Rentals application. Service contains CRUD operations for creating and managing vehicle reservations.
 
 ####Swagger Docs
-Once app is started by running the project as Spring boot 
-
-http://localhost:8080/swagger-ui/index.html#/
+http://project2-goeazy-carrent-env.eba-xjdmbrhh.us-east-1.elasticbeanstalk.com:8080/swagger-ui/index.html#/
 
 #### API Description
 
@@ -23,7 +15,8 @@ http://localhost:8080/swagger-ui/index.html#/
     |----------|------------------|
     | GET | /vehicles/type/{type} |
     | GET | /vehicles/all |
-    | GET | /vehicles/location/{location}
+    | GET | /vehicles/location/{location} |
+    | GET | /vehicles/filter?location={location}&vehicleType={vehicleType} |
    
 
 We created a class `ReservationServiceController` with several methods for handling incoming http requests. Each method is associated with a unique api endpoint-url and http-verb combination. 
@@ -34,8 +27,9 @@ We created a class `ReservationServiceController` with several methods for handl
     |----------|------------------|
     | GET | /reservation/id/{id} |
     | POST | /reservation/confirm |
-    | POST | /reservation/cancel/{id} |
+    | POST | /reservation/cancel |
     | PUT | /reservation/modify |
+    | GET | /reservation/{location}/{startDate}/{endDate} |
 
 We created a class `CustomerServiceController` with several methods for handling incoming http requests. Each method is associated with a unique api endpoint-url and http-verb combination. 
 
@@ -44,20 +38,3 @@ We created a class `CustomerServiceController` with several methods for handling
     | Http Verb | Api Endpoint URL | 
     |----------|------------------|
     | POST | /customer/signup |
- 
-
-
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.14/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.14/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.14/reference/htmlsinge/index.html#web)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
