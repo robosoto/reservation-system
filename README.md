@@ -15,10 +15,9 @@ Go Eazy Car Rentals is a web application that allows users to easily reserve and
 
 ## Features
 
-- User registration and authentication
 - Browse and search for available cars
 - Reserve cars for specific dates and locations
-- View and manage reservations
+- Manage, update, and cancel existing reservations
 - User-friendly interface
 
 ## Demo
@@ -46,22 +45,24 @@ Before you begin, ensure you have met the following requirements:
 
    ```
 
-2. Install the dependencies:
+2. Run the back end service:
 
-    ``` 
-    npm install
+   ```
+   cd com.goeazycarrent.service
+   mvn spring-boot:run
+   ```
 
-    ```
+3. Install dependencies for the front end Angular application:
 
-3. Configure the environment:
+   ```
+   cd ../reservation-system-frontend
+   npm install
+   ```
 
-    -Create a .env file in the project root and add your environment-specific configurations.
-
-4. Start the development server: 
+5. Start the frontend Angular server: 
 
     ```
     ng serve
-
     ```
 
 ## Usage 
