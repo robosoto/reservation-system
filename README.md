@@ -1,7 +1,10 @@
 # Go Eazy Car Rentals
 
-
 Go Eazy Car Rentals is a web application that allows users to easily reserve and manage car rentals. Whether you're planning a road trip or need a rental car for daily use, our system makes the reservation process smooth and convenient.
+
+Make a reservation on Go Eazy Car Rentals! http://goeazystore.s3-website-us-east-1.amazonaws.com/
+
+The application is hosted on AWS -- The user interface is deployed in an S3 bucket, the back end on AWS Elastic Beanstalk, and the database is running on RDS Aurora Serverless.
 
 ## Table of Contents
 
@@ -19,6 +22,7 @@ Go Eazy Car Rentals is a web application that allows users to easily reserve and
 - Reserve cars for specific dates and locations
 - Manage, update, and cancel existing reservations
 - User-friendly interface
+- Full application can be translated between English and Spanish with the click of a button
 
 ## Demo
 
