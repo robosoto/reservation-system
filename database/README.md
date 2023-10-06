@@ -3,22 +3,28 @@ This directory contains SQL files for generating the tables of our database as w
 Also included is an EER diagram of our database schema. The schema is as follows:
 
 ## Vehicles
-|  id            |  int       |
-|  make          |  varchar   |
-|  model         |  varchar   |
-|  type          |  varchar   |
-|  price_per_day |  int       | 
+|  Column        |  Data Type |
+| -------------- | ---------- |
+|  id            |  int       |\
+|  make          |  varchar   |\
+|  model         |  varchar   |\
+|  type          |  varchar   |\
+|  price_per_day |  int       |\
 
 ## Reservations
+|  Column        |  Data Type |  Foreign Key  |
+| -------------- | ---------- | ------------- |
 |  id            |  varchar   |
 |  start_date    |  datetime  |
 |  end_date      |  datetime  |
 |  location      |  varchar   |
-|  customer_id   |  int       |  FK Customers  |
-|  vehicle_id    |  int       |  FK Vehicles   |
+|  customer_id   |  int       |  FK Customers  |\
+|  vehicle_id    |  int       |  FK Vehicles   |\
 |  status        |  varchar   |
 
 ## Customers
-|  id            |  int       |
-|  email         |  varchar   |
-|  name          |  varchar   |
+|  Column        |  Data Type |
+| -------------- | ---------- |
+|  id            |  int       |\
+|  email         |  varchar   |\
+|  name          |  varchar   |\
