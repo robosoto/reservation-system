@@ -1,4 +1,4 @@
-# Go Eazy Car Rentals Service 
+# Go Eazy Car Rentals Back End Service
 
 This Service provides API endpoints for our Go Eazy Car Rentals application. Service contains CRUD operations for creating and managing vehicle reservations.
 
